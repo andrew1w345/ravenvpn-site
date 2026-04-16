@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raven VPN — интернет без границ</title>
+  <meta name="description" content="Raven VPN — быстрый VPN через Telegram-бот. До 500 Мбит/с, настройка за 2 минуты, пробный доступ за 10 ₽.">
+  <meta name="theme-color" content="#0c0a14">
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            raven: {
+              bg: '#0c0a14',
+              surface: '#110e1c',
+              card: '#161225',
+              'card-hover': '#1c1730',
+              border: '#2a2240',
+              'border-light': '#3a3255',
+              purple: '#7C3AED',
+              'purple-dim': '#6D28D9',
+              'purple-light': '#A78BFA',
+              'purple-glow': 'rgba(124, 58, 237, 0.15)',
+              muted: '#9CA3AF',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    :root { color-scheme: dark; }
+    html { scroll-behavior: smooth; }
+
+    /* Glow effects */
+    .glow-sm { box-shadow: 0 0 20px rgba(124, 58, 237, 0.15); }
+    .glow-md { box-shadow: 0 0 40px rgba(124, 58, 237, 0.2), 0 0 80px rgba(124, 58, 237, 0.08); }
+    .glow-lg { box-shadow: 0 0 60px rgba(124, 58, 237, 0.3), 0 0 120px rgba(124, 58, 237, 0.1); }
+
+    /* Hero gradient */
+    .hero-gradient {
+      background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+    }
+
+    /* Card hover */
+    .card-lift {
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-4px);
+      border-color: rgba(124, 58, 237, 0.4);
+      box-shadow: 0 0 30px rgba(124, 58, 237, 0.15);
+    }
+
+    /* Button hover */
+    .btn-primary {
+      background: linear-gradient(135deg, #7C3AED 0%, #6D28D9 100%);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 40px rgba(124, 58, 237, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    }
+    .btn-outline:hover {
+      border-color: rgba(124, 58, 237, 0.5);
+      background: rgba(124, 58, 237, 0.05);
+      color: #fff;
+    }
+
+    .hero-panel {
+      background: linear-gradient(180deg, rgba(22, 18, 37, 0.92), rgba(17, 14, 28, 0.86));
+      border: 1px solid rgba(42, 34, 64, 0.9);
+      box-shadow: 0 0 32px rgba(124, 58, 237, 0.08);
+    }
+
+    .metric-chip {
+      background: rgba(22, 18, 37, 0.86);
+      border: 1px solid rgba(42, 34, 64, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    /* Fade-in on scroll */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* FAQ animation */
+    details[open] summary .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform 0.2s ease; }
+    details .faq-body {
+      animation: fadeIn 0.25s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Material icon sizing */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500;
+    }
+    .icon-filled {
+      font-variation-settings: 'FILL' 1, 'wght' 500;
+    }
+
+    /* Noise texture overlay */
+    .noise::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .card-lift,
+      .btn-primary,
+      .btn-outline,
+      .faq-icon,
+      .fade-up,
+      .fade-up.visible {
+        transition: none !important;
+      }
+      .card-lift:hover,
+      .btn-primary:hover {
+        transform: none;
+        box-shadow: none;
+      }
+      .fade-up,
+      .fade-up.visible {
+        opacity: 1;
+        transform: none;
+      }
+      details .faq-body {
+        animation: none;
+      }
+    }
+  </style>
+
+  <!-- Umami Analytics — добавить рабочий script src и data-website-id перед публикацией -->
+</head>
+<body class="bg-raven-bg text-white font-sans antialiased noise">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-raven-bg/70 backdrop-blur-xl border-b border-raven-border/50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.png" alt="Raven VPN" class="w-9 h-9 rounded-full ring-2 ring-raven-border">
+        <span class="text-lg font-bold tracking-tight">Raven VPN</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-raven-muted">
+        <a href="#features" class="hover:text-white transition-colors">Возможности</a>
+        <a href="#pricing" class="hover:text-white transition-colors">Тарифы</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+      <a href="https://t.me/GetRavenBot" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-full glow-sm">
+        Получить ключ
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
+    <div class="absolute inset-0 hero-gradient"></div>
+    <div class="relative max-w-6xl mx-auto grid items-center gap-10 px-6 md:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] md:gap-12">
+      <div class="text-center md:text-left">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-raven-card border border-raven-border mb-8">
+          <span class="w-2 h-2 rounded-full bg-raven-purple animate-pulse"></span>
+          <span class="text-xs font-semibold tracking-widest uppercase text-raven-purple-light">Подключение через @GetRavenBot</span>
+        </div>
+
+        <h1 class="text-5xl md:text-7xl font-black leading-[1.05] tracking-tight mb-6">
+          Интернет<br><span class="bg-gradient-to-r from-raven-purple-light to-raven-purple bg-clip-text text-transparent">без границ</span>
+        </h1>
+        <p class="text-lg md:text-xl text-raven-muted mb-10 max-w-lg leading-relaxed">
+          Скорость до 500&nbsp;Мбит/с, настройка за&nbsp;2&nbsp;минуты. Попробуйте&nbsp;за&nbsp;10&nbsp;&#8381;.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="https://t.me/GetRavenBot" class="btn-primary text-white font-bold px-8 py-4 rounded-full text-lg glow-md text-center">
+            Попробовать за 10 &#8381;
+          </a>
+          <a href="#pricing" class="btn-outline border border-raven-border text-raven-muted font-semibold px-8 py-4 rounded-full text-lg text-center">
+            Тарифы
+          </a>
+        </div>
+        <div class="mt-8 grid gap-3 text-left sm:grid-cols-3">
+          <div class="metric-chip rounded-2xl p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-raven-muted">Скорость</p>
+            <p class="mt-2 text-lg font-bold">до 500 Мбит/с</p>
+          </div>
+          <div class="metric-chip rounded-2xl p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-raven-muted">Настройка</p>
+            <p class="mt-2 text-lg font-bold">ключ и QR в боте</p>
+          </div>
+          <div class="metric-chip rounded-2xl p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-raven-muted">Устройства</p>
+            <p class="mt-2 text-lg font-bold">от 2 до 6</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full max-w-xl justify-self-center md:justify-self-end">
+        <div class="hero-panel relative overflow-hidden rounded-[2rem] p-6 md:p-8">
+          <div class="absolute inset-0 bg-raven-purple/15 blur-[90px] rounded-full scale-75"></div>
+          <img src="img/mascot.png" alt="Raven" class="relative z-10 mx-auto w-56 md:w-72 drop-shadow-2xl">
+        </div>
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <div class="hero-panel rounded-2xl p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-raven-muted">После оплаты</p>
+            <p class="mt-2 text-sm leading-relaxed text-white">Ключ и инструкция приходят сразу в бот.</p>
+          </div>
+          <div class="hero-panel rounded-2xl p-4">
+            <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-raven-muted">Канал</p>
+            <p class="mt-2 text-sm leading-relaxed text-white">Новости и статус работы — @TheRavenVPN</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 border-t border-raven-border/50 bg-raven-surface md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-14 fade-up md:mb-16">
+        <span class="text-sm font-bold text-raven-purple tracking-[0.15em] uppercase">Возможности</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3">Почему Raven VPN</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+
+        <div class="bg-raven-card border border-raven-border rounded-2xl p-7 card-lift fade-up group">
+          <div class="w-14 h-14 rounded-xl bg-raven-purple/10 flex items-center justify-center mb-5 group-hover:bg-raven-purple/20 transition-colors">
+            <span class="material-symbols-outlined text-raven-purple-light text-3xl">bolt</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">До 500 Мбит/с</h3>
+          <p class="text-sm text-raven-muted leading-relaxed">Для видео, звонков и повседневных задач без заметной просадки по скорости.</p>
+        </div>
+
+        <div class="bg-raven-card border border-raven-border rounded-2xl p-7 card-lift fade-up group">
+          <div class="w-14 h-14 rounded-xl bg-raven-purple/10 flex items-center justify-center mb-5 group-hover:bg-raven-purple/20 transition-colors">
+            <span class="material-symbols-outlined text-raven-purple-light text-3xl">shield_lock</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Не логируем активность</h3>
+          <p class="text-sm text-raven-muted leading-relaxed">Мы не храним данные о&nbsp;ваших действиях в сети</p>
+        </div>
+
+        <div class="bg-raven-card border border-raven-border rounded-2xl p-7 card-lift fade-up group">
+          <div class="w-14 h-14 rounded-xl bg-raven-purple/10 flex items-center justify-center mb-5 group-hover:bg-raven-purple/20 transition-colors">
+            <span class="material-symbols-outlined text-raven-purple-light text-3xl">schedule</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Настройка за 2 минуты</h3>
+          <p class="text-sm text-raven-muted leading-relaxed">Ключ, QR и короткая инструкция выдаются прямо в боте.</p>
+        </div>
+
+        <div class="bg-raven-card border border-raven-border rounded-2xl p-7 card-lift fade-up group">
+          <div class="w-14 h-14 rounded-xl bg-raven-purple/10 flex items-center justify-center mb-5 group-hover:bg-raven-purple/20 transition-colors">
+            <span class="material-symbols-outlined text-raven-purple-light text-3xl">devices</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">До 6 устройств</h3>
+          <p class="text-sm text-raven-muted leading-relaxed">Лимит зависит от тарифа: от 2 до 6 устройств одновременно.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="py-20 border-t border-raven-border/50 md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-6 fade-up">
+        <span class="text-sm font-bold text-raven-purple tracking-[0.15em] uppercase">Тарифы</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3">Выберите свой план</h2>
+      </div>
+      <p class="text-center text-raven-muted mb-12 fade-up">Скидки при оплате за период: 3 мес &minus;10%, 6 мес &minus;20%, 12 мес &minus;30%</p>
+
+      <!-- Trial banner -->
+      <div class="bg-gradient-to-r from-raven-purple/10 to-raven-purple/5 border border-raven-purple/25 rounded-2xl p-6 mb-6 text-center fade-up">
+        <p class="text-raven-purple-light font-semibold text-lg">
+          Пробный период: <span class="text-white font-bold text-2xl">10 &#8381;</span> &mdash; 1 день, 10 ГБ, 100 Мбит/с
+        </p>
+        <p class="text-sm text-raven-muted mt-1">Одна попытка на Telegram ID</p>
+      </div>
+      <p class="text-center text-sm text-raven-muted mb-10 fade-up">После оплаты ключ приходит сразу в бот.</p>
+
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 items-start">
+
+        <!-- Start -->
+        <div class="bg-raven-card border border-raven-border rounded-2xl p-7 lg:p-8 card-lift fade-up">
+          <h3 class="text-xl font-bold mb-2">Start</h3>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-black">149 &#8381;</span>
+            <span class="text-raven-muted font-medium">/мес</span>
+          </div>
+          <hr class="border-raven-border mb-8">
+          <ul class="space-y-4 text-sm text-raven-muted mb-10">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              0.5 ТБ трафика
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              Скорость до 100 Мбит/с
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              2 устройства
+            </li>
+          </ul>
+          <a href="https://t.me/GetRavenBot" class="block text-center btn-outline border border-raven-border text-raven-muted font-semibold py-3.5 rounded-xl">
+            Выбрать
+          </a>
+        </div>
+
+        <!-- Standard (highlighted) -->
+        <div class="bg-raven-card border-2 border-raven-purple rounded-2xl p-7 lg:p-8 relative glow-md fade-up md:-mt-3 md:mb-3">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-raven-purple to-raven-purple-dim text-white text-xs font-bold px-5 py-1.5 rounded-full tracking-wide uppercase">
+            Популярный
+          </div>
+          <h3 class="text-xl font-bold mb-2">Standard</h3>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-black">249 &#8381;</span>
+            <span class="text-raven-muted font-medium">/мес</span>
+          </div>
+          <hr class="border-raven-border mb-8">
+          <ul class="space-y-4 text-sm mb-10">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              1 ТБ трафика
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              Скорость до 200 Мбит/с
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              4 устройства
+            </li>
+          </ul>
+          <a href="https://t.me/GetRavenBot" class="block text-center btn-primary text-white font-bold py-3.5 rounded-xl">
+            Выбрать
+          </a>
+        </div>
+
+        <!-- Pro -->
+        <div class="bg-raven-card border border-raven-border rounded-2xl p-7 lg:p-8 card-lift fade-up">
+          <h3 class="text-xl font-bold mb-2">Pro</h3>
+          <div class="flex items-baseline gap-1 mb-8">
+            <span class="text-4xl font-black">349 &#8381;</span>
+            <span class="text-raven-muted font-medium">/мес</span>
+          </div>
+          <hr class="border-raven-border mb-8">
+          <ul class="space-y-4 text-sm text-raven-muted mb-10">
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              2 ТБ трафика
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              Скорость до 500 Мбит/с
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined icon-filled text-raven-purple-light text-lg">check_circle</span>
+              6 устройств
+            </li>
+          </ul>
+          <a href="https://t.me/GetRavenBot" class="block text-center btn-outline border border-raven-border text-raven-muted font-semibold py-3.5 rounded-xl">
+            Выбрать
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How to connect -->
+  <section class="py-20 border-t border-raven-border/50 bg-raven-surface md:py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="hero-panel rounded-[2rem] p-6 md:p-8">
+        <div class="fade-up">
+          <span class="text-sm font-bold text-raven-purple tracking-[0.15em] uppercase">Как начать</span>
+          <h2 class="mt-3 text-3xl md:text-4xl font-bold">Подключение за 3 шага</h2>
+        </div>
+        <div class="mt-8 grid gap-4 md:grid-cols-3">
+          <div class="fade-up rounded-2xl border border-raven-border bg-raven-card/80 p-5">
+            <div class="w-14 h-14 rounded-2xl bg-raven-bg flex items-center justify-center mb-5">
+              <span class="text-2xl font-black text-raven-purple-light">1</span>
+            </div>
+            <h3 class="font-bold text-lg">Откройте бота</h3>
+            <p class="mt-3 text-sm text-raven-muted leading-relaxed">Перейдите в <a href="https://t.me/GetRavenBot" class="text-raven-purple-light hover:underline">@GetRavenBot</a> в&nbsp;Telegram</p>
+          </div>
+          <div class="fade-up rounded-2xl border border-raven-border bg-raven-card/80 p-5">
+            <div class="w-14 h-14 rounded-2xl bg-raven-bg flex items-center justify-center mb-5">
+              <span class="text-2xl font-black text-raven-purple-light">2</span>
+            </div>
+            <h3 class="font-bold text-lg">Выберите тариф</h3>
+            <p class="mt-3 text-sm text-raven-muted leading-relaxed">Оплатите через СБП, карту или Telegram Stars</p>
+          </div>
+          <div class="fade-up rounded-2xl border border-raven-border bg-raven-card/80 p-5">
+            <div class="w-14 h-14 rounded-2xl bg-raven-bg flex items-center justify-center mb-5">
+              <span class="text-2xl font-black text-raven-purple-light">3</span>
+            </div>
+            <h3 class="font-bold text-lg">Получите ключ</h3>
+            <p class="mt-3 text-sm text-raven-muted leading-relaxed">Ключ, QR и инструкция придут сразу в бот</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 border-t border-raven-border/50 md:py-24">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="text-sm font-bold text-raven-purple tracking-[0.15em] uppercase">FAQ</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3">Частые вопросы</h2>
+      </div>
+      <div class="space-y-3">
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            Как оплатить?
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            В боте доступны три способа: СБП (через Robokassa), Telegram Stars и криптовалюта (USDT, TON). СБП &mdash; самый выгодный вариант.
+          </div>
+        </details>
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            На каких устройствах работает?
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            Android, iOS, Windows и macOS. Подходят приложения с поддержкой VLESS, включая Hiddify, v2rayNG, V2Box и другие.
+          </div>
+        </details>
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            Можно ли подключить несколько устройств?
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            Да. Один ключ работает на нескольких устройствах одновременно. Лимит зависит от тарифа: от 2 до 6.
+          </div>
+        </details>
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            Что если VPN перестал работать?
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            Напишите в поддержку через бота. Для массовых инцидентов и статусов сервиса используем канал @TheRavenVPN.
+          </div>
+        </details>
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            Есть ли возврат?
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            Если ключ не был выдан в течение 24 часов после оплаты &mdash; полный возврат. После выдачи ключа услуга считается оказанной.
+          </div>
+        </details>
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            Где смотреть статусы сервиса?
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            В канале <a href="https://t.me/TheRavenVPN" class="text-raven-purple-light hover:underline">@TheRavenVPN</a> — там публикуются новости и обновления.
+          </div>
+        </details>
+
+        <details class="group bg-raven-card border border-raven-border rounded-2xl fade-up">
+          <summary class="cursor-pointer p-6 font-semibold flex items-center justify-between select-none">
+            Реферальная программа
+            <span class="material-symbols-outlined text-raven-purple faq-icon text-xl">add</span>
+          </summary>
+          <div class="faq-body px-6 pb-6 text-sm text-raven-muted leading-relaxed">
+            Пригласите друга &mdash; получите +30 дней к подписке, когда он оплатит тариф. До 10 рефералов (300 дней бонуса).
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="py-20 border-t border-raven-border/50 relative overflow-hidden md:py-24">
+    <div class="absolute inset-0 bg-gradient-to-t from-raven-purple/5 to-transparent"></div>
+    <div class="relative max-w-3xl mx-auto px-6 text-center fade-up">
+      <h2 class="text-4xl md:text-5xl font-black mb-5">Попробуйте за 10 &#8381;</h2>
+      <p class="text-lg text-raven-muted mb-10">1 день, 10 ГБ, 100 Мбит/с &mdash; чтобы убедиться</p>
+      <a href="https://t.me/GetRavenBot" class="inline-block btn-primary text-white font-bold px-12 py-5 rounded-full text-xl glow-lg">
+        Открыть @GetRavenBot
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-raven-border/50 py-10 bg-raven-surface">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-raven-muted">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.png" alt="Raven VPN" class="w-6 h-6 rounded-full">
+        <span>&copy; 2026 Raven VPN</span>
+      </div>
+      <div class="flex gap-8">
+        <a href="https://t.me/TheRavenVPN" class="hover:text-white transition-colors">Канал</a>
+        <a href="https://t.me/GetRavenBot" class="hover:text-white transition-colors">Бот</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fade-in on scroll -->
+  <script>
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      fadeElements.forEach((element) => element.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      fadeElements.forEach((element) => observer.observe(element));
+    }
+  </script>
+
+</body>
+</html>
