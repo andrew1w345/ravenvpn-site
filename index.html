@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raven VPN — VPN, который работает</title>
+  <meta name="description" content="Raven VPN — быстрый VPN через Telegram-бот. Подключение за 2 минуты, пробный день — 10 ₽, ключ и инструкция приходят сразу в бот.">
+  <meta name="theme-color" content="#0a0f1a">
+  <link rel="icon" type="image/webp" href="img/logo.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            raven: {
+              bg: '#0a0f1a',
+              surface: '#0f1520',
+              card: '#141c28',
+              'card-soft': '#182233',
+              border: '#1e2a3a',
+              'border-light': '#2a3a4e',
+              green: '#22C55E',
+              'green-dim': '#16A34A',
+              violet: '#7c6f9b',
+              muted: '#8a9bb5',
+              ink: '#e8edf7',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 14% 10%, rgba(42, 58, 78, 0.22), transparent 30%),
+        radial-gradient(circle at 82% 0%, rgba(30, 42, 58, 0.28), transparent 34%),
+        linear-gradient(180deg, #0d1320 0%, #0a0f1a 24%, #0a0f1a 100%);
+      padding-bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    .site-header {
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .site-header.is-solid {
+      background: rgba(10, 15, 26, 0.94);
+      border-color: rgba(30, 42, 58, 0.92);
+    }
+
+    .brand-mark {
+      box-shadow: inset 0 0 0 1px rgba(124, 111, 155, 0.32);
+    }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(30, 42, 58, 0.96), transparent);
+    }
+
+    .surface-card {
+      background: rgba(20, 28, 40, 0.86);
+      border: 1px solid #1e2a3a;
+    }
+
+    .surface-card-soft {
+      background: rgba(24, 34, 51, 0.94);
+      border: 1px solid rgba(124, 111, 155, 0.28);
+    }
+
+    .card-lift {
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .card-lift:hover {
+      border-color: #2a3a4e;
+      background: rgba(20, 28, 40, 0.96);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      border-radius: 9999px;
+      background: #22C55E;
+      color: #0a0f1a;
+      font-weight: 700;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background: #16A34A;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      border: 1px solid #1e2a3a;
+      color: #e8edf7;
+      transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .btn-outline:hover {
+      border-color: #2a3a4e;
+      background: rgba(20, 28, 40, 0.9);
+    }
+
+    .text-link {
+      color: #c6d0e0;
+      transition: color 0.2s ease;
+    }
+
+    .text-link:hover {
+      color: #ffffff;
+    }
+
+    .pill-violet {
+      border: 1px solid rgba(124, 111, 155, 0.3);
+      background: rgba(124, 111, 155, 0.1);
+      color: #c9bddf;
+    }
+
+    .hero-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 20rem;
+    }
+
+    .hero-stage::before {
+      content: '';
+      position: absolute;
+      inset: 7% 5% 16%;
+      border: 1px solid rgba(30, 42, 58, 0.88);
+      border-radius: 38% 38% 32% 32%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    }
+
+    .hero-stage::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 8%;
+      width: 76%;
+      height: 12%;
+      transform: translateX(-50%);
+      border: 1px solid rgba(42, 58, 78, 0.88);
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .hero-mascot-shell {
+      animation: mascot-sway 4s ease-in-out infinite;
+      transform-origin: 50% 62%;
+    }
+
+    .hero-mascot {
+      animation: mascot-breathe 3.5s ease-in-out infinite;
+      transform-origin: 50% 58%;
+    }
+
+    .hero-terminal {
+      min-height: 7.75rem;
+    }
+
+    .terminal-cursor {
+      display: inline-block;
+      color: #22C55E;
+      animation: blink 0.95s steps(2, start) infinite;
+    }
+
+    .hero-cta-wrap {
+      position: relative;
+      display: inline-flex;
+      width: fit-content;
+    }
+
+    .hero-cta-bubble {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 0.85rem);
+      z-index: 30;
+      white-space: nowrap;
+      transform: translate(-50%, 4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .hero-cta-bubble::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: calc(100% - 1px);
+      width: 0.75rem;
+      height: 0.75rem;
+      border-right: 1px solid #1e2a3a;
+      border-bottom: 1px solid #1e2a3a;
+      background: #182233;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .hero-cta-wrap:hover .hero-cta-bubble,
+      .hero-cta-wrap:focus-within .hero-cta-bubble {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
+    }
+
+    .hero-cta-wrap.is-visible .hero-cta-bubble {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .nav-phrase {
+      opacity: 0;
+      transition: opacity 0.18s ease;
+    }
+
+    .nav-phrase.is-visible {
+      opacity: 1;
+    }
+
+    .steps-pose {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateY(10px) scale(0.985);
+      transition: opacity 0.34s ease, transform 0.34s ease;
+    }
+
+    .steps-pose.is-active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .steps-copy {
+      border-color: #1e2a3a;
+      opacity: 0.42;
+      transition: opacity 0.24s ease, border-color 0.24s ease;
+    }
+
+    .steps-copy.is-active {
+      border-color: #7c6f9b;
+      opacity: 1;
+    }
+
+    @keyframes mascot-sway {
+      0%,
+      100% {
+        transform: rotate(-0.5deg);
+      }
+      50% {
+        transform: rotate(0.5deg);
+      }
+    }
+
+    @keyframes mascot-breathe {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.008);
+      }
+    }
+
+    @keyframes blink {
+      0%,
+      45% {
+        opacity: 1;
+      }
+      46%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transition: opacity 0.55s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+    }
+
+    details summary {
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item {
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .faq-item[open] {
+      border-color: #2a3a4e;
+      background: rgba(20, 28, 40, 0.96);
+    }
+
+    .faq-icon {
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .sticky-cta {
+      padding-bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .site-header,
+      .card-lift,
+      .btn-primary,
+      .btn-outline,
+      .text-link,
+      .faq-icon,
+      .hero-cta-bubble,
+      .nav-phrase,
+      .steps-pose,
+      .steps-copy,
+      .fade-up {
+        transition: none !important;
+      }
+
+      .hero-mascot-shell,
+      .hero-mascot,
+      .terminal-cursor {
+        animation: none !important;
+      }
+
+      .fade-up {
+        opacity: 1;
+      }
+    }
+  </style>
+
+  <!-- Umami Analytics — при публикации подставить рабочий script src и data-website-id -->
+</head>
+<body class="bg-raven-bg font-sans text-raven-ink antialiased selection:bg-raven-violet/30 selection:text-white">
+  <header class="site-header fixed inset-x-0 top-0 z-50">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="#hero" class="flex items-center gap-3">
+        <img src="img/logo.webp" alt="Raven VPN" class="brand-mark h-10 w-10 rounded-full">
+        <div>
+          <p class="text-base font-bold tracking-tight text-white">Raven VPN</p>
+          <p class="text-xs font-medium text-raven-muted">
+            через Telegram
+            <span class="nav-phrase ml-2 hidden font-mono md:inline" data-nav-status></span>
+          </p>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-medium text-raven-muted md:flex">
+        <a href="#pricing" class="text-link">Тарифы</a>
+        <a href="#faq" class="text-link">FAQ</a>
+      </nav>
+      <a href="https://t.me/GetRavenBot" class="btn-primary hidden px-5 py-3 text-sm md:inline-flex">
+        Получить ключ
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" data-hero data-nav-phrase="" class="relative overflow-hidden pt-28 md:pt-36">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-16 md:grid-cols-[minmax(18rem,0.94fr)_minmax(0,1.06fr)] md:gap-14 md:pb-24">
+        <div class="order-2 fade-up md:order-1">
+          <div class="hero-stage mx-auto max-w-[30rem]">
+            <div class="hero-mascot-shell relative z-10 w-full max-w-[30rem]">
+              <img
+                src="img/pose_1.webp"
+                alt="Маскот Raven VPN"
+                class="hero-mascot w-full"
+                data-hero-mascot
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="order-1 fade-up md:order-2">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-raven-muted">Raven VPN</p>
+          <h1 class="mt-5 max-w-xl text-4xl font-black leading-[0.98] tracking-tight text-white sm:text-5xl md:text-6xl">
+            VPN, который работает
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-raven-muted md:text-xl">
+            Открывает YouTube, Instagram и другие привычные сервисы. Подключение через Telegram за 2 минуты, пробный день — 10 ₽.
+          </p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <div class="hero-cta-wrap" data-hero-cta-wrap>
+              <div class="hero-cta-bubble rounded-xl border border-raven-border bg-raven-card-soft px-4 py-2 text-sm font-semibold text-white shadow-xl shadow-black/20" aria-hidden="true">
+                🔑 Ключ готов, заходим?
+              </div>
+              <a href="https://t.me/GetRavenBot" class="btn-primary px-7 py-4 text-base sm:text-lg" data-hero-cta>
+                Попробовать за 10 ₽
+              </a>
+            </div>
+            <a href="#pricing" class="text-link text-sm font-semibold sm:text-base">
+              Сначала посмотреть тарифы
+            </a>
+          </div>
+          <p class="mt-6 max-w-xl font-mono text-xs uppercase tracking-[0.16em] text-raven-muted sm:text-sm">
+            до 500 Мбит/с · ключ сразу в боте · от 149 ₽/мес
+          </p>
+          <div class="hero-terminal mt-5 max-w-md rounded-2xl border border-raven-border bg-raven-surface/95 px-4 py-3 font-mono text-xs leading-relaxed text-raven-muted sm:text-sm" data-terminal aria-label="Статус подключения Raven VPN" aria-live="polite">
+            <pre class="m-0 whitespace-pre-wrap"><span data-terminal-output></span><span class="terminal-cursor" data-terminal-cursor>▋</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mx-auto max-w-7xl px-6"></div>
+
+    <section class="py-8 md:py-10">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="surface-card fade-up rounded-[1.75rem] px-5 py-5 md:px-7">
+          <div class="grid gap-4 text-sm md:grid-cols-3 md:gap-6 md:text-base">
+            <div class="flex items-center gap-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-raven-violet"></span>
+              <span>Не логируем активность</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-raven-violet"></span>
+              <span>iPhone / Android / PC</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-raven-violet"></span>
+              <span>Ключ и инструкция сразу в боте</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mx-auto max-w-7xl px-6"></div>
+
+    <section id="pricing" data-nav-phrase="показываю тарифы" class="py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl fade-up">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-raven-muted">Тарифы</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Выберите тариф без лишних условий
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-raven-muted md:text-lg">
+            Скидки при оплате за период: 3 месяца — минус 10%, 6 месяцев — минус 20%, 12 месяцев — минус 30%.
+          </p>
+        </div>
+
+        <div class="surface-card surface-card-soft fade-up mt-10 rounded-[1.75rem] p-6 md:p-7">
+          <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            <div>
+              <span class="pill-violet inline-flex rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em]">
+                Пробный день
+              </span>
+              <p class="mt-4 text-2xl font-bold text-white md:text-3xl">
+                10 ₽ • 1 день • 10 ГБ • 100 Мбит/с
+              </p>
+              <p class="mt-2 text-sm leading-relaxed text-raven-muted md:text-base">
+                Одна попытка на Telegram ID. Ключ, QR и короткая инструкция приходят сразу после оплаты.
+              </p>
+            </div>
+            <a href="https://t.me/GetRavenBot" class="btn-primary w-full px-6 py-4 text-base md:w-auto">
+              Попробовать за 10 ₽
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3 lg:gap-8">
+          <article class="surface-card card-lift fade-up rounded-[1.75rem] p-7 lg:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Start</h3>
+                <p class="mt-2 text-sm text-raven-muted">Для одного-двух устройств и повседневных задач.</p>
+              </div>
+              <span class="font-mono text-xs uppercase tracking-[0.2em] text-raven-muted">01</span>
+            </div>
+            <div class="mt-8 flex items-end gap-2">
+              <span class="font-mono text-4xl font-bold text-white">149 ₽</span>
+              <span class="pb-1 text-raven-muted">/мес</span>
+            </div>
+            <div class="mt-8 h-px bg-raven-border"></div>
+            <ul class="mt-8 space-y-4 text-sm leading-relaxed text-raven-muted md:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>0.5 ТБ трафика</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>Скорость до 100 Мбит/с</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>2 устройства</span>
+              </li>
+            </ul>
+            <a href="https://t.me/GetRavenBot" class="btn-outline mt-10 w-full px-6 py-3.5 text-sm font-semibold md:text-base">
+              Выбрать Start
+            </a>
+          </article>
+
+          <article class="surface-card surface-card-soft fade-up rounded-[1.75rem] p-7 lg:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <span class="pill-violet inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em]">
+                  Чаще выбирают
+                </span>
+                <h3 class="mt-4 text-2xl font-bold text-white">Standard</h3>
+                <p class="mt-2 text-sm text-raven-muted">Баланс скорости, трафика и количества устройств.</p>
+              </div>
+              <span class="font-mono text-xs uppercase tracking-[0.2em] text-raven-muted">02</span>
+            </div>
+            <div class="mt-8 flex items-end gap-2">
+              <span class="font-mono text-4xl font-bold text-white">249 ₽</span>
+              <span class="pb-1 text-raven-muted">/мес</span>
+            </div>
+            <div class="mt-8 h-px bg-raven-border"></div>
+            <ul class="mt-8 space-y-4 text-sm leading-relaxed text-raven-muted md:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>1 ТБ трафика</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>Скорость до 200 Мбит/с</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>4 устройства</span>
+              </li>
+            </ul>
+            <a href="https://t.me/GetRavenBot" class="btn-primary mt-10 w-full px-6 py-3.5 text-sm md:text-base">
+              Выбрать Standard
+            </a>
+          </article>
+
+          <article class="surface-card card-lift fade-up rounded-[1.75rem] p-7 lg:p-8">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h3 class="text-2xl font-bold text-white">Pro</h3>
+                <p class="mt-2 text-sm text-raven-muted">Максимальная скорость и запас по устройствам.</p>
+              </div>
+              <span class="font-mono text-xs uppercase tracking-[0.2em] text-raven-muted">03</span>
+            </div>
+            <div class="mt-8 flex items-end gap-2">
+              <span class="font-mono text-4xl font-bold text-white">349 ₽</span>
+              <span class="pb-1 text-raven-muted">/мес</span>
+            </div>
+            <div class="mt-8 h-px bg-raven-border"></div>
+            <ul class="mt-8 space-y-4 text-sm leading-relaxed text-raven-muted md:text-base">
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>2 ТБ трафика</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>Скорость до 500 Мбит/с</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="mt-2 h-2 w-2 flex-none rounded-full bg-raven-violet"></span>
+                <span>6 устройств</span>
+              </li>
+            </ul>
+            <a href="https://t.me/GetRavenBot" class="btn-outline mt-10 w-full px-6 py-3.5 text-sm font-semibold md:text-base">
+              Выбрать Pro
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mx-auto max-w-7xl px-6"></div>
+
+    <section id="steps" data-nav-phrase="объясняю подключение" class="py-16 md:py-24">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="max-w-3xl fade-up">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-raven-muted">Как подключиться</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Нужны всего три шага
+          </h2>
+        </div>
+
+        <div class="mt-12 hidden gap-10 md:grid md:grid-cols-[minmax(18rem,0.9fr)_minmax(0,1.1fr)]" data-steps-scene>
+          <div class="relative">
+            <div class="sticky top-28 flex h-[calc(100vh-8rem)] min-h-[32rem] items-center justify-center">
+              <div class="relative h-[30rem] w-full max-w-[25rem]">
+                <img
+                  src="img/pose_3.webp"
+                  alt="Маскот Raven VPN показывает телефон"
+                  class="steps-pose is-active"
+                  data-step-pose="0"
+                >
+                <img
+                  src="img/pose_1.webp"
+                  alt="Маскот Raven VPN помогает выбрать тариф"
+                  class="steps-pose"
+                  data-step-pose="1"
+                >
+                <img
+                  src="img/pose_key.webp"
+                  alt="Маскот Raven VPN протягивает ключ"
+                  class="steps-pose"
+                  data-step-pose="2"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="py-[18vh]">
+            <div class="space-y-[34vh]">
+              <article class="steps-copy is-active min-h-[16rem] border-l pl-7" data-step-copy="0">
+                <div class="font-mono text-sm font-bold uppercase tracking-[0.25em] text-raven-violet">01</div>
+                <h3 class="mt-5 text-3xl font-bold tracking-tight text-white">Откройте бота</h3>
+                <p class="mt-4 max-w-xl text-base leading-relaxed text-raven-muted md:text-lg">
+                  Перейдите в <a href="https://t.me/GetRavenBot" class="text-link font-semibold">@GetRavenBot</a> и нажмите start.
+                </p>
+              </article>
+
+              <article class="steps-copy min-h-[16rem] border-l pl-7" data-step-copy="1">
+                <div class="font-mono text-sm font-bold uppercase tracking-[0.25em] text-raven-violet">02</div>
+                <h3 class="mt-5 text-3xl font-bold tracking-tight text-white">Выберите тариф</h3>
+                <p class="mt-4 max-w-xl text-base leading-relaxed text-raven-muted md:text-lg">
+                  Оплатить можно через СБП, карту, Telegram Stars или криптовалюту.
+                </p>
+              </article>
+
+              <article class="steps-copy min-h-[16rem] border-l pl-7" data-step-copy="2">
+                <div class="font-mono text-sm font-bold uppercase tracking-[0.25em] text-raven-violet">03</div>
+                <h3 class="mt-5 text-3xl font-bold tracking-tight text-white">Получите ключ</h3>
+                <p class="mt-4 max-w-xl text-base leading-relaxed text-raven-muted md:text-lg">
+                  Ключ, QR и короткая инструкция приходят сразу в Telegram без отдельной переписки с поддержкой.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:hidden">
+          <article class="surface-card card-lift fade-up rounded-[1.75rem] p-6">
+            <img src="img/pose_3.webp" alt="" class="mx-auto mb-5 h-36 object-contain" aria-hidden="true">
+            <div class="font-mono text-sm font-bold uppercase tracking-[0.25em] text-raven-violet">01</div>
+            <h3 class="mt-5 text-xl font-bold text-white">Откройте бота</h3>
+            <p class="mt-3 text-sm leading-relaxed text-raven-muted">
+              Перейдите в <a href="https://t.me/GetRavenBot" class="text-link font-semibold">@GetRavenBot</a> и нажмите start.
+            </p>
+          </article>
+
+          <article class="surface-card card-lift fade-up rounded-[1.75rem] p-6">
+            <img src="img/pose_1.webp" alt="" class="mx-auto mb-5 h-36 object-contain" aria-hidden="true">
+            <div class="font-mono text-sm font-bold uppercase tracking-[0.25em] text-raven-violet">02</div>
+            <h3 class="mt-5 text-xl font-bold text-white">Выберите тариф</h3>
+            <p class="mt-3 text-sm leading-relaxed text-raven-muted">
+              Оплатить можно через СБП, карту, Telegram Stars или криптовалюту.
+            </p>
+          </article>
+
+          <article class="surface-card card-lift fade-up rounded-[1.75rem] p-6">
+            <img src="img/pose_key.webp" alt="" class="mx-auto mb-5 h-36 object-contain" aria-hidden="true">
+            <div class="font-mono text-sm font-bold uppercase tracking-[0.25em] text-raven-violet">03</div>
+            <h3 class="mt-5 text-xl font-bold text-white">Получите ключ</h3>
+            <p class="mt-3 text-sm leading-relaxed text-raven-muted">
+              Ключ, QR и короткая инструкция приходят сразу в Telegram без отдельной переписки с поддержкой.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mx-auto max-w-7xl px-6"></div>
+
+    <section id="faq" data-nav-phrase="отвечаю на вопросы" class="py-16 md:py-24">
+      <div class="mx-auto max-w-3xl px-6">
+        <div class="fade-up text-center">
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-raven-muted">FAQ</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+            Частые вопросы
+          </h2>
+        </div>
+
+        <div class="mt-10 space-y-3">
+          <details class="faq-item surface-card fade-up rounded-[1.5rem] p-0">
+            <summary class="flex cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left font-semibold text-white">
+              <span>Как оплатить?</span>
+              <svg class="faq-icon h-5 w-5 flex-none text-raven-muted" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-raven-muted md:text-base">
+              В боте доступны СБП через Robokassa, Telegram Stars и криптовалюта. СБП обычно самый выгодный вариант.
+            </div>
+          </details>
+
+          <details class="faq-item surface-card fade-up rounded-[1.5rem] p-0">
+            <summary class="flex cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left font-semibold text-white">
+              <span>На каких устройствах работает?</span>
+              <svg class="faq-icon h-5 w-5 flex-none text-raven-muted" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-raven-muted md:text-base">
+              Android, iPhone, Windows и macOS. Подходят приложения с поддержкой VLESS, включая Hiddify, v2rayNG и V2Box.
+            </div>
+          </details>
+
+          <details class="faq-item surface-card fade-up rounded-[1.5rem] p-0">
+            <summary class="flex cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left font-semibold text-white">
+              <span>Можно ли подключить несколько устройств?</span>
+              <svg class="faq-icon h-5 w-5 flex-none text-raven-muted" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-raven-muted md:text-base">
+              Да. Один ключ можно использовать на нескольких устройствах одновременно. Лимит зависит от тарифа: от 2 до 6 устройств.
+            </div>
+          </details>
+
+          <details class="faq-item surface-card fade-up rounded-[1.5rem] p-0">
+            <summary class="flex cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left font-semibold text-white">
+              <span>Что делать, если не заработало?</span>
+              <svg class="faq-icon h-5 w-5 flex-none text-raven-muted" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-raven-muted md:text-base">
+              Напишите через бота в поддержку. Если проблема массовая, новости и обновления публикуются в канале <a href="https://t.me/TheRavenVPN" class="text-link font-semibold">@TheRavenVPN</a>.
+            </div>
+          </details>
+
+          <details class="faq-item surface-card fade-up rounded-[1.5rem] p-0">
+            <summary class="flex cursor-pointer items-center justify-between gap-6 px-6 py-5 text-left font-semibold text-white">
+              <span>Есть ли возврат?</span>
+              <svg class="faq-icon h-5 w-5 flex-none text-raven-muted" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-sm leading-relaxed text-raven-muted md:text-base">
+              Если ключ не был выдан в течение 24 часов после оплаты, оформим полный возврат. После выдачи ключа услуга считается оказанной.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider mx-auto max-w-7xl px-6"></div>
+
+    <section data-final-cta data-nav-phrase="жду в боте" class="py-16 md:py-24">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="surface-card fade-up grid items-center gap-8 rounded-[2rem] px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[minmax(0,1.05fr)_20rem]">
+          <div>
+            <p class="font-mono text-xs uppercase tracking-[0.3em] text-raven-muted">Пробный доступ</p>
+            <h2 class="mt-4 max-w-2xl text-3xl font-black leading-tight tracking-tight text-white md:text-5xl">
+              Один день. 10 рублей. Без обязательств.
+            </h2>
+            <p class="mt-5 max-w-2xl text-base leading-relaxed text-raven-muted md:text-lg">
+              Если нужен VPN без длинных объяснений, начните с пробного дня. Ключ, QR и инструкция придут сразу в Telegram.
+            </p>
+            <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="https://t.me/GetRavenBot" class="btn-primary px-7 py-4 text-base sm:text-lg">
+                Попробовать за 10 ₽
+              </a>
+              <span class="font-mono text-xs uppercase tracking-[0.16em] text-raven-muted sm:text-sm">
+                от 149 ₽/мес после пробы
+              </span>
+            </div>
+          </div>
+          <div class="mx-auto max-w-[18rem]">
+            <img
+              src="img/pose_2.webp"
+              alt="Маскот Raven VPN приглашает попробовать сервис"
+              class="w-full"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-raven-border bg-raven-surface py-8">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 text-sm text-raven-muted md:flex-row">
+      <div class="flex items-center gap-3">
+        <img src="img/logo.webp" alt="Raven VPN" class="brand-mark h-7 w-7 rounded-full">
+        <span>© 2026 Raven VPN</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="https://t.me/TheRavenVPN" class="text-link">Канал</a>
+        <a href="https://t.me/GetRavenBot" class="text-link">Бот</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta fixed inset-x-0 bottom-0 z-40 border-t border-raven-border bg-[rgba(10,15,26,0.97)] px-4 pt-3 md:hidden">
+    <div class="mx-auto flex max-w-md items-center gap-3">
+      <div class="min-w-0">
+        <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-raven-muted">Пробный день</p>
+        <p class="mt-1 truncate text-sm font-semibold text-white">10 ₽ и ключ сразу в боте</p>
+      </div>
+      <a href="https://t.me/GetRavenBot" class="btn-primary shrink-0 px-4 py-3 text-sm">
+        Попробовать
+      </a>
+    </div>
+  </div>
+
+  <script>
+    const header = document.querySelector('.site-header');
+    const hero = document.querySelector('[data-hero]');
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const navStatus = document.querySelector('[data-nav-status]');
+    const navSections = document.querySelectorAll('[data-nav-phrase]');
+    const terminal = document.querySelector('[data-terminal]');
+    const terminalOutput = document.querySelector('[data-terminal-output]');
+    const heroCta = document.querySelector('[data-hero-cta]');
+    const heroCtaWrap = document.querySelector('[data-hero-cta-wrap]');
+    const stepCopies = document.querySelectorAll('[data-step-copy]');
+    const stepPoses = document.querySelectorAll('[data-step-pose]');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const escapeHtml = (value) => value.replace(/[&<>"']/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;',
+    }[char]));
+
+    if (!prefersReducedMotion && 'IntersectionObserver' in window && hero && header) {
+      const headerObserver = new IntersectionObserver(
+        ([entry]) => {
+          header.classList.toggle('is-solid', !entry.isIntersecting);
+        },
+        { threshold: 0.2 }
+      );
+      headerObserver.observe(hero);
+    } else if (header) {
+      header.classList.add('is-solid');
+    }
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      fadeElements.forEach((element) => element.classList.add('visible'));
+    } else {
+      const fadeObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      fadeElements.forEach((element) => fadeObserver.observe(element));
+    }
+
+    if (navStatus && navSections.length) {
+      let currentPhrase = '';
+      let navTimer;
+
+      const setNavPhrase = (phrase) => {
+        if (phrase === currentPhrase) return;
+        window.clearTimeout(navTimer);
+        navStatus.classList.remove('is-visible');
+        navTimer = window.setTimeout(() => {
+          currentPhrase = phrase;
+          navStatus.textContent = phrase ? `// ${phrase}` : '';
+          navStatus.classList.toggle('is-visible', Boolean(phrase));
+        }, currentPhrase ? 120 : 0);
+      };
+
+      if ('IntersectionObserver' in window) {
+        const navObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setNavPhrase(entry.target.dataset.navPhrase || '');
+              }
+            });
+          },
+          { rootMargin: '-42% 0px -48% 0px', threshold: 0 }
+        );
+
+        navSections.forEach((section) => navObserver.observe(section));
+      }
+    }
+
+    if (terminal && terminalOutput) {
+      const terminalLines = [
+        '$ raven connect',
+        '  Сервер найден...',
+        '  Ключ выдан',
+        '  Скорость: 487 Мбит/с',
+        '  Статус: подключено ✓',
+      ];
+      let terminalStarted = false;
+
+      const formatTerminalLine = (line) => {
+        const safeLine = escapeHtml(line);
+        if (safeLine.startsWith('$')) {
+          return `<span style="color:#22C55E">$</span>${safeLine.slice(1)}`;
+        }
+        return safeLine.replace('✓', '<span style="color:#22C55E">✓</span>');
+      };
+
+      const renderTerminal = (lines) => {
+        terminalOutput.innerHTML = lines.map(formatTerminalLine).join('\n');
+      };
+
+      const startTerminal = () => {
+        if (terminalStarted) return;
+        terminalStarted = true;
+
+        if (prefersReducedMotion) {
+          renderTerminal(terminalLines);
+          return;
+        }
+
+        const visibleLines = [''];
+        let lineIndex = 0;
+        let charIndex = 0;
+
+        const typeNext = () => {
+          visibleLines[lineIndex] = terminalLines[lineIndex].slice(0, charIndex);
+          renderTerminal(visibleLines);
+
+          if (charIndex < terminalLines[lineIndex].length) {
+            charIndex += 1;
+            window.setTimeout(typeNext, lineIndex === 0 ? 44 : 24);
+            return;
+          }
+
+          if (lineIndex < terminalLines.length - 1) {
+            lineIndex += 1;
+            charIndex = 0;
+            visibleLines.push('');
+            window.setTimeout(typeNext, 180);
+          }
+        };
+
+        typeNext();
+      };
+
+      if ('IntersectionObserver' in window) {
+        const terminalObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              startTerminal();
+              terminalObserver.unobserve(terminal);
+            }
+          },
+          { threshold: 0.35 }
+        );
+        terminalObserver.observe(terminal);
+      } else {
+        startTerminal();
+      }
+    }
+
+    if (heroCta && heroCtaWrap) {
+      let mobileBubblePrimed = false;
+      let bubbleTimer;
+
+      heroCta.addEventListener('click', (event) => {
+        if (!window.matchMedia('(max-width: 767px)').matches || mobileBubblePrimed) {
+          heroCtaWrap.classList.remove('is-visible');
+          mobileBubblePrimed = false;
+          return;
+        }
+
+        event.preventDefault();
+        mobileBubblePrimed = true;
+        heroCtaWrap.classList.add('is-visible');
+        window.clearTimeout(bubbleTimer);
+        bubbleTimer = window.setTimeout(() => {
+          heroCtaWrap.classList.remove('is-visible');
+        }, 2000);
+      });
+    }
+
+    if (stepCopies.length && stepPoses.length) {
+      const setActiveStep = (activeIndex) => {
+        stepCopies.forEach((copy) => {
+          copy.classList.toggle('is-active', Number(copy.dataset.stepCopy) === activeIndex);
+        });
+        stepPoses.forEach((pose) => {
+          pose.classList.toggle('is-active', Number(pose.dataset.stepPose) === activeIndex);
+        });
+      };
+
+      if ('IntersectionObserver' in window) {
+        const stepsObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                setActiveStep(Number(entry.target.dataset.stepCopy));
+              }
+            });
+          },
+          { rootMargin: '-44% 0px -44% 0px', threshold: 0 }
+        );
+
+        stepCopies.forEach((copy) => stepsObserver.observe(copy));
+      }
+    }
+  </script>
+</body>
+</html>
