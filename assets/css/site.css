@@ -296,6 +296,139 @@ a {
   object-position: center;
 }
 
+/* Dark hero background variants. Switch the hero class between hero-bg-v1/v2/v3. */
+@media (prefers-color-scheme: dark) {
+  .hero.hero-bg-v1 {
+    background-color: #101418;
+    background-image:
+      radial-gradient(620px 420px at 19% 66%, rgba(255, 255, 255, 0.034), transparent 68%),
+      linear-gradient(154deg, transparent 0 17%, rgba(255, 255, 255, 0.024) 17.2% 38%, transparent 38.35%),
+      linear-gradient(24deg, transparent 0 28%, rgba(0, 0, 0, 0.14) 28.2% 42%, transparent 42.25%),
+      linear-gradient(108deg, transparent 0 45.35%, rgba(237, 243, 243, 0.14) 45.52%, rgba(3, 6, 8, 0.45) 45.78%, transparent 46.18%),
+      linear-gradient(146deg, transparent 0 57%, rgba(255, 255, 255, 0.05) 57.2% 66%, transparent 66.25%),
+      linear-gradient(108deg, #101418 0 46%, #252c31 46.1%, #171d21 100%);
+  }
+
+  .hero.hero-bg-v2 {
+    background-color: #101418;
+    background-image:
+      radial-gradient(720px 480px at 20% 64%, rgba(255, 255, 255, 0.04), transparent 70%),
+      linear-gradient(154deg, transparent 0 16%, rgba(255, 255, 255, 0.03) 16.2% 42%, transparent 42.35%),
+      linear-gradient(36deg, transparent 0 19%, rgba(255, 255, 255, 0.018) 19.2% 31%, transparent 31.25%),
+      linear-gradient(24deg, transparent 0 31%, rgba(0, 0, 0, 0.16) 31.2% 45%, transparent 45.25%),
+      linear-gradient(108deg, transparent 0 45.35%, rgba(237, 243, 243, 0.14) 45.52%, rgba(3, 6, 8, 0.45) 45.78%, transparent 46.18%),
+      linear-gradient(146deg, transparent 0 57%, rgba(255, 255, 255, 0.05) 57.2% 66%, transparent 66.25%),
+      linear-gradient(108deg, #101418 0 46%, #252c31 46.1%, #171d21 100%);
+  }
+
+  .hero.hero-bg-v3 {
+    background-color: #101418;
+    background-image:
+      radial-gradient(680px 460px at 17% 70%, rgba(255, 255, 255, 0.032), transparent 67%),
+      linear-gradient(150deg, transparent 0 13%, rgba(255, 255, 255, 0.024) 13.2% 30%, transparent 30.25%),
+      linear-gradient(162deg, transparent 0 35%, rgba(255, 255, 255, 0.019) 35.2% 47%, transparent 47.25%),
+      linear-gradient(24deg, transparent 0 24%, rgba(0, 0, 0, 0.14) 24.2% 37%, transparent 37.25%),
+      linear-gradient(108deg, transparent 0 45.35%, rgba(237, 243, 243, 0.14) 45.52%, rgba(3, 6, 8, 0.45) 45.78%, transparent 46.18%),
+      linear-gradient(146deg, transparent 0 57%, rgba(255, 255, 255, 0.05) 57.2% 66%, transparent 66.25%),
+      linear-gradient(108deg, #101418 0 46%, #252c31 46.1%, #171d21 100%);
+  }
+}
+
+.hero.hero-bg-image {
+  background-color: var(--paper);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-image-desktop,
+.hero-image-mobile {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image-mobile {
+  display: none;
+}
+
+.hero.hero-bg-image-dark {
+  color: #edf3f3;
+  background-color: #101418;
+  background-position: center;
+}
+
+.hero.hero-bg-image-dark .eyebrow,
+.hero.hero-bg-image-dark .lead {
+  color: #dce5e8;
+}
+
+.hero.hero-bg-image-dark .button-ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: #edf3f3;
+  border-color: rgba(237, 243, 243, 0.58);
+}
+
+.hero.hero-bg-image-light {
+  color: #111820;
+  background-color: #f5f6f5;
+  background-position: 48% center;
+}
+
+.hero.hero-bg-image-light .eyebrow {
+  color: #52606b;
+}
+
+.hero.hero-bg-image-light .lead {
+  color: #34434e;
+}
+
+.hero.hero-bg-image-light .button-ghost {
+  background: rgba(255, 255, 255, 0.55);
+  color: #111820;
+  border-color: rgba(17, 24, 32, 0.38);
+}
+
+.hero.hero-bg-image-theme {
+  color: #111820;
+  background-color: #f5f6f5;
+  background-image: var(--hero-bg-light);
+  background-position: 48% center;
+}
+
+.hero.hero-bg-image-theme .eyebrow {
+  color: #52606b;
+}
+
+.hero.hero-bg-image-theme .lead {
+  color: #34434e;
+}
+
+.hero.hero-bg-image-theme .button-ghost {
+  background: rgba(255, 255, 255, 0.55);
+  color: #111820;
+  border-color: rgba(17, 24, 32, 0.38);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero.hero-bg-image-theme {
+    color: #edf3f3;
+    background-color: #101418;
+    background-image: var(--hero-bg-dark);
+    background-position: center;
+  }
+
+  .hero.hero-bg-image-theme .eyebrow,
+  .hero.hero-bg-image-theme .lead {
+    color: #dce5e8;
+  }
+
+  .hero.hero-bg-image-theme .button-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: #edf3f3;
+    border-color: rgba(237, 243, 243, 0.58);
+  }
+}
+
 .hero-content,
 .hero-grid,
 .hero-stack {
@@ -1457,6 +1590,44 @@ tr:last-child td {
     object-position: center bottom;
   }
 
+  .hero.hero-bg-image {
+    background-image: none !important;
+  }
+
+  .hero.hero-bg-image-dark,
+  .hero.hero-bg-image-light,
+  .hero.hero-bg-image-theme {
+    color: var(--ink);
+  }
+
+  .hero.hero-bg-image-dark .eyebrow,
+  .hero.hero-bg-image-light .eyebrow,
+  .hero.hero-bg-image-theme .eyebrow {
+    color: #52606b;
+  }
+
+  .hero.hero-bg-image-dark .lead,
+  .hero.hero-bg-image-light .lead,
+  .hero.hero-bg-image-theme .lead {
+    color: #34434e;
+  }
+
+  .hero.hero-bg-image-dark .button-ghost,
+  .hero.hero-bg-image-light .button-ghost,
+  .hero.hero-bg-image-theme .button-ghost {
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--ink);
+    border-color: rgba(17, 24, 32, 0.38);
+  }
+
+  .hero-bg-image .hero-image-desktop {
+    display: none;
+  }
+
+  .hero-bg-image .hero-image-mobile {
+    display: block;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1729,5 +1900,30 @@ tr:last-child td {
 
   .panel-dark {
     background: #151d22;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 760px) {
+  .hero.hero-bg-image-dark,
+  .hero.hero-bg-image-light,
+  .hero.hero-bg-image-theme {
+    color: var(--ink);
+  }
+
+  .hero.hero-bg-image-dark .eyebrow,
+  .hero.hero-bg-image-dark .lead,
+  .hero.hero-bg-image-light .eyebrow,
+  .hero.hero-bg-image-light .lead,
+  .hero.hero-bg-image-theme .eyebrow,
+  .hero.hero-bg-image-theme .lead {
+    color: #dce5e8;
+  }
+
+  .hero.hero-bg-image-dark .button-ghost,
+  .hero.hero-bg-image-light .button-ghost,
+  .hero.hero-bg-image-theme .button-ghost {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--ink);
+    border-color: rgba(237, 243, 243, 0.58);
   }
 }
