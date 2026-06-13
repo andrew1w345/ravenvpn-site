@@ -108,12 +108,19 @@
     </header>
   <main id="main">
 
-    <section class="hero hero-bg hero-bg-image hero-bg-image-theme" style="--hero-bg-light: url('/assets/img/hero-bg/white-3200.webp'); --hero-bg-dark: url('/assets/img/hero-bg/dark-3-3200.webp')">
+    <section class="hero hero-bg hero-bg-image hero-bg-image-theme">
+      <picture class="hero-bg-backdrop">
+          <source media="(prefers-color-scheme: dark)" type="image/avif" srcset="../assets/img/hero-bg/dark-3-1200.avif 1200w, ../assets/img/hero-bg/dark-3-1600.avif 1600w, ../assets/img/hero-bg/dark-3-2400.avif 2400w, ../assets/img/hero-bg/dark-3-3200.avif 3200w" sizes="100vw">
+          <source media="(prefers-color-scheme: dark)" type="image/webp" srcset="../assets/img/hero-bg/dark-3-1200.webp 1200w, ../assets/img/hero-bg/dark-3-1600.webp 1600w, ../assets/img/hero-bg/dark-3-2400.webp 2400w, ../assets/img/hero-bg/dark-3-3200.webp 3200w" sizes="100vw">
+          <source type="image/avif" srcset="../assets/img/hero-bg/white-1200.avif 1200w, ../assets/img/hero-bg/white-1600.avif 1600w, ../assets/img/hero-bg/white-2400.avif 2400w, ../assets/img/hero-bg/white-3200.avif 3200w" sizes="100vw">
+          <source type="image/webp" srcset="../assets/img/hero-bg/white-1200.webp 1200w, ../assets/img/hero-bg/white-1600.webp 1600w, ../assets/img/hero-bg/white-2400.webp 2400w, ../assets/img/hero-bg/white-3200.webp 3200w" sizes="100vw">
+          <img src="../assets/img/hero-bg/white-1600.webp" width="1600" height="733" alt="" loading="eager" fetchpriority="high">
+        </picture>
       <div class="hero-bg-media" aria-hidden="true">
         <div class="hero-image-desktop"><picture class="product-picture">
-          <source type="image/avif" srcset="../assets/img/en/hero-wide-dark-900.avif 900w, ../assets/img/en/hero-wide-dark-1200.avif 1200w, ../assets/img/en/hero-wide-dark-1600.avif 1600w" sizes="100vw">
-          <source type="image/webp" srcset="../assets/img/en/hero-wide-dark-900.webp 900w, ../assets/img/en/hero-wide-dark-1200.webp 1200w, ../assets/img/en/hero-wide-dark-1600.webp 1600w" sizes="100vw">
-          <img src="../assets/img/en/hero-wide-dark-1200.webp" width="1200" height="550" alt="" loading="eager" fetchpriority="high">
+          <source type="image/avif" srcset="../assets/img/en/hero-wide-floor-900.avif 900w, ../assets/img/en/hero-wide-floor-1200.avif 1200w, ../assets/img/en/hero-wide-floor-1600.avif 1600w" sizes="100vw">
+          <source type="image/webp" srcset="../assets/img/en/hero-wide-floor-900.webp 900w, ../assets/img/en/hero-wide-floor-1200.webp 1200w, ../assets/img/en/hero-wide-floor-1600.webp 1600w" sizes="100vw">
+          <img src="../assets/img/en/hero-wide-floor-1200.webp" width="1200" height="550" alt="" loading="eager" fetchpriority="high">
         </picture></div>
         <div class="hero-image-mobile"><picture class="product-picture">
           <source media="(prefers-color-scheme: dark) and (max-width: 760px)" type="image/avif" srcset="../assets/img/en/hero-mobile-dark-640.avif 640w, ../assets/img/en/hero-mobile-dark-900.avif 900w" sizes="100vw">

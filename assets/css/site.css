@@ -281,8 +281,9 @@ a {
 .hero-bg-media {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   clip-path: inset(0 0 0 46%);
+  pointer-events: none;
 }
 
 .hero-bg-media .product-picture,
@@ -293,6 +294,25 @@ a {
 
 .hero-bg-media img {
   object-fit: contain;
+  object-position: center;
+}
+
+.hero-bg-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg-backdrop,
+.hero-bg-backdrop img {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg-backdrop img {
+  object-fit: cover;
   object-position: center;
 }
 
@@ -391,8 +411,6 @@ a {
 .hero.hero-bg-image-theme {
   color: #111820;
   background-color: #f5f6f5;
-  background-image: var(--hero-bg-light);
-  background-position: 48% center;
 }
 
 .hero.hero-bg-image-theme .eyebrow {
@@ -413,8 +431,6 @@ a {
   .hero.hero-bg-image-theme {
     color: #edf3f3;
     background-color: #101418;
-    background-image: var(--hero-bg-dark);
-    background-position: center;
   }
 
   .hero.hero-bg-image-theme .eyebrow,
@@ -1592,6 +1608,10 @@ tr:last-child td {
 
   .hero.hero-bg-image {
     background-image: none !important;
+  }
+
+  .hero-bg-backdrop {
+    display: none !important;
   }
 
   .hero.hero-bg-image-dark,
