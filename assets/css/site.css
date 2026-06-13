@@ -298,7 +298,8 @@ a {
 }
 
 .hero-image-desktop img {
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .hero-bg-backdrop {
