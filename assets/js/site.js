@@ -12,15 +12,35 @@
   const languagePickers = Array.from(document.querySelectorAll(".language-picker"));
 
   if (languagePickers.length) {
+    const closeLanguagePicker = (picker) => {
+      const toggle = picker.querySelector("[data-language-toggle]");
+      const menu = picker.querySelector("[data-language-menu]");
+      toggle?.setAttribute("aria-expanded", "false");
+      if (menu) menu.hidden = true;
+    };
+
+    languagePickers.forEach((picker) => {
+      const toggle = picker.querySelector("[data-language-toggle]");
+      const menu = picker.querySelector("[data-language-menu]");
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener("click", () => {
+        const willOpen = menu.hidden;
+        languagePickers.forEach(closeLanguagePicker);
+        menu.hidden = !willOpen;
+        toggle.setAttribute("aria-expanded", String(willOpen));
+      });
+    });
+
     document.addEventListener("click", (event) => {
       languagePickers.forEach((picker) => {
-        if (!picker.contains(event.target)) picker.removeAttribute("open");
+        if (!picker.contains(event.target)) closeLanguagePicker(picker);
       });
     });
 
     document.addEventListener("keydown", (event) => {
       if (event.key !== "Escape") return;
-      languagePickers.forEach((picker) => picker.removeAttribute("open"));
+      languagePickers.forEach(closeLanguagePicker);
     });
   }
 
