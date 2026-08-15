@@ -236,8 +236,9 @@ a {
   background: var(--surface);
   color: var(--muted);
   text-decoration: none;
-  font-size: 13px;
-  font-weight: 800;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
   line-height: 1;
   list-style: none;
   white-space: nowrap;
@@ -288,6 +289,7 @@ button.language {
   padding: 10px 12px;
   border-radius: 5px;
   color: var(--ink);
+  font-family: inherit;
   font-size: 14px;
   font-weight: 650;
   line-height: 1.2;
