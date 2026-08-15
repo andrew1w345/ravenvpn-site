@@ -9,6 +9,21 @@
     });
   }
 
+  const languagePickers = Array.from(document.querySelectorAll(".language-picker"));
+
+  if (languagePickers.length) {
+    document.addEventListener("click", (event) => {
+      languagePickers.forEach((picker) => {
+        if (!picker.contains(event.target)) picker.removeAttribute("open");
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      languagePickers.forEach((picker) => picker.removeAttribute("open"));
+    });
+  }
+
   const track = (name, data) => {
     if (window.umami && typeof window.umami.track === "function") {
       window.umami.track(name, data);
