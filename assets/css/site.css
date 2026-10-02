@@ -986,7 +986,7 @@ p {
   grid-area: purchase;
   display: grid;
   grid-template-areas: "price" "action";
-  gap: 16px;
+  gap: 32px;
   align-self: center;
 }
 
@@ -1007,11 +1007,6 @@ p {
   font-size: 32px;
   font-weight: 900;
   line-height: 1;
-}
-
-.trial-card-price small {
-  color: var(--muted);
-  font-weight: 750;
 }
 
 .trial-card .button {
@@ -1423,17 +1418,17 @@ tr:last-child td {
 
 .footer-column {
   gap: 30px;
-  width: max-content;
+  width: 100%;
   max-width: 100%;
-  justify-self: start;
+  text-align: left;
 }
 
 .footer-column:nth-child(2) {
-  justify-self: center;
+  text-align: center;
 }
 
 .footer-column:nth-child(3) {
-  justify-self: end;
+  text-align: right;
 }
 
 .footer-group {
@@ -1835,6 +1830,10 @@ tr:last-child td {
 
   .trial-card-price {
     justify-content: flex-start;
+  }
+
+  .trial-card .button {
+    margin-top: 14px;
   }
 
   .paid-plans .price-card {
