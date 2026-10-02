@@ -8,6 +8,7 @@
   --line: #d9e1e2;
   --muted: #5d6975;
   --accent: #b33a3a;
+  --accent-fill: #b33a3a;
   --accent-strong: #8e2d2d;
   --deep: #111820;
   --deep-2: #18212a;
@@ -48,6 +49,7 @@ body {
     --line: #334047;
     --muted: #aebbc3;
     --accent: #e06a6a;
+    --accent-fill: #b83e48;
     --accent-strong: #f08888;
     --deep: #0d1116;
     --deep-2: #12191e;
@@ -73,7 +75,7 @@ a {
   top: -48px;
   z-index: 20;
   padding: 10px 12px;
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
   border-radius: 6px;
   font-weight: 800;
@@ -111,12 +113,6 @@ a {
   text-decoration: none;
   font-size: 18px;
   font-weight: 850;
-}
-
-.brand img {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
 }
 
 .nav-links {
@@ -208,9 +204,23 @@ a {
 }
 
 .button-accent {
-  background: var(--accent);
+  background: var(--accent-fill);
   color: #fff;
   border-color: var(--accent-strong);
+}
+
+.button-header {
+  background: var(--surface);
+  border-color: var(--line);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.nav-actions .button,
+.nav-actions .language {
+  min-height: 44px;
+  padding: 10px 14px;
 }
 
 .button-light {
@@ -494,8 +504,9 @@ button.language {
 
 .eyebrow::before {
   content: "";
-  width: 24px;
-  height: 2px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
   background: currentColor;
 }
 
@@ -943,8 +954,9 @@ p {
 
 .trial-card {
   display: grid;
-  grid-template-columns: minmax(220px, 1.15fr) minmax(130px, 0.45fr) minmax(320px, 1.35fr) auto;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas: "copy price action" "features features features" "note note note";
+  gap: 18px 28px;
   align-items: center;
   padding: 26px 28px;
   border: 1px solid var(--line);
@@ -953,8 +965,12 @@ p {
   color: #fff;
 }
 
-.trial-card .eyebrow {
-  color: #cdd7dc;
+.trial-copy {
+  grid-area: copy;
+}
+
+.trial-copy p {
+  margin-bottom: 0;
 }
 
 .trial-card h3 {
@@ -971,24 +987,26 @@ p {
 }
 
 .trial-card-price {
-  min-width: 130px;
+  grid-area: price;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 10px;
 }
 
-.trial-card-price span {
-  display: block;
+.trial-card-price .price-amount {
   font-size: 38px;
   font-weight: 900;
   line-height: 1;
 }
 
 .trial-card-price small {
-  display: block;
-  margin-top: 6px;
   color: #b7c2c8;
   font-weight: 750;
 }
 
 .trial-card .button {
+  grid-area: action;
   min-width: 132px;
 }
 
@@ -998,9 +1016,17 @@ p {
   border-color: #fff;
 }
 
-.trial-list {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.trial-card .trial-list {
+  grid-area: features;
+  grid-template-columns: repeat(3, max-content);
+  gap: 12px 32px;
   margin: 0;
+}
+
+.trial-card .trial-note {
+  grid-area: note;
+  margin: 0;
+  font-size: 14px;
 }
 
 .price-grid {
@@ -1016,7 +1042,7 @@ p {
 .price-card {
   position: relative;
   display: grid;
-  grid-template-rows: 30px minmax(98px, auto) auto 1fr auto;
+  grid-template-rows: 28px minmax(80px, auto) auto 1fr auto;
   min-height: 100%;
   padding: 24px;
   gap: 0;
@@ -1035,24 +1061,40 @@ p {
   padding: 5px 9px;
   border: 1px solid rgba(179, 58, 58, 0.24);
   border-radius: 999px;
-  color: var(--accent);
+  color: var(--ink);
   font-size: 12px;
   font-weight: 850;
 }
 
 .plan-badge-slot {
-  min-height: 30px;
+  min-height: 28px;
 }
 
 .plan-copy {
-  min-height: 98px;
+  min-height: 80px;
 }
 
 .price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 8px;
   margin: 12px 0 10px;
   font-size: 36px;
   font-weight: 900;
   line-height: 1;
+}
+
+.price-amount {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.price-currency {
+  font-size: 0.55em;
+  font-weight: 750;
 }
 
 .price small {
@@ -1082,6 +1124,10 @@ p {
   align-items: flex-start;
   gap: 8px;
   padding-left: 0;
+}
+
+.check-list .list-icon {
+  margin-top: calc((1.55em - 18px) / 2);
 }
 
 .check-list li::before {
@@ -1350,8 +1396,8 @@ tr:last-child td {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(140px, auto) minmax(220px, 1fr);
-  column-gap: clamp(48px, 8vw, 120px);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 32px;
   row-gap: 30px;
   align-items: start;
 }
@@ -1378,17 +1424,9 @@ tr:last-child td {
 
 .footer-column {
   gap: 30px;
-  width: max-content;
+  width: 100%;
   max-width: 100%;
   justify-self: start;
-}
-
-.footer-column:nth-child(2) {
-  justify-self: center;
-}
-
-.footer-column:nth-child(3) {
-  justify-self: end;
 }
 
 .footer-group {
@@ -1396,7 +1434,7 @@ tr:last-child td {
 }
 
 .footer-setup-column {
-  width: min(100%, 250px);
+  width: 100%;
 }
 
 .footer h3 {
@@ -1486,15 +1524,44 @@ tr:last-child td {
   }
 
   .trial-card {
-    grid-template-columns: minmax(220px, 1fr) minmax(130px, 0.45fr);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "copy price" "features features" "note action";
   }
 
-  .trial-list {
-    grid-column: 1 / -1;
+  .paid-plans {
+    grid-template-columns: 1fr;
   }
 
-  .trial-card .button {
+  .paid-plans .price-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 24px;
+  }
+
+  .paid-plans .plan-badge-slot {
     grid-column: 1 / -1;
+    min-height: 0;
+  }
+
+  .paid-plans .plan-badge {
+    margin: 0 0 12px;
+  }
+
+  .paid-plans .plan-copy {
+    min-height: 0;
+  }
+
+  .paid-plans .price {
+    justify-content: flex-end;
+  }
+
+  .paid-plans .check-list {
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
+  .paid-plans .button {
+    grid-column: 2;
   }
 
   .hero {
@@ -1515,7 +1582,6 @@ tr:last-child td {
   }
 
   .stats,
-  .price-grid,
   .cards,
   .use-case-grid,
   .trust-bar-grid,
@@ -1662,7 +1728,7 @@ tr:last-child td {
 }
 
 @media (max-width: 680px) {
-  body {
+  body.has-sticky-cta {
     padding-bottom: 70px;
   }
 
@@ -1674,7 +1740,25 @@ tr:last-child td {
   }
 
   .brand {
-    display: none;
+    display: flex;
+    font-size: 17px;
+    order: 1;
+  }
+
+  .menu-button {
+    order: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav-actions {
+    order: 2;
+  }
+
+  .nav-actions .language {
+    min-height: 40px;
+    padding: 8px;
+    font-size: 14px;
   }
 
   .language {
@@ -1757,6 +1841,23 @@ tr:last-child td {
 
   .trial-card {
     grid-template-columns: 1fr;
+    grid-template-areas: "copy" "price" "features" "note" "action";
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .paid-plans .price-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paid-plans .price {
+    justify-content: flex-start;
+    margin-top: 8px;
+  }
+
+  .paid-plans .check-list {
+    margin-bottom: 24px;
   }
 
   .footer-grid {
@@ -1780,12 +1881,7 @@ tr:last-child td {
     margin-top: 26px;
   }
 
-  .trial-list,
-  .trial-card .button {
-    grid-column: auto;
-  }
-
-  .trial-list {
+  .trial-card .trial-list {
     grid-template-columns: 1fr;
   }
 
@@ -1841,13 +1937,22 @@ tr:last-child td {
     position: fixed;
     left: 12px;
     right: 12px;
-    bottom: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
     z-index: 30;
     display: flex;
     justify-content: center;
     width: auto;
     box-shadow: 0 10px 28px rgba(16, 20, 25, 0.24);
   }
+}
+
+.sticky-cta[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button:hover { transform: none; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1930,5 +2035,55 @@ tr:last-child td {
     background: rgba(255, 255, 255, 0.08);
     color: var(--ink);
     border-color: rgba(237, 243, 243, 0.58);
+  }
+}
+
+@media (max-width: 980px) {
+  .hero.hero-bg {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .hero .hero-content {
+    order: 1;
+    padding: 36px 20px 20px;
+  }
+
+  .hero-copy {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .hero .hero-bg-media {
+    position: relative;
+    order: 2;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hero-bg-backdrop,
+  .hero-bg-image .hero-image-desktop {
+    display: none;
+  }
+
+  .hero-bg-image .hero-image-mobile {
+    display: block;
+    height: auto;
+  }
+
+  .hero-image-mobile .product-picture {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .hero-bg-media .hero-image-mobile img {
+    width: 210%;
+    max-width: none;
+    height: auto;
+    transform: translateX(-46%);
   }
 }
