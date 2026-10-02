@@ -954,15 +954,15 @@ p {
 
 .trial-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  grid-template-areas: "copy price action" "features features features" "note note note";
-  gap: 18px 28px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 230px;
+  grid-template-areas: "copy purchase" "features purchase" "note purchase";
+  gap: 14px 36px;
+  align-items: start;
   padding: 26px 28px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--deep);
-  color: #fff;
+  background: var(--surface);
+  color: var(--ink);
 }
 
 .trial-copy {
@@ -979,29 +979,38 @@ p {
 
 .trial-card p,
 .trial-card li {
-  color: #cdd7dc;
+  color: var(--muted);
 }
 
-.trial-card .list-icon {
-  color: #fff;
+.trial-purchase {
+  grid-area: purchase;
+  display: grid;
+  grid-template-areas: "price" "action";
+  gap: 16px;
+  align-self: center;
+}
+
+.trial-purchase .button {
+  width: 100%;
 }
 
 .trial-card-price {
   grid-area: price;
   display: flex;
   align-items: baseline;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 6px 10px;
 }
 
 .trial-card-price .price-amount {
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 900;
   line-height: 1;
 }
 
 .trial-card-price small {
-  color: #b7c2c8;
+  color: var(--muted);
   font-weight: 750;
 }
 
@@ -1010,16 +1019,11 @@ p {
   min-width: 132px;
 }
 
-.trial-card .button-light {
-  background: #fff;
-  color: #111820;
-  border-color: #fff;
-}
-
 .trial-card .trial-list {
   grid-area: features;
-  grid-template-columns: repeat(3, max-content);
-  gap: 12px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
   margin: 0;
 }
 
@@ -1132,11 +1136,6 @@ p {
 
 .check-list li::before {
   content: none;
-}
-
-.trial-card .check-list li,
-.trial-card .check-list span {
-  color: #cdd7dc;
 }
 
 .plain-list li::before {
@@ -1424,17 +1423,21 @@ tr:last-child td {
 
 .footer-column {
   gap: 30px;
-  width: 100%;
+  width: max-content;
   max-width: 100%;
   justify-self: start;
 }
 
-.footer-group {
-  gap: 8px;
+.footer-column:nth-child(2) {
+  justify-self: center;
 }
 
-.footer-setup-column {
-  width: 100%;
+.footer-column:nth-child(3) {
+  justify-self: end;
+}
+
+.footer-group {
+  gap: 8px;
 }
 
 .footer h3 {
@@ -1521,11 +1524,6 @@ tr:last-child td {
 
   .hero-bg-media {
     clip-path: none;
-  }
-
-  .trial-card {
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas: "copy price" "features features" "note action";
   }
 
   .paid-plans {
@@ -1707,21 +1705,6 @@ tr:last-child td {
     display: block;
   }
 
-  .footer-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .footer-column,
-  .footer-column:nth-child(2),
-  .footer-column:nth-child(3) {
-    justify-self: start;
-  }
-
-  .footer-setup-column {
-    justify-self: stretch;
-    width: auto;
-  }
-
   .hero .trust-line {
     display: none;
   }
@@ -1841,9 +1824,17 @@ tr:last-child td {
 
   .trial-card {
     grid-template-columns: 1fr;
-    grid-template-areas: "copy" "price" "features" "note" "action";
+    grid-template-areas: "copy" "features" "price" "action" "note";
     gap: 18px;
     padding: 24px;
+  }
+
+  .trial-purchase {
+    display: contents;
+  }
+
+  .trial-card-price {
+    justify-content: flex-start;
   }
 
   .paid-plans .price-card {
@@ -1882,7 +1873,7 @@ tr:last-child td {
   }
 
   .trial-card .trial-list {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
   .trust-bar-item {
