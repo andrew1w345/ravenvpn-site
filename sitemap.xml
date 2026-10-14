@@ -64,13 +64,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/terms/"/>
   </url>
   <url>
-    <loc>https://ravenvpn.site/en/refund/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/refund/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/refund/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/refund/"/>
-  </url>
-  <url>
     <loc>https://ravenvpn.site/pricing/</loc>
     <lastmod>2026-10-14</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/pricing/"/>
@@ -118,12 +111,5 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/terms/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/terms/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/terms/"/>
-  </url>
-  <url>
-    <loc>https://ravenvpn.site/refund/</loc>
-    <lastmod>2026-10-14</lastmod>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/refund/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/refund/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/refund/"/>
   </url>
 </urlset>

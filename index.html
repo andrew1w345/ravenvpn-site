@@ -30,7 +30,7 @@
   <link rel="preload" href="assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
   try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
-  <link rel="stylesheet" href="assets/css/site.css?v=57be4fb9d1b3">
+  <link rel="stylesheet" href="assets/css/site.css?v=207207a905c4">
   <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
   <script type="application/ld+json">[
   {
@@ -42,8 +42,7 @@
     "sameAs": [
       "https://t.me/TheRavenVPN",
       "https://t.me/RavenVPNReviews",
-      "https://www.youtube.com/@TheRavenVPN",
-      "https://t.me/RavenVPN_support_bot"
+      "https://www.youtube.com/@TheRavenVPN"
     ]
   },
   {
@@ -294,11 +293,11 @@
               <!-- 2. Connection page: device and app -->
               <div class="screen cp" role="img" aria-label="Страница подключения: выбор устройства Android и приложения Happ">
                 <div class="sbar"><span>9:41</span><svg fill="currentColor"><use href="#i-sig"/></svg></div>
+                <div class="cp-header"><img src="assets/img/logo.webp" width="26" height="26" alt=""><b>Raven VPN</b></div>
                 <div class="cp-body">
-                  <div class="cp-kicker">Настройка</div>
                   <h4>Выберите устройство и&nbsp;приложение</h4>
                   <div class="cp-sec">
-                    <div class="cp-sec-head"><span class="n">01</span><b>Устройство</b></div>
+                    <div class="cp-sec-head"><span class="n">1</span><b>Устройство</b></div>
                     <div class="cp-chips">
                       <div class="cp-chip sel-chip tap" style="--tap: 0.7s">Android</div>
                       <div class="cp-chip">iPhone / iPad</div>
@@ -309,15 +308,15 @@
                     </div>
                   </div>
                   <div class="cp-sec">
-                    <div class="cp-sec-head"><span class="n">02</span><b>Приложение</b></div>
+                    <div class="cp-sec-head"><span class="n">2</span><b>Приложение</b></div>
                     <p class="cp-note">В Happ, Incy и FlClashX сайты из белого списка и поддерживаемые приложения открываются напрямую.</p>
                     <div class="cp-card sel-card tap" style="--tap: 1.9s">
-                      <div class="cp-app"><span class="cp-ico">H</span><b>Happ</b><span class="cp-pill">РЕКОМЕНДУЕМ</span><span class="cp-radio"></span></div>
+                      <div class="cp-app"><span class="cp-ico">H</span><b>Happ</b><span class="cp-pill">Рекомендуем</span><span class="cp-radio"></span></div>
                       <p>Подписка и исключения добавляются автоматически.</p>
                     </div>
                     <div class="cp-card">
-                      <div class="cp-app"><span class="cp-ico">I</span><b>Incy</b><span class="cp-radio"></span></div>
-                      <p>Подписка и правила добавляются автоматически.</p>
+                      <div class="cp-app"><span class="cp-ico">I</span><b>Incy</b><span class="cp-pill">Рекомендуем</span><span class="cp-radio"></span></div>
+                      <p>Подписка и исключения добавляются автоматически.</p>
                     </div>
                   </div>
                 </div>
@@ -327,21 +326,23 @@
               <div class="screen cp" role="img" aria-label="Страница подключения: российские сайты напрямую и кнопка «Добавить в Happ»">
                 <div class="sbar"><span>9:41</span><svg fill="currentColor"><use href="#i-sig"/></svg></div>
                 <div class="cp-body">
-                  <div class="cp-head"><span class="cp-ico">H</span><div><span class="k">ПРОДОЛЖИТЬ С</span><b>Happ</b></div></div>
-                  <h5>Российские сайты</h5>
-                  <div class="cp-sub">Открывать напрямую:</div>
-                  <div class="cp-opts">
-                    <div class="cp-opt unsel-opt preset"><span class="cp-radio"></span><span class="t">Только сайты белого списка</span></div>
-                    <div class="cp-opt sel-opt tap" style="--tap: 0.8s"><span class="cp-radio"></span><span class="t">Расширенный список российских сайтов</span></div>
-                    <div class="cp-opt"><span class="cp-radio"></span><span class="t">Свои правила</span></div>
-                  </div>
-                  <div class="cp-row"><span>Доступ к Gemini</span><span class="cp-switch"></span></div>
-                  <p class="cp-small">Альтернативный маршрут для Google и YouTube. Только на этом устройстве.</p>
-                  <p class="cp-hint">После добавления подписки выберите в приложении «Авто - Обычный VPN». Для сети с белыми списками используйте «Авто - Белые списки».</p>
-                  <div class="cp-btns">
-                    <div class="cp-btn">Установить Happ</div>
-                    <div class="cp-btn inverse tap" style="--tap: 2.2s">Добавить в Happ</div>
-                    <div class="cp-btn"><svg class="icon"><use href="#i-qr"/></svg>Показать QR-код</div>
+                  <div class="cp-panel">
+                    <div class="cp-head"><span class="cp-ico">H</span><div><span class="k">Продолжить с</span><b>Happ</b></div></div>
+                    <h5>Российские сайты</h5>
+                    <div class="cp-sub">Открывать напрямую:</div>
+                    <div class="cp-opts">
+                      <div class="cp-opt unsel-opt preset"><span class="cp-radio"></span><span class="t">Только сайты белого списка</span></div>
+                      <div class="cp-opt sel-opt tap" style="--tap: 0.8s"><span class="cp-radio"></span><span class="t">Расширенный список российских сайтов</span></div>
+                      <div class="cp-opt"><span class="cp-radio"></span><span class="t">Свои правила</span></div>
+                    </div>
+                    <div class="cp-row"><span>Доступ к Gemini</span><span class="cp-switch"></span></div>
+                    <p class="cp-small">Альтернативный маршрут для Google и YouTube. Только на этом устройстве.</p>
+                    <p class="cp-hint">После добавления подписки выберите в приложении «Авто - Обычный VPN». Для сети с белыми списками используйте «Авто - Белые списки».</p>
+                    <div class="cp-btns">
+                      <div class="cp-btn">Установить Happ</div>
+                      <div class="cp-btn primary tap" style="--tap: 2.2s">Добавить в Happ</div>
+                      <div class="cp-btn"><svg class="icon"><use href="#i-qr"/></svg>Показать QR-код</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -501,7 +502,7 @@
 
   <footer class="site-footer"><div class="wrap"><div class="footer-grid">
     <div class="footer-brand"><a class="brand" href="./"><img src="assets/img/logo.webp" width="36" height="36" alt=""><span>Raven VPN</span></a><p>VPN с подключением и оплатой в Telegram.</p></div>
-    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="pricing/">Тарифы</a></li><li><a href="setup/">Настройка</a></li><li><a href="faq/">FAQ</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="support/">Поддержка</a></li><li><a href="refund/">Возвраты</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал @TheRavenVPN</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li><li><a href="https://t.me/RavenVPN_support_bot">Поддержка в Telegram</a></li></ul></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="pricing/">Тарифы</a></li><li><a href="setup/">Настройка</a></li><li><a href="how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="support/">Поддержка</a></li><li><a href="faq/">FAQ</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
   </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
 
 </body>
