@@ -1,67 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ravenvpn.site/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/pricing/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/pricing/"/>
+  </url>
+  <url>
+    <loc>https://ravenvpn.site/en/how-it-works/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/how-it-works/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/setup/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/setup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/setup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/setup/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/faq/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/faq/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/support/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/support/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/privacy/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/privacy/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/terms/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/terms/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/en/refund/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/refund/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/refund/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/refund/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/pricing/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/pricing/"/>
+  </url>
+  <url>
+    <loc>https://ravenvpn.site/how-it-works/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/how-it-works/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/setup/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/setup/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/setup/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/setup/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/faq/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/faq/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/faq/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/faq/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/support/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/support/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/privacy/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/privacy/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/terms/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/terms/"/>
   </url>
   <url>
     <loc>https://ravenvpn.site/refund/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-14</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/refund/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ravenvpn.site/en/refund/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/refund/"/>
   </url>
 </urlset>

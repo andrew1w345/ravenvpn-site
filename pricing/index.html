@@ -15,10 +15,22 @@
   <meta property="og:title" content="Тарифы Raven VPN - пробный доступ и месячные тарифы">
   <meta property="og:description" content="Сравнение тарифов Raven VPN: Пробный, Старт, Стандарт и Про. Трафик, скорость, устройства, способы оплаты и скидки за период.">
   <meta property="og:url" content="https://ravenvpn.site/pricing/">
-  <meta property="og:image" content="https://ravenvpn.site/assets/img/ru/hero-wide-1200.webp">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raven VPN - работает даже при белых списках">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="../assets/img/logo.webp" type="image/webp">
-  <link rel="stylesheet" href="../assets/css/site.css?v=1082c93e0aeb">
+  <meta name="twitter:title" content="Тарифы Raven VPN - пробный доступ и месячные тарифы">
+  <meta name="twitter:description" content="Сравнение тарифов Raven VPN: Пробный, Старт, Стандарт и Про. Трафик, скорость, устройства, способы оплаты и скидки за период.">
+  <meta name="twitter:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" sizes="180x180">
+  <link rel="preload" href="../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
+  <link rel="stylesheet" href="../assets/css/site.css?v=57be4fb9d1b3">
   <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
   <script type="application/ld+json">[
   {
@@ -28,7 +40,10 @@
     "url": "https://ravenvpn.site",
     "logo": "https://ravenvpn.site/assets/img/logo.webp",
     "sameAs": [
-      "https://t.me/TheRavenVPN"
+      "https://t.me/TheRavenVPN",
+      "https://t.me/RavenVPNReviews",
+      "https://www.youtube.com/@TheRavenVPN",
+      "https://t.me/RavenVPN_support_bot"
     ]
   },
   {
@@ -39,24 +54,52 @@
     "inLanguage": "ru"
   }
 ]</script>
-  <script defer src="../assets/js/site.js?v=b194e10dd41c"></script>
+  <script defer src="../assets/js/site.js?v=b3b197549147"></script>
 </head>
-<body class="has-sticky-cta">
+<body>
   <a class="skip-link" href="#main">К содержанию</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.6-1.3 1.5-2 2.5-2s1.9.7 2.5 2"/><path d="M14 10h4"/><path d="M14 14h3"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.8-3.3 3.2-5 6-5s5.2 1.7 6 5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 15c1.6.6 2.7 2.2 3 5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0"/><path d="M12 17v5"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+  <symbol id="i-sig" viewBox="0 0 54 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/><path d="M26 11.2 22.6 7.6a4.8 4.8 0 0 1 6.8 0zM20.4 5.4a8 8 0 0 1 11.2 0l-1.4 1.4a6 6 0 0 0-8.4 0z"/><rect x="36" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37.6" y="3.1" width="10" height="5.8" rx="1.2"/><rect x="51.8" y="4.3" width="1.4" height="3.4" rx=".7"/></symbol>
+</svg>
 
-    <header class="site-header">
-      <nav class="nav" aria-label="Основная навигация">
-        <a class="brand" href="../" aria-label="Raven VPN">
-          <span>Raven VPN</span>
-        </a>
-        <button class="menu-button" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
-        <div class="nav-links" id="main-navigation" data-nav-links>
-          <a href="../pricing/">Тарифы</a><a href="../setup/">Настройка</a><a href="../faq/">FAQ</a>
-        </div>
-        <div class="nav-actions">
-          <div class="language-picker">
+  <header class="site-header"><div class="wrap header-row">
+    <a class="brand" href="../" aria-label="Raven VPN"><img src="../assets/img/logo.webp" width="36" height="36" alt=""><span>Raven VPN</span></a>
+    <button class="menu-button theme-toggle" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
+    <nav class="nav" id="main-navigation" data-nav-links aria-label="Разделы">
+      <a href="../pricing/">Тарифы</a><a href="../setup/">Подключение</a><a href="../faq/">FAQ</a><a href="../support/">Поддержка</a>
+    </nav>
+    <div class="header-actions">
+      <div class="language-picker">
             <button class="language" type="button" aria-label="Выбрать язык" aria-expanded="false" data-language-toggle>
-              <span>Русский</span>
+              <span class="language-full">Русский</span><span class="language-short">RU</span>
               <svg class="language-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg>
             </button>
             <div class="language-menu" hidden data-language-menu>
@@ -64,190 +107,135 @@
               <a class="language-option" href="../en/pricing/" lang="en">English</a>
             </div>
           </div>
-          <a class="button button-header button-with-icon" href="https://t.me/GetRavenBot?start=site_ru_header" data-umami-event="hero_cta_click"><svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть бота</span></a>
-        </div>
-      </nav>
-    </header>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+        <svg class="icon sun"><use href="#i-sun"/></svg><svg class="icon moon"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-quiet btn-small" href="https://t.me/GetRavenBot?start=ru_header" data-umami-event="hero_cta_click">Открыть бота</a>
+    </div>
+  </div></header>
   <main id="main">
-
 
     <section class="page-hero">
       <div class="wrap">
         <nav class="breadcrumbs" aria-label="breadcrumbs">
           <a href="../">Raven VPN</a><span>/</span><span>Тарифы</span>
         </nav>
-        <p class="eyebrow">Raven VPN</p>
+
         <h1>Тарифы Raven VPN</h1>
-        <p class="lead">Пробный доступ для проверки и три месячных тарифа с понятными лимитами трафика, скорости и устройств.</p>
+        <p class="lead">Проверьте VPN за день или выберите тариф с понятными лимитами трафика, скорости и устройств.</p>
       </div>
     </section>
-    <section class="section">
-      <div class="wrap">
-
-      <div class="pricing-layout">
-
-        <article class="trial-card">
-          <div class="trial-copy">
-            <h3>Пробный доступ на день</h3>
-            <p>Проверьте VPN на своих устройствах.</p>
-          </div>
-          <ul class="check-list trial-list">
-            <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>10 ГБ трафика</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>До 25 Мбит/с</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>2 устройства</span></li>
-          </ul>
-          <div class="trial-purchase">
-            <div class="trial-card-price">
-              <span class="price-amount">15<span class="price-currency">₽</span></span>
-            </div>
-            <a class="button button-light" href="https://t.me/GetRavenBot?start=ru_plan_trial" data-umami-event="trial_click">Попробовать</a>
-          </div>
-          <p class="trial-note">Один раз для каждого аккаунта Telegram.</p>
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="pricing-head">
+        <div>
+          <h2 class="h2" id="pricing-title">Тарифы</h2>
+          <p>Чем дольше срок, тем ниже цена за месяц.</p>
+        </div>
+        <div class="period" role="radiogroup" aria-label="Срок оплаты">
+          <input type="radio" name="period" id="period-1" value="0" checked><label for="period-1">1 мес</label>
+          <input type="radio" name="period" id="period-3" value="1"><label for="period-3">3 мес<small>-10%</small></label>
+          <input type="radio" name="period" id="period-6" value="2"><label for="period-6">6 мес<small>-20%</small></label>
+          <input type="radio" name="period" id="period-12" value="3"><label for="period-12">12 мес<small>-30%</small></label>
+        </div>
+      </div>
+      <div class="plans">
+        <article class="plan" data-prices="149,129,119,99">
+          <div><div class="plan-top"><h3>Старт</h3></div><p class="plan-desc">Для телефона и ноутбука.</p></div>
+          <div class="plan-price"><b data-price>149 ₽</b><span>/мес</span></div>
+          <p class="plan-total" data-total>за 1 месяц</p>
+          <dl class="plan-specs">
+            <div><dt>Трафик</dt><dd>250 ГБ в месяц</dd></div>
+            <div><dt>Белые списки</dt><dd>10 ГБ в месяц</dd></div>
+            <div><dt>Скорость</dt><dd>до 50 Мбит/с</dd></div>
+            <div><dt>Устройства</dt><dd>2</dd></div>
+          </dl>
+          <span></span>
+          <a class="btn btn-quiet" href="https://t.me/GetRavenBot?start=ru_plan_start" data-umami-event="pricing_plan_click">Выбрать Старт</a>
         </article>
-        <div class="price-grid paid-plans">
+        <article class="plan is-featured" data-prices="249,219,199,169">
+          <div><div class="plan-top"><h3>Стандарт</h3><span class="badge">Рекомендуем</span></div><p class="plan-desc">Больше трафика для повседневных задач.</p></div>
+          <div class="plan-price"><b data-price>249 ₽</b><span>/мес</span></div>
+          <p class="plan-total" data-total>за 1 месяц</p>
+          <dl class="plan-specs">
+            <div><dt>Трафик</dt><dd>500 ГБ в месяц</dd></div>
+            <div><dt>Белые списки</dt><dd>20 ГБ в месяц</dd></div>
+            <div><dt>Скорость</dt><dd>до 100 Мбит/с</dd></div>
+            <div><dt>Устройства</dt><dd>4</dd></div>
+          </dl>
+          <span></span>
+          <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=ru_plan_standard" data-umami-event="pricing_plan_click">Выбрать Стандарт</a>
+        </article>
+        <article class="plan" data-prices="349,309,279,239">
+          <div><div class="plan-top"><h3>Про</h3></div><p class="plan-desc">Для активного использования на нескольких устройствах.</p></div>
+          <div class="plan-price"><b data-price>349 ₽</b><span>/мес</span></div>
+          <p class="plan-total" data-total>за 1 месяц</p>
+          <dl class="plan-specs">
+            <div><dt>Трафик</dt><dd>1000 ГБ в месяц</dd></div>
+            <div><dt>Белые списки</dt><dd>50 ГБ в месяц</dd></div>
+            <div><dt>Скорость</dt><dd>до 200 Мбит/с</dd></div>
+            <div><dt>Устройства</dt><dd>6</dd></div>
+          </dl>
+          <span></span>
+          <a class="btn btn-quiet" href="https://t.me/GetRavenBot?start=ru_plan_pro" data-umami-event="pricing_plan_click">Выбрать Про</a>
+        </article>
+      </div>
+      <div class="trial">
+        <div>
+          <h3>Пробный день - 15 ₽</h3>
+          <p>10 ГБ, белые списки 2 ГБ, до 25 Мбит/с, 2 устройства. Один раз для каждого аккаунта Telegram.</p>
+        </div>
+        <a class="btn btn-quiet" href="https://t.me/GetRavenBot?start=ru_plan_trial" data-umami-event="trial_click">Попробовать</a>
+      </div>
+      <p class="pay-note"><svg class="icon"><use href="#i-card"/></svg>Оплата в боте: банковская карта и СБП, Telegram Stars, CryptoBot.</p>
+    </div>
+  </section>
 
-          <article class="price-card">
-            <div class="plan-badge-slot"></div>
-            <div class="plan-copy">
-              <h3>Старт</h3>
-              <p>Для телефона и ноутбука.</p>
-            </div>
-            <div class="price"><span class="price-amount">149<span class="price-currency">₽</span></span> <small>/ мес.</small></div>
-            <ul class="check-list">
-              <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>250 ГБ в месяц</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>До 50 Мбит/с</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>2 устройства</span></li>
-            </ul>
-            <a class="button button-light" href="https://t.me/GetRavenBot?start=ru_plan_start" data-umami-event="pricing_plan_click">Выбрать тариф</a>
-          </article>
-          <article class="price-card featured">
-            <div class="plan-badge-slot"><div class="plan-badge">Популярный выбор</div></div>
-            <div class="plan-copy">
-              <h3>Стандарт</h3>
-              <p>Больше трафика для повседневных задач.</p>
-            </div>
-            <div class="price"><span class="price-amount">249<span class="price-currency">₽</span></span> <small>/ мес.</small></div>
-            <ul class="check-list">
-              <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>500 ГБ в месяц</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>До 100 Мбит/с</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>4 устройства</span></li>
-            </ul>
-            <a class="button button-accent" href="https://t.me/GetRavenBot?start=ru_plan_standard" data-umami-event="pricing_plan_click">Выбрать тариф</a>
-          </article>
-          <article class="price-card">
-            <div class="plan-badge-slot"></div>
-            <div class="plan-copy">
-              <h3>Про</h3>
-              <p>Для активного использования на нескольких устройствах.</p>
-            </div>
-            <div class="price"><span class="price-amount">349<span class="price-currency">₽</span></span> <small>/ мес.</small></div>
-            <ul class="check-list">
-              <li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>1000 ГБ в месяц</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>До 200 Мбит/с</span></li><li><svg class="list-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"></path></svg><span>6 устройств</span></li>
-            </ul>
-            <a class="button button-light" href="https://t.me/GetRavenBot?start=ru_plan_pro" data-umami-event="pricing_plan_click">Выбрать тариф</a>
-          </article>
-        </div>
-      </div>
-      </div>
-    </section>
-    <section class="section section-band">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Сравнение</p>
-            <h2>Что входит в каждый тариф</h2>
-          </div>
-          <p>При оплате за 3 месяца скидка 10%, за 6 месяцев - 20%, за год - 30%.</p>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th>Параметр</th><th>Пробный</th><th>Старт</th><th>Стандарт</th><th>Про</th></tr></thead>
-            <tbody>
-              <tr><td>Цена</td><td>15₽</td><td>149₽/мес</td><td>249₽/мес</td><td>349₽/мес</td></tr>
-              <tr><td>Трафик</td><td>10 ГБ</td><td>250 ГБ</td><td>500 ГБ</td><td>1000 ГБ</td></tr>
-              <tr><td>Скорость</td><td>до 25 Мбит/с</td><td>до 50 Мбит/с</td><td>до 100 Мбит/с</td><td>до 200 Мбит/с</td></tr>
-              <tr><td>Устройства</td><td>2</td><td>2</td><td>4</td><td>6</td></tr>
-              <tr><td>Срок</td><td>1 день</td><td>месяц</td><td>месяц</td><td>месяц</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="wrap">
-        <div class="panel payment-panel">
-          <h2>Способы оплаты</h2>
-          <ul class="plain-list">
-            <li>Telegram Stars.</li>
-            <li>CryptoBot с USDT и TON.</li>
-            <li>YooKassa, включая оплату картой и СБП.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <section class="section section-band">
-      <div class="wrap">
-        <div class="section-head"><div><p class="eyebrow">FAQ</p><h2>Вопросы по оплате</h2></div></div>
 
+  <section class="section"><div class="wrap">
+    <div class="section-head"><h2>Что входит в каждый тариф</h2><p>Трафик обновляется каждый месяц. Срок оплаты не меняет месячные лимиты.</p></div>
+    <div class="table-wrap" role="region" aria-label="Сравнение тарифов" tabindex="0"><table><thead><tr><th scope="col">Параметр</th><th scope="col">Пробный</th><th scope="col">Старт</th><th scope="col">Стандарт</th><th scope="col">Про</th></tr></thead>
+    <tbody><tr><th scope="row">Цена за 1 месяц</th><td>15 ₽ / день</td><td>149 ₽</td><td>249 ₽</td><td>349 ₽</td></tr><tr><th scope="row">Трафик</th><td>10 ГБ</td><td>250 ГБ</td><td>500 ГБ</td><td>1000 ГБ</td></tr><tr><th scope="row">Белые списки</th><td>2 ГБ</td><td>10 ГБ</td><td>20 ГБ</td><td>50 ГБ</td></tr><tr><th scope="row">Скорость</th><td>до 25 Мбит/с</td><td>до 50 Мбит/с</td><td>до 100 Мбит/с</td><td>до 200 Мбит/с</td></tr><tr><th scope="row">Устройства</th><td>2</td><td>2</td><td>4</td><td>6</td></tr><tr><th scope="row">Срок</th><td>1 день</td><td>месяц</td><td>месяц</td><td>месяц</td></tr></tbody></table></div>
+  </div></section>
+  <section class="section"><div class="wrap faq-grid"><h2 class="h2">Вопросы по оплате</h2>
       <div class="faq-list">
 
         <details class="faq-item" data-umami-event="faq_open">
           <summary><span>Можно ли докупить трафик?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
-          <p>Да. Доступны докупки +250 ГБ, +500 ГБ и +1000 ГБ; они действуют до ближайшего месячного сброса лимита.</p>
+          <p>Да. Доступны 250 ГБ за 99 ₽, 500 ГБ за 179 ₽ и 1000 ГБ за 299 ₽ до ближайшего месячного сброса лимита.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Поддерживаются ли белые списки для мобильного интернета?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Да. Во всех тарифах есть отдельный сервер «Белые списки»: 10, 20 или 50 ГБ в месяц, в пробном дне - 2 ГБ. Закончились - докупите 10 ГБ за 20 ₽, 50 ГБ за 100 ₽ или 100 ГБ за 200 ₽.</p>
         </details>
         <details class="faq-item" data-umami-event="faq_open">
           <summary><span>Можно ли повысить тариф?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
-          <p>Да, повышение тарифа посреди оплаченного срока поддерживается. Доплата считается за оставшийся срок, новый месячный лимит и скорость применяются сразу.</p>
+          <p>Да. Доплата считается за оставшийся срок, новый месячный лимит и скорость применяются сразу.</p>
         </details>
         <details class="faq-item" data-umami-event="faq_open">
           <summary><span>Что делать при двойном списании?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
           <p>Напишите в поддержку. Укажите способ оплаты, время платежа и приложите скриншот с закрытыми платёжными реквизитами.</p>
         </details>
-      </div>
-      </div>
-    </section>
+      </div></div></section>
   </main>
-
-    <section class="cta-band">
-      <div class="wrap">
-        <h2>Начните в Telegram</h2>
-        <p>Выберите тариф в боте и добавьте устройства, которые хотите подключить.</p>
-        <div class="cta-row">
-          <a class="button button-accent button-with-icon" href="https://t.me/GetRavenBot?start=site_ru_final" data-umami-event="hero_cta_click"><svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть Telegram-бота</span></a>
-
-        </div>
+    <section class="section" aria-labelledby="final-title">
+    <div class="wrap final-grid">
+      <div>
+        <h2 class="h2" id="final-title">Попробуйте Raven VPN за 15 ₽</h2>
+        <p>Один день, 10 ГБ и 2 устройства. Понравится - выберите тариф от 99 ₽/мес в том же боте.</p>
+        <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=ru_plan_trial" data-umami-event="trial_click"><svg class="icon"><use href="#i-send"/></svg>Открыть бота</a>
       </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-shell">
-        <div class="footer-grid">
-          <div class="footer-column">
-            <div class="footer-group">
-              <h3>Продукт</h3>
-              <a href="../pricing/">Тарифы</a>
-              <a href="../setup/">Настройка</a>
-              <a href="../faq/">FAQ</a>
-            </div>
-          </div>
-          <div class="footer-column">
-            <div class="footer-group">
-              <h3>Помощь</h3>
-              <a href="../support/">Поддержка</a>
-              <a href="../refund/">Возвраты</a>
-            </div>
-          </div>
-          <div class="footer-column footer-setup-column">
-            <div class="footer-group">
-              <h3>Документы</h3>
-              <a href="../privacy/" data-umami-event="legal_click">Конфиденциальность</a>
-              <a href="../terms/" data-umami-event="legal_click">Условия и правила</a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-mobile" aria-label="Навигация в подвале">
-          <h3>Raven VPN</h3>
-          <nav class="footer-mobile-nav" aria-label="Навигация в подвале">
-            <a href="../pricing/">Тарифы</a><a href="../setup/">Настройка</a><a href="../faq/">FAQ</a><a href="../support/">Поддержка</a><a href="../refund/">Возвраты</a><a href="../privacy/" data-umami-event="legal_click">Конфиденциальность</a><a href="../terms/" data-umami-event="legal_click">Условия и правила</a>
-          </nav>
-        </div>
+      <div class="final-visual" id="final-visual">
+        <img src="../assets/img/raven-phone.webp" width="720" height="605" alt="" loading="lazy">
+        <div class="key-stage" id="key-stage" aria-hidden="true"></div>
       </div>
-      <div class="footer-bottom">© 2026 Raven VPN. VPN через Telegram.</div>
-    </footer>
-  <a class="button button-accent button-with-icon sticky-cta" href="https://t.me/GetRavenBot?start=site_ru_sticky" data-umami-event="sticky_cta_click" hidden><svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть бота</span></a>
+    </div>
+  </section>
+
+  <footer class="site-footer"><div class="wrap"><div class="footer-grid">
+    <div class="footer-brand"><a class="brand" href="../"><img src="../assets/img/logo.webp" width="36" height="36" alt=""><span>Raven VPN</span></a><p>VPN с подключением и оплатой в Telegram.</p></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="../pricing/">Тарифы</a></li><li><a href="../setup/">Настройка</a></li><li><a href="../faq/">FAQ</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="../support/">Поддержка</a></li><li><a href="../refund/">Возвраты</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="../privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="../terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал @TheRavenVPN</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li><li><a href="https://t.me/RavenVPN_support_bot">Поддержка в Telegram</a></li></ul></div>
+  </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
+
 </body>
 </html>
