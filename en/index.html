@@ -30,7 +30,7 @@
   <link rel="preload" href="../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
   try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
-  <link rel="stylesheet" href="../assets/css/site.css?v=207207a905c4">
+  <link rel="stylesheet" href="../assets/css/site.css?v=f0cd81422a09">
   <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
   <script type="application/ld+json">[
   {
@@ -38,7 +38,7 @@
     "@type": "Organization",
     "name": "Raven VPN",
     "url": "https://ravenvpn.site",
-    "logo": "https://ravenvpn.site/assets/img/logo.webp"
+    "logo": "https://ravenvpn.site/assets/img/logo-transparent.webp"
   },
   {
     "@context": "https://schema.org",
@@ -131,7 +131,7 @@
 </svg>
 
   <header class="site-header"><div class="wrap header-row">
-    <a class="brand" href="../en/" aria-label="Raven VPN"><img src="../assets/img/logo.webp" width="36" height="36" alt=""><span>Raven VPN</span></a>
+    <a class="brand" href="../en/" aria-label="Raven VPN"><img src="../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a>
     <button class="menu-button theme-toggle" type="button" aria-label="Menu" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
     <nav class="nav" id="main-navigation" data-nav-links aria-label="Sections">
       <a href="#features">Features</a><a href="#setup">Setup</a><a href="#pricing">Pricing</a><a href="#faq">Questions</a>
@@ -158,12 +158,12 @@
     <div class="wrap hero-grid">
       <div>
         <h1>Your VPN.<br><span class="mark">Managed in Telegram</span>.</h1>
-        <p class="lead">Choose a plan, add your devices and connect with your favourite VPN app. One-day trial - 1.49 USDT.</p>
+        <p class="lead">Choose a plan, add your devices and connect with your favourite VPN app. <span class="nowrap">One-day trial</span> - 1.49 USDT.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://t.me/TheRavenVPNBot?start=en_plan_trial" data-umami-event="hero_cta_click"><svg class="icon"><use href="#i-send"/></svg>Try for 1.49 USDT</a>
+          <a class="btn btn-primary" href="https://t.me/TheRavenVPNBot?start=en_plan_trial" data-umami-event="hero_cta_click"><svg class="icon"><use href="#i-send"/></svg>Try for 1.49 USDT</a>
+          <p class="hero-note">1 day: 10 GB, up to 25 Mbps, 2 devices.</p>
           <a class="text-link" href="#pricing" data-umami-event="hero_pricing_click">Explore plans<svg class="icon"><use href="#i-arrow"/></svg></a>
         </div>
-        <p class="hero-note">1 day: 10 GB, up to 25 Mbps, 2 devices.</p>
       </div>
       <div class="hero-visual" id="hero-visual">
         <img class="hero-scene" src="../assets/img/hero-en-600.webp" srcset="../assets/img/hero-en-600.webp 1x, ../assets/img/hero-en-1200.webp 2x" width="1200" height="1068" alt="The Raven VPN raven shows a phone connected to a Netherlands server in Happ" fetchpriority="high">
@@ -174,8 +174,8 @@
   </section>
   <section class="facts" aria-label="Raven VPN at a glance">
     <div class="wrap facts-grid">
-      <div class="fact"><svg class="icon"><use href="#i-gauge"/></svg><div><strong>Up to 200 Mbps</strong><span>speed depends on your plan</span></div></div>
-      <div class="fact"><svg class="icon"><use href="#i-people"/></svg><div><strong>Up to 6 devices</strong><span>a separate link for each device</span></div></div>
+      <div class="fact"><svg class="icon"><use href="#i-gauge"/></svg><div><strong>Up to 200 Mbps</strong><span>speed depends on your plan</span></div></div>
+      <div class="fact"><svg class="icon"><use href="#i-people"/></svg><div><strong>Up to 6 devices</strong><span>a separate link for each device</span></div></div>
       <div class="fact"><svg class="icon"><use href="#i-card"/></svg><div><strong>Stars and crypto</strong><span>pay right in the Telegram bot</span></div></div>
     </div>
   </section>
@@ -209,7 +209,7 @@
           <div class="screen tg is-active" role="img" aria-label="Raven VPN bot: Devices and Add device">
             <div class="sbar"><span>9:41</span><svg fill="currentColor"><use href="#i-sig"/></svg></div>
             <div class="tg-head"><svg class="back icon"><use href="#i-back"/></svg><img class="tg-ava" src="../assets/img/logo.webp" width="34" height="34" alt=""><div class="tg-name"><b>Raven VPN</b><span>bot</span></div></div>
-            <div class="tg-chat"><div class="tg-date">Today</div><div class="tg-msg tg-text"><div class="tg-cap">Monthly traffic: <b>500 GB</b><br>Create a separate link for each phone, computer or TV.</div></div><div class="tg-msg"><img src="../assets/img/cover-devices.webp" width="640" height="320" alt=""><div class="tg-cap"><b>Devices</b><div class="gap"></div>Used: <b>1 of 4</b></div></div><div class="tg-kb"><div class="row"><div class="tg-btn">Android · active</div></div><div class="row"><div class="tg-btn primary tap" style="--tap:1.7s"><svg><use href="#i-plus"/></svg>Add device</div></div><div class="row"><div class="tg-btn">Back</div></div></div></div>
+            <div class="tg-chat"><div class="tg-date">Today</div><div class="tg-msg tg-text"><div class="tg-cap">Monthly traffic: <b>500 GB</b><br>Create a separate link for each phone, computer or TV.</div></div><div class="tg-msg"><img src="../assets/img/cover-devices.webp" width="640" height="320" alt=""><div class="tg-cap"><b>Devices</b><div class="gap"></div>Used: <b>1 of 4</b></div></div><div class="tg-kb"><div class="row"><div class="tg-btn">Android · active</div></div><div class="row"><div class="tg-btn primary tap" style="--tap:1.7s"><svg><use href="#i-plus"/></svg>Add device</div></div><div class="row"><div class="tg-btn">Back</div></div></div></div>
             <div class="tg-input"><div class="tg-menu">Menu</div><div class="tg-field">Message</div></div>
           </div>
           <div class="screen tg" role="img" aria-label="Raven VPN bot: choose a platform">
@@ -239,25 +239,25 @@
   <section class="section" id="pricing" aria-labelledby="pricing-title"><div class="wrap">
     <div class="pricing-head"><div><h2 class="h2" id="pricing-title">Plans</h2><p>A longer subscription costs less per month.</p></div>
     <div class="period" role="radiogroup" aria-label="Billing period">
-      <input type="radio" name="period" id="period-1" value="0" checked><label for="period-1">1 mo</label><input type="radio" name="period" id="period-3" value="1"><label for="period-3">3 mo<small>-10%</small></label><input type="radio" name="period" id="period-6" value="2"><label for="period-6">6 mo<small>-20%</small></label><input type="radio" name="period" id="period-12" value="3"><label for="period-12">12 mo<small>-30%</small></label>
+      <input type="radio" name="period" id="period-1" value="0" checked><label for="period-1">1 mo</label><input type="radio" name="period" id="period-3" value="1"><label for="period-3">3 mo<small>-10%</small></label><input type="radio" name="period" id="period-6" value="2"><label for="period-6">6 mo<small>-20%</small></label><input type="radio" name="period" id="period-12" value="3"><label for="period-12">12 mo<small>-30%</small></label>
     </div></div>
     <div class="plans"><article class="plan" data-prices="4.99,4.49,3.99,3.49" data-totals="4.99,13.47,23.95,41.92">
         <div><div class="plan-top"><h3>Start</h3></div><p class="plan-desc">For your phone and laptop.</p></div>
-        <div class="plan-price"><b data-price>4.99 USDT</b><span>/mo</span></div><p class="plan-total" data-total aria-live="polite">for 1 month</p>
-        <dl class="plan-specs"><div><dt>Traffic</dt><dd>250 GB per month</dd></div><div><dt>Speed</dt><dd>up to 50 Mbps</dd></div><div><dt>Devices</dt><dd>2</dd></div></dl><span></span>
+        <div class="plan-price"><b data-price>4.99 USDT</b><span>/mo</span></div><p class="plan-total" data-total aria-live="polite">for 1 month</p>
+        <dl class="plan-specs"><div><dt>Traffic</dt><dd>250 GB per month</dd></div><div><dt>Speed</dt><dd>up to 50 Mbps</dd></div><div><dt>Devices</dt><dd>2</dd></div></dl><span></span>
         <a class="btn btn-quiet" href="https://t.me/TheRavenVPNBot?start=en_plan_start" data-umami-event="pricing_plan_click">Choose Start</a>
       </article><article class="plan is-featured" data-prices="7.99,7.19,6.39,5.59" data-totals="7.99,21.57,38.35,67.12">
         <div><div class="plan-top"><h3>Standard</h3><span class="badge">Recommended</span></div><p class="plan-desc">More data for everyday use.</p></div>
-        <div class="plan-price"><b data-price>7.99 USDT</b><span>/mo</span></div><p class="plan-total" data-total aria-live="polite">for 1 month</p>
-        <dl class="plan-specs"><div><dt>Traffic</dt><dd>500 GB per month</dd></div><div><dt>Speed</dt><dd>up to 100 Mbps</dd></div><div><dt>Devices</dt><dd>4</dd></div></dl><span></span>
+        <div class="plan-price"><b data-price>7.99 USDT</b><span>/mo</span></div><p class="plan-total" data-total aria-live="polite">for 1 month</p>
+        <dl class="plan-specs"><div><dt>Traffic</dt><dd>500 GB per month</dd></div><div><dt>Speed</dt><dd>up to 100 Mbps</dd></div><div><dt>Devices</dt><dd>4</dd></div></dl><span></span>
         <a class="btn btn-primary" href="https://t.me/TheRavenVPNBot?start=en_plan_standard" data-umami-event="pricing_plan_click">Choose Standard</a>
       </article><article class="plan" data-prices="11.99,10.79,9.59,8.39" data-totals="11.99,32.37,57.55,100.72">
         <div><div class="plan-top"><h3>Pro</h3></div><p class="plan-desc">For heavier use across more devices.</p></div>
-        <div class="plan-price"><b data-price>11.99 USDT</b><span>/mo</span></div><p class="plan-total" data-total aria-live="polite">for 1 month</p>
-        <dl class="plan-specs"><div><dt>Traffic</dt><dd>1000 GB per month</dd></div><div><dt>Speed</dt><dd>up to 200 Mbps</dd></div><div><dt>Devices</dt><dd>6</dd></div></dl><span></span>
+        <div class="plan-price"><b data-price>11.99 USDT</b><span>/mo</span></div><p class="plan-total" data-total aria-live="polite">for 1 month</p>
+        <dl class="plan-specs"><div><dt>Traffic</dt><dd>1000 GB per month</dd></div><div><dt>Speed</dt><dd>up to 200 Mbps</dd></div><div><dt>Devices</dt><dd>6</dd></div></dl><span></span>
         <a class="btn btn-quiet" href="https://t.me/TheRavenVPNBot?start=en_plan_pro" data-umami-event="pricing_plan_click">Choose Pro</a>
       </article></div>
-    <div class="trial"><div><h3>One-day trial - 1.49 USDT</h3><p>10 GB, up to 25 Mbps, 2 devices. Available once per Telegram account.</p></div><a class="btn btn-quiet" href="https://t.me/TheRavenVPNBot?start=en_plan_trial" data-umami-event="trial_click">Try it</a></div>
+    <div class="trial"><div><h3>One-day trial - 1.49 USDT</h3><p>10 GB, up to 25 Mbps, 2 devices. Available once per Telegram account.</p></div><a class="btn btn-quiet" href="https://t.me/TheRavenVPNBot?start=en_plan_trial" data-umami-event="trial_click">Try it</a></div>
     <p class="pay-note"><svg class="icon"><use href="#i-card"/></svg>Pay in the bot: Telegram Stars or crypto through CryptoBot.</p>
   </div></section>
   <section class="section" id="faq"><div class="wrap faq-grid"><div><h2 class="h2">Common questions</h2><p>More answers on <a href="../en/faq/">our FAQ page</a>.</p></div>
@@ -273,7 +273,7 @@
         </details>
         <details class="faq-item" data-umami-event="faq_open">
           <summary><span>Can I test it first?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
-          <p>Yes. A 1-day trial costs 1.49 USDT and includes 10 GB, speeds up to 25 Mbps and 2 devices. Available once per Telegram account.</p>
+          <p>Yes. A 1-day trial costs 1.49 USDT and includes 10 GB, speeds up to 25 Mbps and 2 devices. Available once per Telegram account.</p>
         </details>
         <details class="faq-item" data-umami-event="faq_open">
           <summary><span>Which payment methods are available?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
@@ -286,7 +286,7 @@
       </div></div></section>
     <section class="section" aria-labelledby="final-title">
     <div class="wrap final-grid">
-      <div><h2 class="h2" id="final-title">Try Raven VPN for 1.49 USDT</h2><p>One day, 10 GB and 2 devices. Choose a longer plan in the same bot when you're ready.</p><a class="btn btn-primary" href="https://t.me/TheRavenVPNBot?start=en_plan_trial" data-umami-event="trial_click"><svg class="icon"><use href="#i-send"/></svg>Open bot</a></div>
+      <div><h2 class="h2" id="final-title">Try Raven VPN for 1.49 USDT</h2><p>One day, 10 GB and 2 devices. Choose a longer plan in the same bot when you're ready.</p><a class="btn btn-primary" href="https://t.me/TheRavenVPNBot?start=en_plan_trial" data-umami-event="trial_click"><svg class="icon"><use href="#i-send"/></svg>Open bot</a></div>
       <div class="final-visual" id="final-visual"><img src="../assets/img/raven-phone.webp" width="720" height="605" alt="" loading="lazy"><div class="key-stage" id="key-stage" aria-hidden="true"></div></div>
     </div>
   </section>
@@ -295,7 +295,7 @@
   </main>
 
   <footer class="site-footer"><div class="wrap"><div class="footer-grid footer-grid-en">
-    <div class="footer-brand"><a class="brand" href="../en/"><img src="../assets/img/logo.webp" width="36" height="36" alt=""><span>Raven VPN</span></a><p>VPN access and payments through Telegram.</p></div>
+    <div class="footer-brand"><a class="brand" href="../en/"><img src="../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a><p>VPN access and payments through Telegram.</p></div>
     <div class="footer-group"><h3>Product</h3><ul><li><a href="../en/pricing/">Pricing</a></li><li><a href="../en/setup/">Setup</a></li><li><a href="../en/how-it-works/">How it works</a></li></ul></div><div class="footer-group"><h3>Help</h3><ul><li><a href="../en/support/">Support</a></li><li><a href="../en/faq/">FAQ</a></li></ul></div><div class="footer-group"><h3>Legal</h3><ul><li><a href="../en/privacy/" data-umami-event="legal_click">Privacy</a></li><li><a href="../en/terms/" data-umami-event="legal_click">Terms and rules</a></li></ul></div>
   </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
 
