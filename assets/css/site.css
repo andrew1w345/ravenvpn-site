@@ -675,3 +675,12 @@ thead { background: var(--surface); }
 @media (max-width: 380px) {
   .page-hero h1 { font-size: 30px; line-height: 36px; }
 }
+
+/* Invite page /i/ */
+.invite .text-page { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.invite .lead { margin-inline: auto; }
+.invite-raven { width: 220px; height: auto; margin-bottom: 8px; }
+.invite-specs { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; font-size: 17px; }
+.invite .cta-row { justify-content: center; }
+.invite-note { margin-top: 16px; color: var(--muted); font-size: 15px; }
+.invite [hidden] { display: none !important; }

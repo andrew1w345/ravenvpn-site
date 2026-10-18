@@ -30,7 +30,7 @@
   <link rel="preload" href="../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
   try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
-  <link rel="stylesheet" href="../assets/css/site.css?v=f0cd81422a09">
+  <link rel="stylesheet" href="../assets/css/site.css?v=0d1c1fe40cde">
   <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
   <script type="application/ld+json">[
   {
@@ -130,7 +130,19 @@
 
           <section>
             <h2>Что нужно для сервиса</h2>
-            <p>Для работы сервиса используются Telegram ID, состояние подписок и устройств, а также счётчики трафика.</p>
+            <p>Для работы сервиса используются Telegram ID или адрес почты, состояние подписок и устройств, а также счётчики трафика.</p>
+          </section>
+          <section>
+            <h2>Кабинет и вход по почте</h2>
+            <p>В кабинет можно войти через Telegram или по почте и паролю. Пароль хранится только в виде криптографического хеша, исходный пароль из него не восстановить. Для входа в браузере используется служебная cookie сеанса. О новом входе в аккаунт приходит уведомление в Telegram или письмом.</p>
+          </section>
+          <section>
+            <h2>Письма</h2>
+            <p>Коды подтверждения и уведомления для аккаунтов без Telegram отправляются письмом через почтовый сервис Resend.</p>
+          </section>
+          <section>
+            <h2>Удаление аккаунта</h2>
+            <p>Удалить аккаунт можно в профиле кабинета или на странице <a href="https://ravenvpn.site/app/#/account/delete">ravenvpn.site/app/#/account/delete</a>. Удаляются способы входа, имя и устройства, ссылки подключения перестают работать. Записи о платежах сохраняются: они нужны для возвратов.</p>
           </section>
           <section>
             <h2>Платежи</h2>
