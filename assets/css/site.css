@@ -93,6 +93,11 @@ p { margin: 0; }
 .nav a { text-decoration: none; color: var(--muted); font-size: 16px; transition: color var(--ease); }
 .nav a:hover { color: var(--fg); }
 .header-actions { display: flex; align-items: center; gap: 12px; }
+/* The cabinet is RU-only and answers only through a VPN: the entry fades in after the probe instead of holding an empty slot. */
+#cabinet-entry { flex: none; animation: cabinet-in 0.2s ease; }
+#cabinet-entry[hidden] { display: none; }
+@keyframes cabinet-in { from { opacity: 0; } }
+.header-bot > .icon { display: none; }
 .theme-toggle {
   width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--line);
   background: transparent; color: var(--fg); display: grid; place-items: center; cursor: pointer;
@@ -659,6 +664,9 @@ thead { background: var(--surface); }
   .header-row { gap: 8px; }
   .header-actions { gap: 8px; }
   .header-actions .btn { padding-inline: 10px; font-size: 14px; }
+  .header-actions:has(#cabinet-entry:not([hidden])) .header-bot { width: 40px; padding: 0; }
+  .header-actions:has(#cabinet-entry:not([hidden])) .header-bot > .icon { display: block; width: 18px; height: 18px; }
+  .header-actions:has(#cabinet-entry:not([hidden])) .header-bot > span { display: none; }
   .language { font-size: 13px; min-height: 40px; }
   .language-full { display: none; }
   .language-short { display: inline; }
