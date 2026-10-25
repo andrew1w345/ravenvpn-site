@@ -23,7 +23,9 @@
   let expired = false;
   const early = setTimeout(fallback, 3000);
   const timer = setTimeout(() => { expired = true; ctrl.abort(); }, 15000);
-  fetch(`${link.dataset.api}/me`, { credentials: "include", cache: "no-store", signal: ctrl.signal })
+  let cookieBlocked = false;
+  try { cookieBlocked = !!localStorage.getItem("raven-browser-no-cookie"); } catch { /* unavailable storage */ }
+  fetch(`${link.dataset.api}/me`, { credentials: cookieBlocked ? "omit" : "include", cache: "no-store", signal: ctrl.signal })
     .then((response) => {
       if (expired || (response.status !== 200 && response.status !== 401)) return fallback();
       show(response.status === 200);

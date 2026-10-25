@@ -13,6 +13,13 @@
     try { localStorage.setItem("raven-error-installation", installation); } catch { /* keep in memory */ }
   }
   let sender = async body => {
+    let fallback = false;
+    try { fallback = sessionStorage.getItem("raven-browser-fallback") === "1"
+      || Number(localStorage.getItem("raven-browser-fallback-until")) > Date.now(); } catch { /* direct until the app selects a path */ }
+    if (fallback && body.source === "cabinet" && !window.RavenApp && !/[?&]host=app(?:&|$)/.test(location.search)) {
+      const module = await import("./static/cabinet-entry-fallback.js");
+      return module.sendError(body);
+    }
     const response = await fetch("https://api.ravenvpn.site/api/app/v1/errors", {
       method: "POST", headers: { "Content-Type": "application/json", "X-Raven-App": "1" },
       body: JSON.stringify(body), credentials: "omit", cache: "no-store", referrerPolicy: "no-referrer",
