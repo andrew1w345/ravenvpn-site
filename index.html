@@ -31,7 +31,7 @@
   <link rel="preload" href="assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
   try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
-  <link rel="stylesheet" href="assets/css/site.css?v=c746db0afe66">
+  <link rel="stylesheet" href="assets/css/site.css?v=14a60faecc85">
   <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
   <script type="application/ld+json">[
   {
@@ -232,16 +232,6 @@
           <p>Поможем с оплатой и настройкой: напишите в <a href="https://t.me/RavenVPN_support_bot" data-umami-event="support_click">@RavenVPN_support_bot</a>, можно со скриншотом.</p>
         </article>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="android">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Приложение для Android</h2>
-        <p>Бета-версия нашего приложения: само выбирает способ подключения, вход по почте или через Telegram, российские приложения можно пустить мимо VPN.</p>
-      </div>
-      <a class="btn btn-quiet" href="./android/" data-umami-event="android_page_click">Скачать для Android</a>
     </div>
   </section>
 
@@ -464,6 +454,15 @@
   </section>
 
 
+  <section class="section app-promo" id="android" data-android-only hidden>
+    <div class="wrap">
+      <a class="app-promo-card" href="./android/" data-umami-event="android_page_click">
+        <img class="app-icon" src="assets/img/apple-touch-raven.png" width="180" height="180" alt="">
+        <span class="app-promo-text"><strong>Raven VPN для Android</strong><span>Бета. Само выбирает подключение, вход по почте или через Telegram.</span></span>
+        <span class="btn btn-primary btn-small">Скачать</span>
+      </a>
+    </div>
+  </section>
   <section class="section" id="reviews" aria-labelledby="reviews-title">
     <div class="wrap reviews-grid">
       <div class="reviews-intro">

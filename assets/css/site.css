@@ -129,6 +129,30 @@ p { margin: 0; }
 .hero-actions .text-link + .text-link { grid-area: 3 / 2; }
 .hero-note { grid-area: 2 / 1 / 3 / 3; font-size: 15px; line-height: 22px; color: var(--muted); }
 .android-download { margin-top: 28px; display: grid; justify-items: start; gap: 10px; }
+.app-icon { width: 72px; height: 72px; flex: none; border-radius: 22%; box-shadow: 0 0 0 1px var(--line); }
+.app-title { display: flex; align-items: center; gap: 20px; }
+.android-hero { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px 64px; align-items: center; }
+.phone-shot { margin: 0; width: 280px; padding: 10px; border-radius: 38px; background: var(--stage); border: 1px solid var(--stage-line); box-shadow: 0 28px 60px -28px var(--floor); }
+.phone-shot img { display: block; width: 100%; height: auto; border-radius: 28px; }
+.section.app-promo { padding-block: 48px; }
+.app-promo-card { display: flex; align-items: center; gap: 20px; max-width: 760px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); color: inherit; text-decoration: none; transition: border-color var(--ease); }
+.app-promo-card:hover { border-color: var(--fg); }
+.app-promo-card .app-icon { width: 64px; height: 64px; }
+.app-promo-text { display: grid; gap: 4px; flex: 1; min-width: 0; }
+.app-promo-text strong { font-size: 19px; line-height: 26px; }
+.app-promo-text span { color: var(--muted); font-size: 15px; line-height: 22px; }
+@media (max-width: 900px) {
+  .android-hero { grid-template-columns: minmax(0, 1fr); }
+  .phone-shot { justify-self: center; width: min(260px, 72vw); }
+}
+@media (max-width: 640px) {
+  .app-icon { width: 56px; height: 56px; }
+  .app-title { gap: 14px; }
+  .section.app-promo { padding-block: 32px; }
+  .app-promo-card { flex-wrap: wrap; gap: 14px; padding: 16px; }
+  .app-promo-card .app-icon { width: 52px; height: 52px; }
+  .app-promo-card .btn { flex-basis: 100%; }
+}
 .android-download .hero-note { grid-area: auto; margin: 0; max-width: 560px; text-align: left; }
 .hero-visual { position: relative; width: 100%; max-width: 600px; justify-self: end; aspect-ratio: 1200 / 1068; }
 .hero-visual::before {
