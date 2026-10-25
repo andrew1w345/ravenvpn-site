@@ -1,0 +1,1 @@
+import{b as r,a as t}from"./fallback-DfU0xyHZ.js";async function e(){if(!r)return!1;try{const a=await t(r)("GET","/me",void 0,{},12600);return a.status===401||a.status===200}catch{return!1}}export{e as available};
