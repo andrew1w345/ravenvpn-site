@@ -122,12 +122,12 @@ p { margin: 0; }
   text-decoration-thickness: 6px; text-underline-offset: 11px; text-decoration-skip-ink: none;
 }
 .hero .lead { margin-top: 30px; font-size: 20px; line-height: 31px; color: var(--muted); max-width: 540px; }
-/* Telegram and the site are equal entries; the trial note sits under both, links below it. */
+/* Telegram and the site are equal entries; the trial note sits under both, a link below it. */
 .hero-actions { margin-top: 38px; display: grid; grid-template-columns: auto auto; justify-content: start; align-items: center; gap: 12px 28px; }
 .hero-buttons { grid-area: 1 / 1 / 2 / 3; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .hero-actions .text-link { grid-area: 3 / 1; }
-.hero-actions .text-link + .text-link { grid-area: 3 / 2; }
 .hero-note { grid-area: 2 / 1 / 3 / 3; font-size: 15px; line-height: 22px; color: var(--muted); }
+.hero-actions .hero-note a { color: var(--fg); font-weight: 600; text-underline-offset: 3px; white-space: nowrap; }
 .android-download { margin-top: 28px; display: grid; justify-items: start; gap: 10px; }
 .app-icon { width: 72px; height: 72px; flex: none; border-radius: 22%; box-shadow: 0 0 0 1px var(--line); }
 .app-title { display: flex; align-items: center; gap: 20px; }
@@ -584,7 +584,6 @@ p { margin: 0; }
   .hero-buttons { grid-area: 1 / 1; grid-template-columns: minmax(0, 1fr); }
   .hero-note { grid-area: 2 / 1; margin-top: 10px; text-align: center; }
   .hero-actions .text-link { grid-area: 3 / 1; justify-self: center; margin-top: 6px; }
-  .hero-actions .text-link + .text-link { grid-area: 4 / 1; }
   .hero-visual { max-width: 400px; margin-top: 8px; }
   .facts-grid { grid-template-columns: minmax(0, 1fr); }
   .fact { padding: 18px 0; }
