@@ -8,6 +8,9 @@
     set(key, value) { try { localStorage.setItem(key, value); } catch (e) {} },
   };
 
+  // The Android app link under the hero is shown only on Android phones.
+  if (/Android/i.test(navigator.userAgent)) document.querySelectorAll("[data-android-only]").forEach((el) => { el.hidden = false; });
+
   // Theme: follows the system until the viewer picks one; the switch cross-fades where supported.
   const media = window.matchMedia("(prefers-color-scheme: dark)");
   const savedTheme = store.get("raven-theme");

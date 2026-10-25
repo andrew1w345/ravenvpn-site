@@ -78,6 +78,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/how-it-works/"/>
   </url>
   <url>
+    <loc>https://ravenvpn.site/android/</loc>
+    <lastmod>2026-10-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/android/"/>
+  </url>
+  <url>
     <loc>https://ravenvpn.site/setup/</loc>
     <lastmod>2026-10-16</lastmod>
     <xhtml:link rel="alternate" hreflang="ru" href="https://ravenvpn.site/setup/"/>

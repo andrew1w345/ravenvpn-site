@@ -53,7 +53,8 @@
     const target = event.target;
     if (target && target !== window) {
       if (target.tagName === "SCRIPT" || target.tagName === "LINK") capture("chunk_load", "module_resource_failed");
-    } else capture("uncaught", event.error || event.message);
+    // A script injected by the host without CORS reports only "Script error.": no source to act on.
+    } else if (!(event.message === "Script error." && !event.filename && !event.error)) capture("uncaught", event.error || event.message);
   }, true);
   window.addEventListener("unhandledrejection", event => capture("unhandledrejection", event.reason));
   let watchdog;
