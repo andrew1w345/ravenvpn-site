@@ -289,7 +289,7 @@ p { margin: 0; }
 .tg-menu { height: 32px; padding: 0 12px; border-radius: 16px; background: #2B86DD; color: #fff; display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 13px; }
 .tg-field { flex: 1; height: 36px; border-radius: 18px; background: #1B2733; color: #6F8296; display: flex; align-items: center; padding: 0 14px; font-size: 13.5px; }
 
-/* Connection page (dark theme), tokens from landing/connect/app.css */
+/* Connection page preview (dark theme) */
 .cp { height: 100%; background: #15181C; color: #F1F2F3; }
 .cp-header { display: flex; align-items: center; gap: 9px; height: 44px; padding: 0 18px; border-bottom: 1px solid #2A3038; font-size: 15px; font-weight: 700; }
 .cp-header img { width: 26px; height: 26px; border-radius: 50%; }
