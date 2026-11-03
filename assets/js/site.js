@@ -8,8 +8,9 @@
     set(key, value) { try { localStorage.setItem(key, value); } catch (e) {} },
   };
 
-  // The Android app link under the hero is shown only on Android phones.
+  // App links on the home page are shown only on the platform they install on.
   if (/Android/i.test(navigator.userAgent)) document.querySelectorAll("[data-android-only]").forEach((el) => { el.hidden = false; });
+  if (/Windows NT/i.test(navigator.userAgent)) document.querySelectorAll("[data-windows-only]").forEach((el) => { el.hidden = false; });
 
   // Theme: follows the system until the viewer picks one; the switch cross-fades where supported.
   const media = window.matchMedia("(prefers-color-scheme: dark)");
