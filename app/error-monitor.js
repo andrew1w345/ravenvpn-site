@@ -49,10 +49,23 @@
       context: { screen, state: document.visibilityState === "hidden" ? "background" : "foreground" } });
     clearTimeout(timer); timer = setTimeout(flush, 50);
   }
+  // A file missing on the server (stale page after a deploy) is a fault. A request that
+  // never reaches the server is a dropped connection: VPN switch, captive network.
+  let resourceFailed = false;
+  async function checkResource(url) {
+    try {
+      const response = await fetch(url, { cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15000) });
+      if (!response.ok) capture("chunk_load", "module_resource_failed");
+    } catch { /* connection failure: not a site fault */ }
+  }
   window.addEventListener("error", event => {
     const target = event.target;
     if (target && target !== window) {
-      if (target.tagName === "SCRIPT" || target.tagName === "LINK") capture("chunk_load", "module_resource_failed");
+      if (target.tagName === "SCRIPT" || target.tagName === "LINK") {
+        resourceFailed = true;
+        const url = target.src || target.href;
+        if (url) void checkResource(url);
+      }
     // A script injected by the host without CORS reports only "Script error.": no source to act on.
     } else if (!(event.message === "Script error." && !event.filename && !event.error)) capture("uncaught", event.error || event.message);
   }, true);
@@ -61,7 +74,8 @@
   function watch() {
     clearTimeout(watchdog);
     watchdog = setTimeout(() => {
-      if (document.visibilityState === "hidden") return;
+      // An empty page after a failed file is that failure, reported (or not) above.
+      if (document.visibilityState === "hidden" || resourceFailed || !navigator.onLine) return;
       const root = document.getElementById("app"), page = root?.querySelector(".page"), main = root?.querySelector("main");
       if (!root?.firstElementChild || !page?.firstElementChild || (main && main.getBoundingClientRect().height < 24 && window.innerHeight >= 320)) {
         capture("blank_root", "cabinet_root_not_rendered");
