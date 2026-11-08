@@ -79,7 +79,10 @@
     // A script injected by the host without CORS reports only "Script error.": no source to act on.
     } else if (!(event.message === "Script error." && !event.filename && !event.error)) capture("uncaught", event.error || event.message);
   }, true);
-  window.addEventListener("unhandledrejection", event => capture("unhandledrejection", event.reason));
+  // A skipped View Transition (hidden tab, newer navigation, a browser without opt-in) rejects
+  // a promise the page may not hold, while the screen still changes: only the animation is lost.
+  const skippedTransition = reason => /Transition was (?:aborted|skipped)|Skipped ViewTransition/.test(String(reason?.message ?? reason));
+  window.addEventListener("unhandledrejection", event => { if (!skippedTransition(event.reason)) capture("unhandledrejection", event.reason); });
   let watchdog;
   function watch() {
     clearTimeout(watchdog);
