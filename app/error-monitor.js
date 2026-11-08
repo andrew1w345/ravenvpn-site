@@ -52,10 +52,18 @@
   // A file missing on the server (stale page after a deploy) is a fault. A request that
   // never reaches the server is a dropped connection: VPN switch, captive network.
   let resourceFailed = false;
-  async function checkResource(url) {
+  async function checkResource(url, kind) {
     try {
       const response = await fetch(url, { cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15000) });
-      if (!response.ok) capture("chunk_load", "module_resource_failed");
+      // A redirect to a captive portal can return HTML with 200 too. Only
+      // classify a same-origin, unredirected resource as a deployment fault.
+      if (response.redirected || new URL(url, location.href).origin !== location.origin) return;
+      if (!response.ok) { capture("chunk_load", "module_resource_failed"); return; }
+      const mime = (response.headers.get("content-type") || "").split(";", 1)[0].trim().toLowerCase();
+      const expected = kind === "script"
+        ? /^(?:(?:text|application)\/(?:x-)?(?:java|ecma)script|text\/(?:javascript1\.[0-5]|jscript|livescript))$/
+        : /^text\/css$/;
+      if (kind && !expected.test(mime)) capture("chunk_load", "module_resource_bad_mime");
     } catch { /* connection failure: not a site fault */ }
   }
   window.addEventListener("error", event => {
@@ -64,7 +72,9 @@
       if (target.tagName === "SCRIPT" || target.tagName === "LINK") {
         resourceFailed = true;
         const url = target.src || target.href;
-        if (url) void checkResource(url);
+        const kind = target.tagName === "SCRIPT" || target.rel === "modulepreload" || target.as === "script" ? "script"
+          : target.rel === "stylesheet" || target.as === "style" ? "style" : null;
+        if (url) void checkResource(url, kind);
       }
     // A script injected by the host without CORS reports only "Script error.": no source to act on.
     } else if (!(event.message === "Script error." && !event.filename && !event.error)) capture("uncaught", event.error || event.message);
