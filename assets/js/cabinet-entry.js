@@ -3,15 +3,12 @@
   if (!link) return;
 
   // The browser session is an HttpOnly cookie on the API domain.
-  // A single credentialed probe also serves the invite page.
-  // Sign-in is visible in the HTML; availability only changes the session label
-  // and the invite page, never hides the entry while the network is pending.
+  // Sign-in and email signup are visible in the HTML while the network is pending.
+  // The probe changes the header label and remembers a working fallback path.
   const ctrl = new AbortController();
   const show = (signedIn) => {
     if (signedIn) link.textContent = link.dataset.sessionLabel;
     link.hidden = false;
-    const signup = document.getElementById("invite-mail");
-    if (signup) { signup.hidden = false; document.getElementById("invite-vpn").hidden = true; }
   };
   // Without VPN the blocked direct API hangs until the timeout, so the
   // encrypted fallback is also asked once the direct probe is slow.

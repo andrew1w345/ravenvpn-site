@@ -55,7 +55,7 @@
 ]</script>
   <script defer src="../assets/js/site.js?v=8a51d1a482ed"></script>
   <script defer src="../assets/js/source-label.js?v=f230d7b03e04"></script>
-  <script defer src="../assets/js/cabinet-entry.js?v=c967079114cb"></script>
+  <script defer src="../assets/js/cabinet-entry.js?v=3958d19615b5"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
@@ -112,7 +112,7 @@
       <div class="wrap text-page">
         <img class="invite-raven" src="../assets/img/raven-phone.webp" width="720" height="605" alt="">
         <h1>Вас пригласили в Raven VPN</h1>
-        <p class="lead">Откройте бота по ссылке и получите 7 дней Про бесплатно.</p>
+        <p class="lead">Зарегистрируйтесь по почте или продолжите в Telegram.</p>
         <p class="lead">VPN, который работает и на мобильном интернете с белыми списками.</p>
         <ul class="invite-specs">
           <li>Бесплатный пробный период - 3 дня Про</li>
@@ -120,10 +120,10 @@
           <li>Оплата картой и СБП</li>
         </ul>
         <div class="cta-row">
-          <a class="btn btn-primary" id="invite-tg" href="https://t.me/GetRavenBot" data-umami-event="invite_open_bot">Открыть в Telegram</a>
-          <a class="btn btn-quiet" id="invite-mail" href="/app/#/login/email?mode=signup" hidden data-umami-event="invite_signup_email">Зарегистрироваться по почте</a>
+          <a class="btn btn-primary" id="invite-mail" href="/app/#/login/email?mode=signup" data-umami-event="invite_signup_email">Зарегистрироваться по почте</a>
+          <a class="btn btn-quiet" id="invite-tg" href="https://t.me/GetRavenBot" data-umami-event="invite_open_bot">Продолжить в Telegram</a>
         </div>
-        <p class="invite-note" id="invite-vpn">Регистрация по почте сейчас работает только с включённым VPN.</p>
+        <p class="invite-note">Для регистрации и покупки Telegram не нужен. Чтобы получить 7 дней Про в подарок, привяжите Telegram.</p>
         <p class="invite-note">Пригласивший получит 21 день подписки, когда вы оплатите тариф.</p>
       </div>
     </section>
@@ -132,6 +132,7 @@
         const code = new URLSearchParams(location.search).get("c") || "";
         if (/^[A-Za-z0-9_-]{4,32}$/.test(code)) {
           document.getElementById("invite-tg").href = "https://t.me/GetRavenBot?start=ref_" + encodeURIComponent(code);
+          document.getElementById("invite-mail").href += "&invite=" + encodeURIComponent(code);
           try { localStorage.setItem("raven-invite", code); } catch {}
         }
       })();
