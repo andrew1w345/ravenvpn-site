@@ -177,8 +177,8 @@
 
   }
 
-  // Final block: procedural low-poly key (Three.js, loaded near the viewport). The raven picture stays
-  // as the static fallback for reduced motion, weak devices and browsers without WebGL.
+  // Final block: procedural low-poly key (standalone WebGL module, loaded near the viewport). The raven
+  // picture stays as the static fallback for reduced motion, weak devices and browsers without WebGL.
   const finalVisual = document.getElementById("final-visual");
   const keyStage = document.getElementById("key-stage");
   if (finalVisual && keyStage) {
@@ -191,43 +191,8 @@
   const keyAllowed = () => hasWebGL && motionOk() && !weakDevice();
   const loadKey = async () => {
     if (keyLoaded) return; keyLoaded = true;
-    const THREE = await import("./vendor/three.module.js");
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    keyStage.appendChild(renderer.domElement);
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
-    camera.position.set(0, 0.4, 13);
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x2a2238, 1.25));
-    const sun = new THREE.DirectionalLight(0xffffff, 2.2); sun.position.set(-4, 6, 8); scene.add(sun);
-    const rim = new THREE.DirectionalLight(0xc9b8ff, 1.1); rim.position.set(5, -2, -6); scene.add(rim);
-    const mat = new THREE.MeshStandardMaterial({ color: 0x8b74c9, flatShading: true, roughness: 0.5, metalness: 0.25 });
-    const key = new THREE.Group();
-    const bow = new THREE.Mesh(new THREE.TorusGeometry(1.15, 0.38, 5, 9), mat); bow.position.x = -2.6; key.add(bow);
-    const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.36, 0.36, 0.34, 6), mat); collar.rotation.z = Math.PI / 2; collar.position.x = -1.18; key.add(collar);
-    const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 4.1, 6), mat); shaft.rotation.z = Math.PI / 2; shaft.position.x = 1.0; key.add(shaft);
-    const bit1 = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.9, 0.34), mat); bit1.position.set(2.45, -0.5, 0); key.add(bit1);
-    const bit2 = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.62, 0.34), mat); bit2.position.set(1.75, -0.36, 0); key.add(bit2);
-    const tip = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.12, 0.3, 6), mat); tip.rotation.z = Math.PI / 2; tip.position.x = 3.2; key.add(tip);
-    key.rotation.z = 0.42; key.position.y = 0.15;
-    scene.add(key);
-    const resize = () => {
-      const w = keyStage.clientWidth || 300, h = keyStage.clientHeight || 300;
-      renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
-      renderer.render(scene, camera);
-    };
-    new ResizeObserver(resize).observe(keyStage); resize();
-    key.rotation.y = -0.55;
-    let raf = 0;
-    const frame = () => {
-      key.rotation.y += 0.0065;
-      renderer.render(scene, camera);
-      raf = requestAnimationFrame(frame);
-    };
-    keyApi = {
-      start() { cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); },
-      stop() { cancelAnimationFrame(raf); },
-    };
+    const { mountKey } = await import("./key-3d.js");
+    keyApi = mountKey(keyStage);
     syncKey();
   };
   // Without the key the raven picture is the final visual: drop the head-time key-pending guess.
