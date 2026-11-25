@@ -31,7 +31,7 @@
   <link rel="preload" href="assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
   <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
   try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
-  <link rel="stylesheet" href="assets/css/site.css?v=c01449f4963a">
+  <link rel="stylesheet" href="assets/css/site.css?v=fee4e5cffbc4">
   <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
   <script type="application/ld+json">[
   {
@@ -62,7 +62,7 @@
         "name": "Как подключить Raven VPN?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "После оплаты откройте «Устройства» в боте, добавьте устройство и перейдите на его страницу подключения. Для каждого устройства нужна отдельная ссылка."
+          "text": "После активации пробного периода или оплаты откройте «Устройства» в боте или в кабинете на сайте, добавьте устройство и перейдите на его страницу подключения. Для каждого устройства нужна отдельная ссылка."
         }
       },
       {
@@ -78,7 +78,7 @@
         "name": "Какие приложения поддерживаются?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Рекомендуем Happ и Incy: подписка и правила для российских сайтов добавляются автоматически. Подойдут и другие совместимые клиенты."
+          "text": "Рекомендуем Happ и Incy: подписка и правила для российских сайтов добавляются автоматически. Для Android и Windows также есть наше приложение Raven VPN, подойдут и другие совместимые клиенты."
         }
       },
       {
@@ -94,7 +94,7 @@
         "name": "Что делать, если VPN не подключается?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Проверьте, что подписка активна и в приложении выбран профиль Raven VPN. Попробуйте другую сеть. Если нужно добавить профиль заново, перевыпустите ссылку в разделе «Устройства» или напишите в поддержку."
+          "text": "Выберите «Авто - Обычный VPN», а при белых списках - «Авто - Белые списки». Попробуйте другую сеть. Не помогло - перевыпустите ссылку в разделе «Устройства» или напишите в поддержку."
         }
       },
       {
@@ -102,7 +102,7 @@
         "name": "Какие способы оплаты доступны?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Банковская карта и СБП, Telegram Stars и CryptoBot. Доступные способы бот показывает при оплате."
+          "text": "Банковская карта и СБП, Telegram Stars и CryptoBot. Доступные способы показаны при оплате в боте или в кабинете на сайте."
         }
       }
     ]
@@ -150,7 +150,7 @@
     <a class="brand" href="./" aria-label="Raven VPN"><img src="assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a>
     <button class="menu-button theme-toggle" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
     <nav class="nav" id="main-navigation" data-nav-links aria-label="Разделы">
-      <a href="#features">Возможности</a><a href="#setup">Подключение</a><a href="#pricing">Тарифы</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a>
+      <a href="#features">Возможности</a><a href="#setup">Подключение</a><a href="#pricing">Тарифы</a><a href="#reviews">Отзывы</a><a href="#faq">Вопросы</a><a href="blog/">Блог</a>
     </nav>
     <div class="header-actions">
       <div class="language-picker">
@@ -217,7 +217,7 @@
         <article class="feature">
           <svg class="icon"><use href="#i-split"/></svg>
           <h3>Российские сервисы напрямую</h3>
-          <p>В Happ и Incy сайты из белого списка открываются без VPN, на Android - и поддерживаемые российские приложения. Можно выбрать расширенный список российских сайтов.</p>
+          <p>В Happ и Incy российские сайты (банки, маркетплейсы, Госуслуги) открываются без VPN автоматически, на Android - и поддерживаемые российские приложения. При желании можно перейти на свои правила.</p>
         </article>
         <article class="feature">
           <svg class="icon"><use href="#i-globe"/></svg>
@@ -242,7 +242,7 @@
           <div class="steps" role="tablist" aria-label="Шаги подключения">
             <button class="step" role="tab" id="step-1" aria-selected="true" aria-controls="demo-screens" type="button">
               <span class="step-num">1</span><span class="step-title">Добавьте устройство</span>
-              <span class="step-text">После оплаты откройте в боте «Устройства» и нажмите «Добавить устройство».</span>
+              <span class="step-text">После активации пробного периода или оплаты откройте «Устройства» в боте или в кабинете на сайте и нажмите «Добавить устройство».</span>
               <span class="step-progress" aria-hidden="true"></span>
             </button>
             <button class="step" role="tab" id="step-2" aria-selected="false" aria-controls="demo-screens" tabindex="-1" type="button">
@@ -252,7 +252,7 @@
             </button>
             <button class="step" role="tab" id="step-3" aria-selected="false" aria-controls="demo-screens" tabindex="-1" type="button">
               <span class="step-num">3</span><span class="step-title">Настройте российские сайты</span>
-              <span class="step-text">Выберите, что открывать напрямую, и нажмите «Добавить в Happ». Подписка и правила добавятся сами.</span>
+              <span class="step-text">Оставьте готовый список российских сайтов или выберите свои правила и нажмите «Добавить в Happ». Подписка и правила добавятся сами.</span>
               <span class="step-progress" aria-hidden="true"></span>
             </button>
             <button class="step" role="tab" id="step-4" aria-selected="false" aria-controls="demo-screens" tabindex="-1" type="button">
@@ -315,7 +315,7 @@
                   </div>
                   <div class="cp-sec">
                     <div class="cp-sec-head"><span class="n">2</span><b>Приложение</b></div>
-                    <p class="cp-note">В Happ, Incy и FlClashX сайты из белого списка и поддерживаемые приложения открываются напрямую.</p>
+                    <p class="cp-note">В Happ и Incy российские сайты и поддерживаемые приложения открываются напрямую.</p>
                     <div class="cp-card sel-card tap" style="--tap: 1.9s">
                       <div class="cp-app"><span class="cp-ico">H</span><b>Happ</b><span class="cp-pill">Рекомендуем</span><span class="cp-radio"></span></div>
                       <p>Подписка и исключения добавляются автоматически.</p>
@@ -337,12 +337,9 @@
                     <h5>Российские сайты</h5>
                     <div class="cp-sub">Открывать напрямую:</div>
                     <div class="cp-opts">
-                      <div class="cp-opt unsel-opt preset"><span class="cp-radio"></span><span class="t">Только сайты белого списка</span></div>
                       <div class="cp-opt sel-opt tap" style="--tap: 0.8s"><span class="cp-radio"></span><span class="t">Расширенный список российских сайтов</span></div>
                       <div class="cp-opt"><span class="cp-radio"></span><span class="t">Свои правила</span></div>
                     </div>
-                    <div class="cp-row"><span>Доступ к Gemini</span><span class="cp-switch"></span></div>
-                    <p class="cp-small">Альтернативный маршрут для Google и YouTube. Только на этом устройстве.</p>
                     <p class="cp-hint">После добавления подписки выберите в приложении «Авто - Обычный VPN». Для сети с белыми списками используйте «Авто - Белые списки».</p>
                     <div class="cp-btns">
                       <div class="cp-btn">Установить Happ</div>
@@ -373,7 +370,7 @@
                   <div class="happ-row happ-sel tap" style="--tap: 0.7s"><span class="g"><svg class="icon"><use href="#i-globe"/></svg></span><div><b>⚡ Авто - Обычный VPN</b><small>VLESS / TCP / REALITY</small></div></div>
                   <div class="happ-row"><span class="g"><svg class="icon"><use href="#i-globe"/></svg></span><div><b>📶 Авто - Белые списки</b><small>VLESS / XHTTP / TLS</small></div></div>
                   <div class="happ-row"><span class="flag-nl"></span><div><b>Нидерланды</b><small>VLESS / TCP / REALITY</small></div></div>
-                  <div class="happ-row"><span class="flag-eu"><svg viewBox="0 0 26 18"><circle cx="13" cy="9" r="5" fill="none" stroke="#FFCC00" stroke-width="1.6" stroke-dasharray="1.2 1.4"/></svg></span><div><b>Резерв · EU</b><small>VLESS / XHTTP / TLS</small></div></div>
+                  <div class="happ-row"><span class="flag-de"></span><div><b>Германия</b><small>VLESS / TCP / REALITY</small></div></div>
                 </div>
               </div>
 
@@ -447,7 +444,7 @@
         </div>
         <a class="btn btn-quiet" href="https://t.me/GetRavenBot?start=ru_plan_trial" data-umami-event="trial_click">Попробовать</a>
       </div>
-      <p class="pay-note"><svg class="icon"><use href="#i-card"/></svg>Оплата в боте: банковская карта и СБП, Telegram Stars, CryptoBot.</p>
+      <p class="pay-note"><svg class="icon"><use href="#i-card"/></svg>Оплата в боте или в кабинете на сайте: банковская карта и СБП, Telegram Stars, CryptoBot.</p>
     </div>
   </section>
 
@@ -496,12 +493,12 @@
         <p>Больше ответов - <a href="./faq/">на странице FAQ</a>.</p>
       </div>
       <div class="faq-list">
-        <details class="faq-item" data-umami-event="faq_open"><summary>Как подключить Raven VPN?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>После оплаты откройте «Устройства» в боте, добавьте устройство и перейдите на его страницу подключения. Для каждого устройства нужна отдельная ссылка.</p></details>
+        <details class="faq-item" data-umami-event="faq_open"><summary>Как подключить Raven VPN?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>После активации пробного периода или оплаты откройте «Устройства» в боте или в кабинете на сайте, добавьте устройство и перейдите на его страницу подключения. Для каждого устройства нужна отдельная ссылка.</p></details>
         <details class="faq-item" data-umami-event="faq_open"><summary>Работают ли белые списки на мобильном интернете?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Да. Сервер «Белые списки» входит во все тарифы с отдельным лимитом: Старт - 10 ГБ, Стандарт - 20 ГБ, Про - 50 ГБ в месяц, в пробном периоде - 2 ГБ.</p></details>
-        <details class="faq-item" data-umami-event="faq_open"><summary>Какие приложения поддерживаются?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Рекомендуем Happ и Incy: подписка и правила для российских сайтов добавляются автоматически. Подойдут и другие совместимые клиенты.</p></details>
+        <details class="faq-item" data-umami-event="faq_open"><summary>Какие приложения поддерживаются?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Рекомендуем Happ и Incy: подписка и правила для российских сайтов добавляются автоматически. Для Android и Windows также есть наше приложение Raven VPN, подойдут и другие совместимые клиенты.</p></details>
         <details class="faq-item" data-umami-event="faq_open"><summary>Можно ли попробовать перед оплатой?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Да. Пробный период бесплатный: 3 дня тарифа Про, 30 ГБ, до 50 Мбит/⁠с, белые списки 2 ГБ, до 6 устройств. Доступен один раз, если вы ещё не покупали тариф. Нужен Telegram; без него - те же 3 дня за 15 ₽.</p></details>
-        <details class="faq-item" data-umami-event="faq_open"><summary>Что делать, если VPN не подключается?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Проверьте, что подписка активна и в приложении выбран профиль Raven VPN. Попробуйте другую сеть. Если нужно добавить профиль заново, перевыпустите ссылку в разделе «Устройства» или напишите в поддержку.</p></details>
-        <details class="faq-item" data-umami-event="faq_open"><summary>Какие способы оплаты доступны?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Банковская карта и СБП, Telegram Stars и CryptoBot. Доступные способы бот показывает при оплате.</p></details>
+        <details class="faq-item" data-umami-event="faq_open"><summary>Что делать, если VPN не подключается?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Выберите «Авто - Обычный VPN», а при белых списках - «Авто - Белые списки». Попробуйте другую сеть. Не помогло - перевыпустите ссылку в разделе «Устройства» или напишите в поддержку.</p></details>
+        <details class="faq-item" data-umami-event="faq_open"><summary>Какие способы оплаты доступны?<svg class="icon"><use href="#i-chevron"/></svg></summary><p>Банковская карта и СБП, Telegram Stars и CryptoBot. Доступные способы показаны при оплате в боте или в кабинете на сайте.</p></details>
       </div>
     </div>
   </section>
@@ -512,7 +509,10 @@
       <div>
         <h2 class="h2" id="final-title">Попробуйте Raven VPN бесплатно</h2>
         <p>Бесплатный пробный период - 3 дня тарифа Про.</p>
-        <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=ru_plan_trial" data-umami-event="trial_click"><svg class="icon"><use href="#i-send"/></svg>Открыть бота</a>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=ru_plan_trial" data-umami-event="trial_click"><svg class="icon"><use href="#i-send"/></svg>Открыть бота</a>
+          <a class="btn btn-quiet" href="/app/" data-umami-event="final_site_click">Начать на сайте</a>
+        </div>
       </div>
       <div class="final-visual" id="final-visual">
         <img src="assets/img/raven-phone.webp" width="720" height="605" alt="" loading="lazy">
@@ -526,7 +526,7 @@
 
   <footer class="site-footer"><div class="wrap"><div class="footer-grid">
     <div class="footer-brand"><a class="brand" href="./"><img src="assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a><p>VPN, который работает даже при белых списках.</p></div>
-    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="pricing/">Тарифы</a></li><li><a href="setup/">Настройка</a></li><li><a href="how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="support/">Поддержка</a></li><li><a href="faq/">FAQ</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="pricing/">Тарифы</a></li><li><a href="setup/">Настройка</a></li><li><a href="how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="support/">Поддержка</a></li><li><a href="faq/">FAQ</a></li><li><a href="blog/">Блог</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
   </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
 
 </body>

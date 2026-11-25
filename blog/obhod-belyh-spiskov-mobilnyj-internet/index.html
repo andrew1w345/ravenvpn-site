@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Белые списки мобильного интернета: как обойти на Android - Блог Raven VPN</title>
+  <meta name="description" content="Разбираем, чем белые списки отличаются от полного отключения связи, почему обычный VPN не подключается и как настроить рабочий обход на Android через Happ, Incy или приложение Raven VPN.">
+  <link rel="canonical" href="https://ravenvpn.site/blog/obhod-belyh-spiskov-mobilnyj-internet/">
+  <link rel="alternate" hreflang="ru" href="https://ravenvpn.site/blog/obhod-belyh-spiskov-mobilnyj-internet/">
+    <link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/blog/obhod-belyh-spiskov-mobilnyj-internet/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Raven VPN">
+  <meta property="og:title" content="Белые списки мобильного интернета: как обойти на Android - Блог Raven VPN">
+  <meta property="og:description" content="Разбираем, чем белые списки отличаются от полного отключения связи, почему обычный VPN не подключается и как настроить рабочий обход на Android через Happ, Incy или приложение Raven VPN.">
+  <meta property="og:url" content="https://ravenvpn.site/blog/obhod-belyh-spiskov-mobilnyj-internet/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="article:published_time" content="2026-11-25">
+  <meta property="article:modified_time" content="2026-11-25">
+  <meta property="og:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raven VPN - работает даже при белых списках">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Белые списки мобильного интернета: как обойти на Android - Блог Raven VPN">
+  <meta name="twitter:description" content="Разбираем, чем белые списки отличаются от полного отключения связи, почему обычный VPN не подключается и как настроить рабочий обход на Android через Happ, Incy или приложение Raven VPN.">
+  <meta name="twitter:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <link rel="icon" href="../../assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../../assets/img/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-raven.png" sizes="180x180">
+  <link rel="preload" href="../../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=fee4e5cffbc4">
+  <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
+  <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "logo": "https://ravenvpn.site/assets/img/logo-transparent.webp",
+    "sameAs": [
+      "https://t.me/TheRavenVPN",
+      "https://t.me/RavenVPNReviews",
+      "https://www.youtube.com/@TheRavenVPN"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "inLanguage": "ru"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Белые списки мобильного интернета в 2026 году: как они работают и как настроить обход на Android",
+    "description": "Разбираем, чем белые списки отличаются от полного отключения связи, почему обычный VPN не подключается и как настроить рабочий обход на Android через Happ, Incy или приложение Raven VPN.",
+    "url": "https://ravenvpn.site/blog/obhod-belyh-spiskov-mobilnyj-internet/",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ravenvpn.site/blog/obhod-belyh-spiskov-mobilnyj-internet/"
+    },
+    "datePublished": "2026-11-25",
+    "dateModified": "2026-11-25",
+    "inLanguage": "ru",
+    "image": "https://ravenvpn.site/assets/img/og-ru.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ravenvpn.site/assets/img/logo-transparent.webp"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Работает ли обход белых списков, если мобильный интернет отключили полностью?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет. Если базовая станция отключила передачу данных полностью и без VPN не открываются даже Госуслуги, карты и банки, ни один VPN-сервис не сможет установить соединение. Обход белых списков работает только тогда, когда оператор пропускает трафик к разрешённым российским сервисам."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Сколько трафика белых списков доступно в пробном периоде?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В пробном периоде доступно 3 дня тарифа Про: 30 ГБ обычного трафика, 2 ГБ для белых списков, скорость до 50 Мбит/с и до 6 устройств. С привязанным Telegram это бесплатно, без Telegram - 15 ₽."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Нужно ли выключать VPN в режиме белых списков, чтобы открыть банк или маркетплейс?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В Happ, Incy и приложении Raven VPN - нет: сайты из белого списка и поддерживаемые российские приложения на Android идут напрямую и не расходуют квоту белых списков."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему режим «Белые списки» не работает в Hiddify?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hiddify не поддерживает параметры XHTTP и шифрования, которые используются для профиля белых списков. Для этого режима рекомендуем Happ, Incy, v2rayNG или приложение Raven VPN для Android."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Что делать, если закончились гигабайты белых списков, а основной трафик остался?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Обычный VPN продолжит работать как обычно. Для активной платной подписки можно докупить пакет белых списков в боте или кабинете: 10 ГБ за 20 ₽, 50 ГБ за 100 ₽ или 100 ГБ за 200 ₽ до ближайшего месячного сброса."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Работают ли белые списки на iPhone и компьютере?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. На iPhone, iPad, Windows, macOS и Linux профиль «Авто - Белые списки» работает через Happ и Incy. Для Windows также доступно наше приложение Raven VPN."
+        }
+      }
+    ]
+  }
+]</script>
+  <script defer src="../../assets/js/site.js?v=8a51d1a482ed"></script>
+  <script defer src="../../assets/js/source-label.js?v=f230d7b03e04"></script>
+  <script defer src="../../assets/js/cabinet-entry.js?v=3958d19615b5"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.6-1.3 1.5-2 2.5-2s1.9.7 2.5 2"/><path d="M14 10h4"/><path d="M14 14h3"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.8-3.3 3.2-5 6-5s5.2 1.7 6 5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 15c1.6.6 2.7 2.2 3 5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0"/><path d="M12 17v5"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+  <symbol id="i-sig" viewBox="0 0 54 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/><path d="M26 11.2 22.6 7.6a4.8 4.8 0 0 1 6.8 0zM20.4 5.4a8 8 0 0 1 11.2 0l-1.4 1.4a6 6 0 0 0-8.4 0z"/><rect x="36" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37.6" y="3.1" width="10" height="5.8" rx="1.2"/><rect x="51.8" y="4.3" width="1.4" height="3.4" rx=".7"/></symbol>
+</svg>
+
+  <header class="site-header"><div class="wrap header-row">
+    <a class="brand" href="../../" aria-label="Raven VPN"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a>
+    <button class="menu-button theme-toggle" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
+    <nav class="nav" id="main-navigation" data-nav-links aria-label="Разделы">
+      <a href="../../pricing/">Тарифы</a><a href="../../setup/">Подключение</a><a href="../../faq/">FAQ</a><a href="../../blog/">Блог</a><a href="../../support/">Поддержка</a>
+    </nav>
+    <div class="header-actions">
+
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+        <svg class="icon sun"><use href="#i-sun"/></svg><svg class="icon moon"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-quiet btn-small" id="cabinet-entry" href="/app/" data-api="https://api.ravenvpn.site/api/app/v1" data-session-label="Кабинет">Войти</a>
+      <a class="btn btn-quiet btn-small header-bot" href="https://t.me/GetRavenBot?start=ru_header" aria-label="Открыть бота" data-umami-event="hero_cta_click"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть бота</span></a>
+    </div>
+  </div></header>
+  <main id="main">
+    <section class="page-hero blog-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="breadcrumbs">
+          <a href="../../">Raven VPN</a><span>/</span><a href="../../blog/">Блог</a><span>/</span><span>Белые списки на мобильном интернете</span>
+        </nav>
+        <span class="blog-badge">Белые списки</span>
+        <h1>Белые списки мобильного интернета в 2026 году: как они работают и как настроить обход на Android</h1>
+        <p class="lead">Значок 4G горит, Госуслуги и карты открываются, а мессенджеры, видео и обычный VPN бесконечно крутят загрузку. Разбираем, как отличить режим белых списков от полного шатдауна, почему привычные протоколы перестают работать и что настроить на Android, чтобы вернуть доступ.</p>
+        <div class="blog-meta"><span>Опубликовано <time datetime="2026-11-25">25 ноября 2026</time></span><span aria-hidden="true">·</span><span>8 мин чтения</span></div>
+      </div>
+    </section>
+    <section class="section blog-section">
+      <div class="wrap blog-layout">
+        <aside class="blog-toc-wrap">
+          <nav class="blog-toc" aria-label="Содержание">
+            <p class="blog-toc-title">Содержание</p>
+            <ol>
+              <li><a href="#whitelist-vs-shutdown">Как за 30 секунд отличить белые списки от полного шатдауна</a></li>
+              <li><a href="#why-ordinary-vpn-fails">Почему обычный VPN и даже VLESS + REALITY не подключаются</a></li>
+              <li><a href="#how-bypass-works">Как работает обход белых списков и чем он отличается от «исключений»</a></li>
+              <li><a href="#android-setup-steps">Как включить обход белых списков на Android</a></li>
+              <li><a href="#common-mistakes">5 частых ошибок, из-за которых обход белых списков не запускается</a></li>
+              <li><a href="#quotas-and-trial">Сколько трафика белых списков нужно и как проверить на своей сети</a></li>
+            </ol>
+          </nav>
+        </aside>
+        <article class="blog-article">
+          <div class="blog-body">
+            <section id="whitelist-vs-shutdown">
+              <h2>Как за 30 секунд отличить белые списки от полного шатдауна</h2>
+              <p>Когда на телефоне внезапно перестаёт работать мобильный интернет, пользователь обычно видит одну и ту же картину: сигнал сети на месте, рядом горит 4G или LTE, но привычные приложения не загружаются. На практике за этим симптомом скрываются три разных состояния сети - и от того, какое именно включено сейчас у вашего оператора, зависит, поможет ли VPN вообще.</p>
+<div class="table-wrap" role="region" aria-label="Сравнение трёх состояний мобильной сети" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Режим сети</th>
+        <th scope="col">Что открывается без VPN</th>
+        <th scope="col">Как ведёт себя обычный VPN</th>
+        <th scope="col">Что реально работает</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Полный шатдаун связи</th>
+        <td>Ничего: не открываются даже Госуслуги, банки и карты. Голосовая связь и SMS могут оставаться.</td>
+        <td>Не подключается: до сети нет маршрута.</td>
+        <td>Ни один VPN не поможет - передача данных отключена на уровне базовой станции. Выручит только Wi-Fi или ожидание.</td>
+      </tr>
+      <tr>
+        <th scope="row">Режим белых списков</th>
+        <td>Открываются только разрешённые российские сервисы (Госуслуги, крупные банки, карты, часть маркетплейсов и соцсетей). Остальной интернет и зарубежные сайты висят.</td>
+        <td>Подключение зависает или рвётся сразу после старта, даже на VLESS + REALITY.</td>
+        <td>Специальный режим обхода белых списков (профиль VLESS + XHTTP поверх TLS или приложение с автоподбором пути).</td>
+      </tr>
+      <tr>
+        <th scope="row">Обычная фильтрация ТСПУ</th>
+        <td>Российские и многие обычные сайты работают, но замедлены или заблокированы отдельные сервисы и старые VPN-протоколы.</td>
+        <td>Старые протоколы (OpenVPN, WireGuard) и часть прямых зарубежных адресов не работают или сильно режутся.</td>
+        <td>Обычный современный VPN (например, «Авто - Обычный VPN» на VLESS + REALITY).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Проверка занимает полминуты: отключите VPN и откройте любой российский сервис из базового перечня - например, Госуслуги, Яндекс Карты или сайт крупного банка. Если они загружаются быстро, а Telegram, зарубежные сайты и обычный VPN стоят - у вас включены именно белые списки. Если не открывается вообще ничего, кроме звонков и SMS, это полный шатдаун: тратить время на перебор приложений и серверов в этот момент бессмысленно.</p>
+<blockquote><p>Честная граница: режим «Белые списки» в VPN работает только тогда, когда оператор сохраняет доступ к разрешённой российской инфраструктуре. При физическом отключении мобильной передачи данных на вышке обойти его программно невозможно.</p></blockquote>
+            </section>
+            <section id="why-ordinary-vpn-fails">
+              <h2>Почему обычный VPN и даже VLESS + REALITY не подключаются</h2>
+              <p>В обычной ситуации блокировки в России устроены по принципу чёрного списка: всё, что не запрещено и не похоже на заблокированный протокол, проходит. Современные протоколы вроде VLESS + REALITY используют это - их трафик внешне выглядит как обычное HTTPS-соединение к зарубежному серверу, и в штатной сети этого часто достаточно.</p>
+<p>При включении белых списков логика переворачивается. Оператор переводит фильтрацию в режим «запрещено всё, что явно не разрешено». Сеть пропускает пакеты только к ограниченному набору допущенных доменов и сетевых подсетей. Любая попытка установить соединение с зарубежным IP-адресом - и даже с обычным российским VPS вне разрешённого периметра - отбрасывается на уровне оператора.</p>
+<p>Отсюда две частые ситуации, с которыми сталкиваются пользователи мобильной связи:</p>
+<ul>
+  <li><strong>На Wi-Fi тот же профиль работает, а при выходе на улицу - нет.</strong> Белые списки чаще включают именно на мобильных сетях (МТС, МегаФон, Билайн, Т2, Yota) - в отдельных районах, по расписанию или на время локальных ограничений, тогда как домашний проводной интернет продолжает работать по обычным правилам. Подробнее все мобильные сценарии мы разобрали в статье <a href="../../blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/">«На Wi-Fi VPN работает, а на мобильном интернете нет»</a>.</li>
+  <li><strong>У каждого оператора набор правил свой.</strong> В одном и том же городе на одной SIM-карте белый список может пропускать конкретный маршрут, а на другой - резать его сразу после TLS-рукопожатия. В наших тестовых замерах на 6 точках разных мобильных операторов один и тот же туннель белых списков с неудачным параметром SNI обрывался на 5 из 6 сетей, тогда как корректно настроенный профиль стабильно открывал все контрольные сайты на всех 6 сетях.</li>
+</ul>
+            </section>
+            <section id="how-bypass-works">
+              <h2>Как работает обход белых списков и чем он отличается от «исключений»</h2>
+              <p>В поиске и в чатах часто смешивают два совершенно разных понятия, из-за чего люди включают не ту настройку и не понимают, почему ничего не поменялось:</p>
+<ul>
+  <li><strong>Исключения сайтов и приложений (раздельная маршрутизация, split tunneling)</strong> - это когда ваш VPN уже работает, но российские банки, Госуслуги и маркетплейсы пускаются мимо туннеля напрямую, чтобы они не просили отключить VPN. Сами по себе эти правила не помогают подключиться к VPN при мобильных ограничениях.</li>
+  <li><strong>Обход белых списков</strong> - это отдельный транспортный маршрут для самого VPN-туннеля. Соединение идёт не напрямую на зарубежный сервер, а через разрешённую инфраструктуру доставки трафика (поверх HTTPS/TLS и транспорта XHTTP с дополнительным внутренним шифрованием VLESS), а уже оттуда доходит до VPN-выхода.</li>
+</ul>
+<p>Такой канал обходится заметно дороже обычного сервера и технически устроен сложнее, поэтому в тарифах для него выделяется отдельная квота (в Raven VPN - от 10 до 50 ГБ в месяц, в пробном периоде - 2 ГБ), а сам транспорт имеет важные особенности, о которых лучше знать заранее:</p>
+<ul>
+  <li><strong>Задержка выше, чем у обычного VPN.</strong> Трафик проходит дополнительное звено, поэтому для онлайн-игр или тяжёлых загрузок по домашнему Wi-Fi лучше переключаться обратно на «Авто - Обычный VPN».</li>
+  <li><strong>Простаивающие фоновые соединения могут переподключаться.</strong> По нашим инструментальным наблюдениям, промежуточные узлы доставки контента обычно закрывают «молчащие» потоки без обмена данными через 20-60 секунд. В браузере и мессенджерах это почти незаметно (клиент быстро открывает новый поток), а вот долгие SSH-сессии без активности или потоковые приложения могут периодически переподключаться.</li>
+  <li><strong>Соединение проверяется реальной передачей данных.</strong> ТСПУ умеет замораживать поток не в момент подключения, а после первых ~16-20 КБ трафика. Поэтому простого «зелёного индикатора» в приложении недостаточно - рабочий маршрут подтверждается только фактическим открытием страниц или загрузкой файла.</li>
+</ul>
+            </section>
+            <section id="android-setup-steps">
+              <h2>Как включить обход белых списков на Android</h2>
+              <p>На практике отдельной сложной настройки не требуется - достаточно переключиться на нужный профиль или использовать наше приложение.</p>
+<h3>Вариант 1. Через Happ или Incy (подходит также для iPhone, ПК и Android TV)</h3>
+<ul>
+  <li><strong>Если подписка Raven VPN уже добавлена:</strong> откройте Happ или Incy, выберите пункт <strong>«Авто - Белые списки»</strong> и нажмите кнопку подключения. Когда вернётесь на обычный Wi-Fi или ограничения снимут, переключитесь обратно на <strong>«Авто - Обычный VPN»</strong>, чтобы не расходовать отдельную квоту белых списков.</li>
+  <li><strong>Если подписки ещё нет:</strong> активируйте тариф или бесплатные 3 дня Про в <a href="https://t.me/GetRavenBot?start=seo_obhod-belyh-spiskov-mobilnyj-internet">боте Raven VPN</a> (либо в <a href="../../app/">кабинете на сайте</a> по почте без Telegram), добавьте телефон в разделе «Устройства» и подключите его со страницы подключения. Все шаги показаны в <a href="../../setup/">общей инструкции</a> и в отдельном гайде <a href="../../blog/nastrojka-happ-android-belye-spiski/">«Настройка Happ на Android»</a>.</li>
+</ul>
+<h3>Вариант 2. Приложение Raven VPN для Android (автопереключение без ручного выбора)</h3>
+<p>Если не хочется каждый раз вручную переключаться между обычным VPN и белыми списками при выходе из дома, установите бета-версию приложения <a href="../../android/">Raven VPN для Android</a> (Android 10 и новее). Оно проверяет фактическую проходимость сети и само переходит на рабочий путь, если обычный сервер перестал отвечать. Вход работает через Telegram или по почте, обновления приходят прямо внутри приложения без Google Play и RuStore.</p>
+<h3>Какие приложения совместимы с режимом «Белые списки»</h3>
+<div class="table-wrap" role="region" aria-label="Совместимость Android-клиентов с режимом Белые списки" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Приложение</th>
+        <th scope="col">Белые списки</th>
+        <th scope="col">Автонастройка российских сайтов</th>
+        <th scope="col">Кому подходит лучше</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Happ</th>
+        <td>Да («Авто - Белые списки»)</td>
+        <td>Да, сайты и поддерживаемые Android-приложения</td>
+        <td>Универсальный выбор для Android, iPhone, ПК и Android TV</td>
+      </tr>
+      <tr>
+        <th scope="row">Incy</th>
+        <td>Да («Авто - Белые списки»)</td>
+        <td>Да, сайты и поддерживаемые Android-приложения</td>
+        <td>Удобная альтернатива Happ с теми же правилами и профилями «Авто»</td>
+      </tr>
+      <tr>
+        <th scope="row">Raven VPN (Android)</th>
+        <td>Да, с автопереходом между режимами</td>
+        <td>Да, встроенный список российских приложений и сайтов</td>
+        <td>Тем, кому нужна одна кнопка без ручного переключения серверов</td>
+      </tr>
+      <tr>
+        <th scope="row">v2rayNG / FlClashX</th>
+        <td>Да (через актуальную версию и подписку)</td>
+        <td>В FlClashX - да; в v2rayNG - вручную</td>
+        <td>Опытным пользователям, которые привыкли к этим клиентам</td>
+      </tr>
+      <tr>
+        <th scope="row">Hiddify</th>
+        <td>Нет</td>
+        <td>Нет (управляемый профиль не поддерживается)</td>
+        <td>Только для обычных VPN-серверов, без белых списков</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Свежая пошаговая схема подключения для всех платформ также всегда доступна на странице <a href="../../setup/">«Подключение Raven VPN»</a>.</p>
+            </section>
+            <section id="common-mistakes">
+              <h2>5 частых ошибок, из-за которых обход белых списков не запускается</h2>
+              <p>По обращениям в нашу поддержку большинство случаев, когда режим «Белые списки» не работает на живой мобильной сети, сводятся к пяти простым причинам:</p>
+<ol>
+  <li><strong>Попытка подключиться через Hiddify.</strong> Hiddify подходит для обычных серверов, но не переносит нужные параметры XHTTP и шифрования профиля белых списков. Для этого режима используйте Happ, Incy, v2rayNG или приложение Raven VPN.</li>
+  <li><strong>Устаревшая версия клиента.</strong> Транспорт XHTTP активно обновляется, поэтому старые сборки Happ или v2rayNG могут импортировать подписку с ошибкой или не открывать соединение. Обновите клиент и обновите подписку внутри него.</li>
+  <li><strong>Включённый вручную Mux (Multiplexing).</strong> Если вы раньше экспериментировали с настройками и включили Mux вручную, профиль белых списков перестанет работать. При стандартных настройках ничего включать не нужно - просто верните Mux в выключенное состояние.</li>
+  <li><strong>Выбрана ручная запись вместо «Авто - Белые списки».</strong> В списке могут отображаться пункты «Белые списки 1», «Белые списки 2». Их номера присваиваются подряд и не закреплены навсегда за одним маршрутом: если резервный путь обновился, ручной выбор может указывать уже на другую запись. Выбирайте «Авто - Белые списки» - он сам подставит рабочий маршрут.</li>
+  <li><strong>Исчерпана отдельная квота белых списков или включён второй VPN.</strong> У белых списков свой счётчик трафика (отдельный от основного тарифа), его остаток видно в боте и кабинете. Также на Android стоит проверить, не перехватывает ли VPN-слот локальный блокировщик рекламы или другое прокси-приложение.</li>
+</ol>
+            </section>
+            <section id="quotas-and-trial">
+              <h2>Сколько трафика белых списков нужно и как проверить на своей сети</h2>
+              <p>Операторы и регионы ведут себя по-разному, поэтому лучший способ убедиться, что обход белых списков работает именно на вашей SIM-карте и в вашем районе - проверить его до оплаты. В Raven VPN действует бесплатный пробный период: <strong>3 дня тарифа Про</strong> (30 ГБ обычного трафика, до 50 Мбит/⁠с, <strong>2 ГБ для белых списков</strong>, до 6 устройств). Для бесплатной активации нужен Telegram; без Telegram в <a href="../../app/">веб-кабинете</a> те же 3 дня доступны за 15 ₽.</p>
+<p>В платных тарифах (<a href="../../pricing/">от 149 ₽/⁠мес</a>) отдельный пакет белых списков уже включён: 10 ГБ в «Старте», 20 ГБ в «Стандарте» и 50 ГБ в «Про». Если в поездке или во время долгих ограничений квота закончится раньше месячного сброса, можно докупить дополнительный пакет: 10 ГБ за 20 ₽, 50 ГБ за 100 ₽ или 100 ГБ за 200 ₽. По нашей статистике активных пользователей, для повседневных мессенджеров, навигации, новостей и почты в дороге обычно хватает 1-5 ГБ трафика белых списков в месяц - главное не оставлять в этом режиме фоновую загрузку тяжёлых видео и обновлений.</p>
+            </section>
+          </div>
+          <aside class="blog-cta" aria-labelledby="blog-cta-title">
+            <div class="blog-cta-copy">
+              <h2 id="blog-cta-title">Проверьте белые списки на своей сети бесплатно</h2>
+              <p>3 дня тарифа Про: 30 ГБ обычного VPN, 2 ГБ для белых списков, до 50 Мбит/⁠с и до 6 устройств. Подключение в Happ, Incy или приложении Raven VPN за пару минут.</p>
+            </div>
+            <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=seo_obhod-belyh-spiskov-mobilnyj-internet" data-umami-event="blog_cta_click" data-umami-event-slug="obhod-belyh-spiskov-mobilnyj-internet"><svg class="icon"><use href="#i-send"/></svg>Попробовать 3 дня бесплатно</a>
+          </aside>
+          <p class="blog-back"><a class="text-link" href="../../blog/"><svg class="icon"><use href="#i-back"/></svg>Все статьи блога</a></p>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="faq" aria-labelledby="article-faq-title">
+      <div class="wrap faq-grid">
+        <div>
+          <h2 class="h2" id="article-faq-title">Частые вопросы</h2>
+          <p>Больше ответов - <a href="../../faq/">на странице FAQ</a>.</p>
+        </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Работает ли обход белых списков, если мобильный интернет отключили полностью?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Нет. Если базовая станция отключила передачу данных полностью и без VPN не открываются даже Госуслуги, карты и банки, ни один VPN-сервис не сможет установить соединение. Обход белых списков работает только тогда, когда оператор пропускает трафик к разрешённым российским сервисам.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Сколько трафика белых списков доступно в пробном периоде?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>В пробном периоде доступно 3 дня тарифа Про: 30 ГБ обычного трафика, 2 ГБ для белых списков, скорость до 50 Мбит/⁠с и до 6 устройств. С привязанным Telegram это бесплатно, без Telegram - 15 ₽.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Нужно ли выключать VPN в режиме белых списков, чтобы открыть банк или маркетплейс?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>В Happ, Incy и приложении Raven VPN - нет: сайты из белого списка и поддерживаемые российские приложения на Android идут напрямую и не расходуют квоту белых списков.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему режим «Белые списки» не работает в Hiddify?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Hiddify не поддерживает параметры XHTTP и шифрования, которые используются для профиля белых списков. Для этого режима рекомендуем Happ, Incy, v2rayNG или приложение Raven VPN для Android.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Что делать, если закончились гигабайты белых списков, а основной трафик остался?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Обычный VPN продолжит работать как обычно. Для активной платной подписки можно докупить пакет белых списков в боте или кабинете: 10 ГБ за 20 ₽, 50 ГБ за 100 ₽ или 100 ГБ за 200 ₽ до ближайшего месячного сброса.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Работают ли белые списки на iPhone и компьютере?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Да. На iPhone, iPad, Windows, macOS и Linux профиль «Авто - Белые списки» работает через Happ и Incy. Для Windows также доступно наше приложение Raven VPN.</p>
+        </details>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><div class="footer-grid">
+    <div class="footer-brand"><a class="brand" href="../../"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a><p>VPN, который работает даже при белых списках.</p></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="../../pricing/">Тарифы</a></li><li><a href="../../setup/">Настройка</a></li><li><a href="../../how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="../../support/">Поддержка</a></li><li><a href="../../faq/">FAQ</a></li><li><a href="../../blog/">Блог</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="../../privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="../../terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
+  </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
+
+</body>
+</html>

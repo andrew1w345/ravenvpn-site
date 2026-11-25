@@ -380,6 +380,7 @@ p { margin: 0; }
 .flag-eu { width: 26px; height: 18px; border-radius: 3px; background: #1F3E99; flex: none; display: block; }
 .flag-eu svg { width: 26px; height: 18px; display: block; }
 .flag-nl { width: 26px; height: 18px; border-radius: 3px; background: linear-gradient(#AE1C28 0 33%, #fff 33% 66%, #21468B 66%); flex: none; margin-inline: 0 0; }
+.flag-de { width: 26px; height: 18px; border-radius: 3px; background: linear-gradient(#111 0 33%, #DD0000 33% 66%, #FFCE00 66%); flex: none; }
 
 /* Demo micro-interactions: one tap per screen, replayed each time a screen opens. */
 .tap::after {
@@ -518,6 +519,8 @@ p { margin: 0; }
 .final-grid { display: grid; grid-template-columns: minmax(0, 1fr) 420px; gap: 48px 80px; align-items: center; }
 .final-grid p { margin-top: 20px; color: var(--muted); font-size: 19px; line-height: 29px; max-width: 520px; }
 .final-grid .btn { margin-top: 36px; }
+.final-grid .cta-row { margin-top: 36px; }
+.final-grid .cta-row .btn { margin-top: 0; }
 .final-visual { justify-self: end; width: 400px; aspect-ratio: 720 / 605; position: relative; }
 .final-visual img { width: 100%; }
 .key-stage { position: absolute; inset: -6% 0; display: none; }
@@ -783,6 +786,10 @@ thead { background: var(--surface); }
   background: var(--surface); border-radius: 0 12px 12px 0; color: var(--muted);
 }
 .blog-body blockquote p:first-child { margin-top: 0; }
+.blog-body .table-wrap { margin-top: 20px; border: 1px solid var(--line); border-radius: 12px; }
+.blog-body table { min-width: 560px; font-size: 15px; line-height: 22px; }
+.blog-body th, .blog-body td { padding: 12px 14px; vertical-align: top; }
+.blog-body tbody tr:last-child th, .blog-body tbody tr:last-child td { border-bottom: 0; }
 .blog-cta {
   margin-top: 48px; padding: 28px 32px; border: 1px solid var(--line); border-radius: 20px;
   background: var(--surface); display: grid; grid-template-columns: minmax(0, 1fr) auto;
@@ -801,6 +808,10 @@ thead { background: var(--surface); }
   .blog-card { padding: 22px; }
   .blog-card h2 { font-size: 21px; line-height: 28px; }
   .blog-body h2 { font-size: 24px; line-height: 31px; }
+  .blog-body table { min-width: 520px; font-size: 14px; line-height: 21px; }
+  .blog-body th, .blog-body td { padding: 10px 12px; white-space: normal; }
+  .blog-body tr > :first-child { position: static; box-shadow: none; background: transparent; }
+  .blog-body thead tr > :first-child { background: var(--surface); }
   .blog-cta { padding: 22px; }
   .blog-cta-copy h2 { font-size: 21px; line-height: 28px; }
 }

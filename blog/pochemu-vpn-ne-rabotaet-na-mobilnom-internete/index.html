@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Почему VPN не работает на мобильном интернете - разбор и решение - Блог Raven VPN</title>
+  <meta name="description" content="Почему значок VPN горит, а сайты на 4G не открываются: отсечка после 16 КБ, таймаут TLS, белые списки, перехват DNS и энергосбережение Android. Пошаговая проверка за 2 минуты.">
+  <link rel="canonical" href="https://ravenvpn.site/blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/">
+  <link rel="alternate" hreflang="ru" href="https://ravenvpn.site/blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/">
+    <link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Raven VPN">
+  <meta property="og:title" content="Почему VPN не работает на мобильном интернете - разбор и решение - Блог Raven VPN">
+  <meta property="og:description" content="Почему значок VPN горит, а сайты на 4G не открываются: отсечка после 16 КБ, таймаут TLS, белые списки, перехват DNS и энергосбережение Android. Пошаговая проверка за 2 минуты.">
+  <meta property="og:url" content="https://ravenvpn.site/blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="article:published_time" content="2026-11-25">
+  <meta property="article:modified_time" content="2026-11-25">
+  <meta property="og:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raven VPN - работает даже при белых списках">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Почему VPN не работает на мобильном интернете - разбор и решение - Блог Raven VPN">
+  <meta name="twitter:description" content="Почему значок VPN горит, а сайты на 4G не открываются: отсечка после 16 КБ, таймаут TLS, белые списки, перехват DNS и энергосбережение Android. Пошаговая проверка за 2 минуты.">
+  <meta name="twitter:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <link rel="icon" href="../../assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../../assets/img/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-raven.png" sizes="180x180">
+  <link rel="preload" href="../../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=fee4e5cffbc4">
+  <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
+  <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "logo": "https://ravenvpn.site/assets/img/logo-transparent.webp",
+    "sameAs": [
+      "https://t.me/TheRavenVPN",
+      "https://t.me/RavenVPNReviews",
+      "https://www.youtube.com/@TheRavenVPN"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "inLanguage": "ru"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "На Wi-Fi VPN работает, а на мобильном интернете нет: 6 реальных причин и как починить",
+    "description": "Почему значок VPN горит, а сайты на 4G не открываются: отсечка после 16 КБ, таймаут TLS, белые списки, перехват DNS и энергосбережение Android. Пошаговая проверка за 2 минуты.",
+    "url": "https://ravenvpn.site/blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ravenvpn.site/blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/"
+    },
+    "datePublished": "2026-11-25",
+    "dateModified": "2026-11-25",
+    "inLanguage": "ru",
+    "image": "https://ravenvpn.site/assets/img/og-ru.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ravenvpn.site/assets/img/logo-transparent.webp"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Почему VPN показывает статус «Подключено», но страницы не загружаются?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "На мобильных сетях фильтрация часто срабатывает не при установке соединения, а после первых 16-20 КБ трафика или на этапе TLS. Клиент видит живой интерфейс и короткий пинг, но реальный трафик не проходит. Обычно помогает переключение на «Авто - Обычный VPN» или «Авто - Белые списки» и обновление подписки."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему на Wi-Fi всё работает, а при переходе на 4G интернет пропадает?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Мобильные операторы применяют отдельные правила фильтрации и чаще включают режим белых списков. Кроме того, при смене Wi-Fi на мобильную сеть часть старых соединений зависает до переподключения VPN. Попробуйте выключить и снова включить VPN, а при белых списках - переключиться на «Авто - Белые списки»."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Поможет ли смена DNS на 1.1.1.1 или 8.8.8.8, если VPN не подключается?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Как правило, нет. Открытые DNS-запросы на части российских сетей перехватываются, а блокировка самого VPN-маршрута происходит уже после DNS. Если в Android включён сторонний «Частный DNS», он может даже мешать первому подключению - лучше перевести его в режим «Авто»."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему Happ отключается на Android после блокировки экрана?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Это работа энергосбережения Android (особенно на Xiaomi, Samsung и Huawei), которое усыпляет фоновые службы через 1-2 часа простоя. Отключите ограничения батареи для приложения, разрешите автозапуск и при необходимости включите «Постоянный VPN» в настройках Android."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Какие данные прислать в поддержку, чтобы быстрее найти причину?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Достаточно указать устройство, приложение, сеть (Wi-Fi или мобильный интернет), примерное время проблемы и приложить скриншот ошибки. Полную ссылку подключения и платёжные реквизиты присылать не нужно."
+        }
+      }
+    ]
+  }
+]</script>
+  <script defer src="../../assets/js/site.js?v=8a51d1a482ed"></script>
+  <script defer src="../../assets/js/source-label.js?v=f230d7b03e04"></script>
+  <script defer src="../../assets/js/cabinet-entry.js?v=3958d19615b5"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.6-1.3 1.5-2 2.5-2s1.9.7 2.5 2"/><path d="M14 10h4"/><path d="M14 14h3"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.8-3.3 3.2-5 6-5s5.2 1.7 6 5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 15c1.6.6 2.7 2.2 3 5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0"/><path d="M12 17v5"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+  <symbol id="i-sig" viewBox="0 0 54 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/><path d="M26 11.2 22.6 7.6a4.8 4.8 0 0 1 6.8 0zM20.4 5.4a8 8 0 0 1 11.2 0l-1.4 1.4a6 6 0 0 0-8.4 0z"/><rect x="36" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37.6" y="3.1" width="10" height="5.8" rx="1.2"/><rect x="51.8" y="4.3" width="1.4" height="3.4" rx=".7"/></symbol>
+</svg>
+
+  <header class="site-header"><div class="wrap header-row">
+    <a class="brand" href="../../" aria-label="Raven VPN"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a>
+    <button class="menu-button theme-toggle" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
+    <nav class="nav" id="main-navigation" data-nav-links aria-label="Разделы">
+      <a href="../../pricing/">Тарифы</a><a href="../../setup/">Подключение</a><a href="../../faq/">FAQ</a><a href="../../blog/">Блог</a><a href="../../support/">Поддержка</a>
+    </nav>
+    <div class="header-actions">
+
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+        <svg class="icon sun"><use href="#i-sun"/></svg><svg class="icon moon"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-quiet btn-small" id="cabinet-entry" href="/app/" data-api="https://api.ravenvpn.site/api/app/v1" data-session-label="Кабинет">Войти</a>
+      <a class="btn btn-quiet btn-small header-bot" href="https://t.me/GetRavenBot?start=ru_header" aria-label="Открыть бота" data-umami-event="hero_cta_click"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть бота</span></a>
+    </div>
+  </div></header>
+  <main id="main">
+    <section class="page-hero blog-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="breadcrumbs">
+          <a href="../../">Raven VPN</a><span>/</span><a href="../../blog/">Блог</a><span>/</span><span>Почему VPN не работает на мобильном</span>
+        </nav>
+        <span class="blog-badge">Диагностика</span>
+        <h1>На Wi-Fi VPN работает, а на мобильном интернете нет: 6 реальных причин и как починить</h1>
+        <p class="lead">Дома на Wi-Fi всё летает, но стоит выйти на улицу и переключиться на 4G - значок VPN продолжает гореть, а сайты и мессенджеры замирают. Разбираем 6 реальных причин по нашим сетевым замерам 2026 года и даём короткий чеклист, который позволяет локализовать проблему за пару минут.</p>
+        <div class="blog-meta"><span>Опубликовано <time datetime="2026-11-25">25 ноября 2026</time></span><span aria-hidden="true">·</span><span>8 мин чтения</span></div>
+      </div>
+    </section>
+    <section class="section blog-section">
+      <div class="wrap blog-layout">
+        <aside class="blog-toc-wrap">
+          <nav class="blog-toc" aria-label="Содержание">
+            <p class="blog-toc-title">Содержание</p>
+            <ol>
+              <li><a href="#connected-but-no-internet">Ловушка «значок VPN горит и пинг есть, а сайты не грузятся»</a></li>
+              <li><a href="#six-causes-matrix">6 причин, почему VPN работает на Wi-Fi и ломается на мобильном интернете</a></li>
+              <li><a href="#dns-myth-2026">Почему совет «поменяйте DNS на 1.1.1.1 или 8.8.8.8» часто не помогает</a></li>
+              <li><a href="#android-background-disconnects">Почему VPN сам отключается на Android после выключения экрана</a></li>
+              <li><a href="#two-minute-checklist">Чеклист диагностики за 2 минуты: что проверить по порядку</a></li>
+              <li><a href="#stop-manual-switching">Как перестать перебирать серверы вручную при каждой смене сети</a></li>
+            </ol>
+          </nav>
+        </aside>
+        <article class="blog-article">
+          <div class="blog-body">
+            <section id="connected-but-no-internet">
+              <h2>Ловушка «значок VPN горит и пинг есть, а сайты не грузятся»</h2>
+              <p>Самая сбивающая с толку ситуация на мобильной сети - когда клиент рапортует <code>Connected</code>, в шторке Android висит значок ключа, тест задержки показывает нормальные цифры в миллисекундах, но ни одна страница не открывается. Кажется, что «упал сервер» или «сломался телефон», но на деле в 2026 году так проявляются три типовых сетевых механизма фильтрации:</p>
+<ul>
+  <li><strong>Обрыв соединения после ~16-20 КБ трафика.</strong> ТСПУ пропускает TCP-рукопожатие и первые килобайты обмена, а затем «замораживает» поток. Короткие проверки доступности (вроде HTTP 204 или ответа на пару сотен байт) при этом проходят успешно, поэтому клиент считает сервер рабочим. Полноценная страница или видео упираются в отсечку сразу после старта - именно поэтому в мониторинге и диагностике мы проверяем не пинг, а реальную передачу от 32-64 КБ данных через TLS.</li>
+  <li><strong>Живой TCP-порт, но таймаут на TLS.</strong> Порт 443 отвечает, но на этапе <code>TLS ClientHello</code> соединение зависает без ответа. В наших ноябрьских замерах по 8 российским мобильным операторам при проверке прямого зарубежного VLESS-сервера TCP открывался везде, но на 6 из 8 операторов TLS-рукопожатие уходило в таймаут - хотя сам сервер был полностью исправен и нормально работал из других сетей.</li>
+  <li><strong>Шейпинг прямого зарубежного маршрута.</strong> На отдельных мобильных операторах прямое соединение до зарубежного IP не обрывается полностью, а режется до 0,1-3 Мбит/⁠с с паузами по 15 секунд. В наших парных замерах на одной и той же SIM-карте прямой зарубежный маршрут проседал с регулярными паузами, тогда как маршрут через промежуточный вход в те же минуты держал стабильную скорость без единого обрыва за полчаса.</li>
+</ul>
+<blockquote><p>Вывод из практики: горящий значок VPN и зелёный пинг в клиенте больше не доказывают, что туннель реально передаёт трафик. Проверять нужно именно загрузку контента, и отдельно сравнивать Wi-Fi и мобильную сеть.</p></blockquote>
+            </section>
+            <section id="six-causes-matrix">
+              <h2>6 причин, почему VPN работает на Wi-Fi и ломается на мобильном интернете</h2>
+              <p>Чтобы не перебирать настройки наугад, свели основные причины в одну диагностическую таблицу - от самых частых сетевых ограничений до настроек самого телефона.</p>
+<div class="table-wrap" role="region" aria-label="6 причин сбоя VPN на мобильном интернете" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Причина</th>
+        <th scope="col">Характерный симптом</th>
+        <th scope="col">Как быстро проверить</th>
+        <th scope="col">Что сделать</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1. Белые списки у оператора</th>
+        <td>На 4G открываются только Госуслуги, карты и банки; остальные сайты и обычный VPN стоят.</td>
+        <td>Выключить VPN и открыть сначала Госуслуги, затем любой обычный нероссийский сайт.</td>
+        <td>Переключиться на профиль «Авто - Белые списки». Если не открываются даже Госуслуги - это полный шатдаун связи.</td>
+      </tr>
+      <tr>
+        <th scope="row">2. Фильтрация прямого зарубежного IP или протокола</th>
+        <td>Обычные сайты без VPN открываются, но WireGuard, OpenVPN или прямой зарубежный VLESS виснут либо режутся до долей Мбит/⁠с.</td>
+        <td>Сравнить тот же профиль на Wi-Fi и на 4G либо сменить маршрут внутри подписки.</td>
+        <td>Использовать современный профиль с автоматическим подбором маршрута («Авто - Обычный VPN»), который умеет обходить проблемные прямые пути.</td>
+      </tr>
+      <tr>
+        <th scope="row">3. Перехват DNS и сбои DoH/DoT</th>
+        <td>Часть сайтов выдаёт ошибку адреса или долго «думает» перед загрузкой; ручная смена DNS на 1.1.1.1 / 8.8.8.8 не помогает.</td>
+        <td>Проверить, зависает ли именно разрешение имени (ошибка DNS в клиенте) и включён ли «Частный DNS» в настройках Android.</td>
+        <td>Отключить конфликтующий ручной «Частный DNS» в системе и оставить штатный DNS профиля VPN-клиента.</td>
+      </tr>
+      <tr>
+        <th scope="row">4. Энергосбережение Android и смена Wi-Fi на 4G</th>
+        <td>После 1-2 часов с выключенным экраном или при выходе из зоны Wi-Fi VPN отваливается сам и не поднимается до перезапуска.</td>
+        <td>Проверить, повторяется ли сбой именно после блокировки экрана (частая проблема на Xiaomi, Samsung, Huawei).</td>
+        <td>Снять ограничения батареи для Happ/Incy/Raven VPN, разрешить работу в фоне и автозапуск.</td>
+      </tr>
+      <tr>
+        <th scope="row">5. Устаревший клиент, ручной Mux или конфликт двух VPN</th>
+        <td>Ошибки TLS handshake, обрыв сразу после подключения или «тихий» перехват маршрута.</td>
+        <td>Проверить дату обновления приложения, настройки Mux и наличие второго VPN/блокировщика.</td>
+        <td>Обновить клиент, отключить ручной Mux, полностью остановить второй VPN-клиент.</td>
+      </tr>
+      <tr>
+        <th scope="row">6. Несовместимый клиент или старая ссылка</th>
+        <td>Не работает конкретно профиль белых списков либо подписка перестала обновляться после перевыпуска.</td>
+        <td>Убедиться, что не используется Hiddify для белых списков, а ссылка устройства актуальна.</td>
+        <td>Перейти на Happ, Incy или приложение Raven VPN; при перевыпуске удалить старую подписку и добавить новую.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            </section>
+            <section id="dns-myth-2026">
+              <h2>Почему совет «поменяйте DNS на 1.1.1.1 или 8.8.8.8» часто не помогает</h2>
+              <p>В старых инструкциях первым пунктом почти всегда предлагают прописать в телефоне публичный DNS вроде <code>1.1.1.1</code> или <code>8.8.8.8</code>. В 2026 году этот совет нередко не просто бесполезен, а мешает диагностике:</p>
+<ul>
+  <li><strong>Открытые DNS-запросы перехватываются.</strong> На части российских сетей запросы к открытым серверам <code>8.8.8.8</code> и <code>1.1.1.1</code> перенаправляются через инфраструктуру оператора, поэтому ответ приходит не от Google и не от Cloudflare.</li>
+  <li><strong>Зашифрованный «Частный DNS» (DoT/DoH) тоже подвержен блокировкам.</strong> Если в настройках Android жёстко вписан сторонний адрес частного DNS, а мобильный оператор его режет или включил белые списки, телефон теряет возможность разрешать имена ещё до запуска VPN-соединения.</li>
+  <li><strong>DNS и маршрут трафика - две разные операции.</strong> DNS только подсказывает телефону IP-адрес сайта. Если сам IP или протокол фильтруется оператором, никакой DNS не откроет соединение.</li>
+</ul>
+<p>Практическое правило: если вы прописывали вручную «Частный DNS» в настройках Android («Сеть и интернет» - «Частный DNS»), на время проверки переведите его в режим «Авто» или «Отключён». Рабочий VPN-профиль сам обрабатывает DNS-запросы внутри защищённого канала.</p>
+            </section>
+            <section id="android-background-disconnects">
+              <h2>Почему VPN сам отключается на Android после выключения экрана</h2>
+              <p>Вторая по частоте жалоба на форумах вроде 4PDA - «через час-два в кармане Happ или другой клиент сам отключается, помогает только перезапуск». Обычно это не сбой VPN-сервера, а агрессивное энергосбережение прошивки телефона.</p>
+<p>Когда экран погашен, Android переводит фоновые процессы в режим сна (Doze), а оболочки Xiaomi (MIUI / HyperOS), Samsung (One UI), Huawei/Honor и Oppo/Realme дополнительно «убивают» сетевые службы ради экономии заряда. Если в этот момент телефон ещё и переключился между вышками или с Wi-Fi на 4G, туннель рвётся и не восстанавливается.</p>
+<p>Что нужно выставить один раз для своего VPN-клиента (Happ, Incy или Raven VPN):</p>
+<ol>
+  <li><strong>Отключить ограничения батареи:</strong> откройте «Настройки» - «Приложения» - ваш VPN-клиент - «Питание / Батарея» и выберите <strong>«Без ограничений»</strong> (на Xiaomi - «Нет ограничений», на Samsung - «Не ограничено»).</li>
+  <li><strong>Разрешить автозапуск и работу в фоне:</strong> на Xiaomi/HyperOS дополнительно включите «Автозапуск в фоновом режиме» и при желании закрепите приложение замком в списке недавних.</li>
+  <li><strong>Проверить «Постоянный VPN» (Always-on VPN):</strong> в разделе «Настройки» - «Сеть и интернет» - «VPN» нажмите на шестерёнку рядом с клиентом и включите «Постоянный VPN», чтобы система сама перезапускала службу при сбое. Опцию «Блокировать подключения без VPN» включайте осторожно - при ручной паузе VPN или полном шатдауне она перекроет вообще весь трафик, включая прямой доступ к банкам.</li>
+</ol>
+            </section>
+            <section id="two-minute-checklist">
+              <h2>Чеклист диагностики за 2 минуты: что проверить по порядку</h2>
+              <p>Если VPN перестал работать прямо сейчас на мобильном интернете, пройдите пять шагов по порядку - обычно причина находится на первом-третьем:</p>
+<ol>
+  <li><strong>Выключите VPN и проверьте базовую сеть.</strong> Откройте Госуслуги или карту. Ничего не грузится - у оператора полный шатдаун или пропала связь. Госуслуги открылись, а зарубежный сайт нет - на линии белые списки, переходите к профилю «Белые списки» (подробно описали в <a href="../../blog/obhod-belyh-spiskov-mobilnyj-internet/">руководстве по белым спискам</a>).</li>
+  <li><strong>Переключите маршрут внутри подписки.</strong> Попробуйте «Авто - Обычный VPN», а если он не открывает страницы - «Авто - Белые списки». Обновите подписку кнопкой обновления в приложении, чтобы подтянулись актуальные серверы.</li>
+  <li><strong>Обновите приложение и проверьте «Частный DNS».</strong> Старый клиент может не понимать текущие параметры транспорта; сторонний «Частный DNS» в системе может блокировать старт соединения.</li>
+  <li><strong>Удалите старый профиль и добавьте заново (или перезагрузите телефон).</strong> Если вы перевыпускали ссылку устройства в боте или кабинете, старый профиль работать перестаёт. Простая перезагрузка телефона также сбрасывает зависший DNS-кеш и сетевой стек после смены Wi-Fi на 4G.</li>
+  <li><strong>Попробуйте другой клиент или напишите в поддержку.</strong> Если один клиент упорно не подключается, проверьте второй (например, Happ и Incy, либо приложение <a href="../../android/">Raven VPN для Android</a>). Если проблема сохраняется - откройте <a href="../../support/">страницу поддержки</a> и пришлите модель устройства, название приложения, тип сети (Wi-Fi или мобильный оператор) и скриншот ошибки без секретных ссылок.</li>
+</ol>
+            </section>
+            <section id="stop-manual-switching">
+              <h2>Как перестать перебирать серверы вручную при каждой смене сети</h2>
+              <p>Главная усталость от мобильного VPN в 2026 году - необходимость вручную проверять, какой протокол и сервер живы именно у этого оператора и именно в этом районе. В Raven VPN мы сняли большую часть этой рутины на уровне подписки и собственного приложения:</p>
+<ul>
+  <li>В <strong>Happ и Incy</strong> достаточно выбрать <strong>«Авто - Обычный VPN»</strong> для повседневной сети и <strong>«Авто - Белые списки»</strong> при мобильных ограничениях - автоматический выбор сам переходит на рабочий маршрут и возвращается на основной, когда тот восстанавливается (подробнее - в гайде <a href="../../blog/nastrojka-happ-android-belye-spiski/">по настройке Happ на Android</a>).</li>
+  <li>В приложении <strong><a href="../../android/">Raven VPN для Android</a></strong> (и для <a href="../../windows/">Windows</a>) режимы объединены в одну кнопку: приложение само проверяет реальную передачу данных и переключается между обычным сервером и обходом белых списков, если текущий путь перестал отвечать.</li>
+</ul>
+            </section>
+          </div>
+          <aside class="blog-cta" aria-labelledby="blog-cta-title">
+            <div class="blog-cta-copy">
+              <h2 id="blog-cta-title">Проверьте стабильность на вашей мобильной сети</h2>
+              <p>Бесплатный пробный период - 3 дня тарифа Про: 30 ГБ, белые списки 2 ГБ, автовыбор рабочего маршрута в Happ, Incy и приложении Raven VPN.</p>
+            </div>
+            <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=seo_pochemu-vpn-ne-rabotaet-na-mobilnom-internete" data-umami-event="blog_cta_click" data-umami-event-slug="pochemu-vpn-ne-rabotaet-na-mobilnom-internete"><svg class="icon"><use href="#i-send"/></svg>Попробовать 3 дня бесплатно</a>
+          </aside>
+          <p class="blog-back"><a class="text-link" href="../../blog/"><svg class="icon"><use href="#i-back"/></svg>Все статьи блога</a></p>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="faq" aria-labelledby="article-faq-title">
+      <div class="wrap faq-grid">
+        <div>
+          <h2 class="h2" id="article-faq-title">Частые вопросы</h2>
+          <p>Больше ответов - <a href="../../faq/">на странице FAQ</a>.</p>
+        </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему VPN показывает статус «Подключено», но страницы не загружаются?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>На мобильных сетях фильтрация часто срабатывает не при установке соединения, а после первых 16-20 КБ трафика или на этапе TLS. Клиент видит живой интерфейс и короткий пинг, но реальный трафик не проходит. Обычно помогает переключение на «Авто - Обычный VPN» или «Авто - Белые списки» и обновление подписки.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему на Wi-Fi всё работает, а при переходе на 4G интернет пропадает?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Мобильные операторы применяют отдельные правила фильтрации и чаще включают режим белых списков. Кроме того, при смене Wi-Fi на мобильную сеть часть старых соединений зависает до переподключения VPN. Попробуйте выключить и снова включить VPN, а при белых списках - переключиться на «Авто - Белые списки».</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Поможет ли смена DNS на 1.1.1.1 или 8.8.8.8, если VPN не подключается?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Как правило, нет. Открытые DNS-запросы на части российских сетей перехватываются, а блокировка самого VPN-маршрута происходит уже после DNS. Если в Android включён сторонний «Частный DNS», он может даже мешать первому подключению - лучше перевести его в режим «Авто».</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему Happ отключается на Android после блокировки экрана?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Это работа энергосбережения Android (особенно на Xiaomi, Samsung и Huawei), которое усыпляет фоновые службы через 1-2 часа простоя. Отключите ограничения батареи для приложения, разрешите автозапуск и при необходимости включите «Постоянный VPN» в настройках Android.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Какие данные прислать в поддержку, чтобы быстрее найти причину?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Достаточно указать устройство, приложение, сеть (Wi-Fi или мобильный интернет), примерное время проблемы и приложить скриншот ошибки. Полную ссылку подключения и платёжные реквизиты присылать не нужно.</p>
+        </details>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><div class="footer-grid">
+    <div class="footer-brand"><a class="brand" href="../../"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a><p>VPN, который работает даже при белых списках.</p></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="../../pricing/">Тарифы</a></li><li><a href="../../setup/">Настройка</a></li><li><a href="../../how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="../../support/">Поддержка</a></li><li><a href="../../faq/">FAQ</a></li><li><a href="../../blog/">Блог</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="../../privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="../../terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
+  </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
+
+</body>
+</html>
