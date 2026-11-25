@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>VPN на iPhone и белые списки: настройка Happ и Incy на iOS - Блог Raven VPN</title>
+  <meta name="description" content="Как установить Happ или Incy на iPhone, если их нет в российском App Store, как включить обход белых списков на iOS и почему VPN на айфоне отключается сам по себе.">
+  <link rel="canonical" href="https://ravenvpn.site/blog/vpn-na-iphone-belye-spiski-ios/">
+  <link rel="alternate" hreflang="ru" href="https://ravenvpn.site/blog/vpn-na-iphone-belye-spiski-ios/">
+    <link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/blog/vpn-na-iphone-belye-spiski-ios/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Raven VPN">
+  <meta property="og:title" content="VPN на iPhone и белые списки: настройка Happ и Incy на iOS - Блог Raven VPN">
+  <meta property="og:description" content="Как установить Happ или Incy на iPhone, если их нет в российском App Store, как включить обход белых списков на iOS и почему VPN на айфоне отключается сам по себе.">
+  <meta property="og:url" content="https://ravenvpn.site/blog/vpn-na-iphone-belye-spiski-ios/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="article:published_time" content="2026-11-25">
+  <meta property="article:modified_time" content="2026-11-25">
+  <meta property="og:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raven VPN - работает даже при белых списках">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VPN на iPhone и белые списки: настройка Happ и Incy на iOS - Блог Raven VPN">
+  <meta name="twitter:description" content="Как установить Happ или Incy на iPhone, если их нет в российском App Store, как включить обход белых списков на iOS и почему VPN на айфоне отключается сам по себе.">
+  <meta name="twitter:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <link rel="icon" href="../../assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../../assets/img/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-raven.png" sizes="180x180">
+  <link rel="preload" href="../../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=fee4e5cffbc4">
+  <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
+  <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "logo": "https://ravenvpn.site/assets/img/logo-transparent.webp",
+    "sameAs": [
+      "https://t.me/TheRavenVPN",
+      "https://t.me/RavenVPNReviews",
+      "https://www.youtube.com/@TheRavenVPN"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "inLanguage": "ru"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "VPN на iPhone при белых списках в 2026 году: как скачать Happ, настроить обход и убрать вылеты",
+    "description": "Как установить Happ или Incy на iPhone, если их нет в российском App Store, как включить обход белых списков на iOS и почему VPN на айфоне отключается сам по себе.",
+    "url": "https://ravenvpn.site/blog/vpn-na-iphone-belye-spiski-ios/",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ravenvpn.site/blog/vpn-na-iphone-belye-spiski-ios/"
+    },
+    "datePublished": "2026-11-25",
+    "dateModified": "2026-11-25",
+    "inLanguage": "ru",
+    "image": "https://ravenvpn.site/assets/img/og-ru.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ravenvpn.site/assets/img/logo-transparent.webp"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Как скачать Happ или Incy на iPhone, если их нет в российском App Store?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Оригинальные Happ и Incy удалены из российского App Store. Удобнее всего создать второй зарубежный Apple ID (например, Казахстан или США), войти под ним только в App Store («Медиаматериалы и покупки»), скачать официальное приложение по ссылке со страницы подключения Raven VPN и вернуться в основной аккаунт. Остерегайтесь клонов с похожими названиями в российском поиске."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Работают ли российские банки и Госуслуги на iPhone без отключения VPN?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В Happ и Incy на iPhone российские сайты из расширенного списка идут напрямую автоматически. Однако из-за ограничений iOS исключать отдельные установленные приложения по имени пакета, как на Android, нельзя - если конкретное банковское приложение проверяет системный статус VPN, его можно открыть, выключив тумблер на минуту."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему VPN на iPhone отключается сам после блокировки экрана или при слабом Wi-Fi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Чаще всего срабатывают три системных механизма iOS: лимит 50 МБ оперативной памяти на сетевое расширение (Jetsam), функция «Помощь Wi-Fi» (Wi-Fi Assist), которая переключает трафик на 4G и рвёт сессию, либо «Режим энергосбережения». Выключите «Помощь Wi-Fi» в настройках сотовой связи, не нагружайте клиент тяжёлыми сторонними списками маршрутов и держите Happ/Incy обновлённым."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли поставить FlClashX или приложение Raven VPN на iPhone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет. FlClashX не выпускается для iOS, а наше собственное приложение Raven VPN сейчас доступно для Android и Windows. Для iPhone и iPad мы рекомендуем Happ или Incy с автонастройкой подписки."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли бесплатно проверить обход белых списков на iPhone перед оплатой?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Да. В Raven VPN есть бесплатный пробный период на 3 дня тарифа Про (30 ГБ обычного трафика, 2 ГБ для белых списков, до 50 Мбит/с и до 6 устройств) при входе через Telegram; без Telegram в веб-кабинете те же 3 дня стоят 15 ₽."
+        }
+      }
+    ]
+  }
+]</script>
+  <script defer src="../../assets/js/site.js?v=8a51d1a482ed"></script>
+  <script defer src="../../assets/js/source-label.js?v=f230d7b03e04"></script>
+  <script defer src="../../assets/js/cabinet-entry.js?v=3958d19615b5"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.6-1.3 1.5-2 2.5-2s1.9.7 2.5 2"/><path d="M14 10h4"/><path d="M14 14h3"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.8-3.3 3.2-5 6-5s5.2 1.7 6 5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 15c1.6.6 2.7 2.2 3 5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0"/><path d="M12 17v5"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+  <symbol id="i-sig" viewBox="0 0 54 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/><path d="M26 11.2 22.6 7.6a4.8 4.8 0 0 1 6.8 0zM20.4 5.4a8 8 0 0 1 11.2 0l-1.4 1.4a6 6 0 0 0-8.4 0z"/><rect x="36" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37.6" y="3.1" width="10" height="5.8" rx="1.2"/><rect x="51.8" y="4.3" width="1.4" height="3.4" rx=".7"/></symbol>
+</svg>
+
+  <header class="site-header"><div class="wrap header-row">
+    <a class="brand" href="../../" aria-label="Raven VPN"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a>
+    <button class="menu-button theme-toggle" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
+    <nav class="nav" id="main-navigation" data-nav-links aria-label="Разделы">
+      <a href="../../pricing/">Тарифы</a><a href="../../setup/">Подключение</a><a href="../../faq/">FAQ</a><a href="../../blog/">Блог</a><a href="../../support/">Поддержка</a>
+    </nav>
+    <div class="header-actions">
+
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+        <svg class="icon sun"><use href="#i-sun"/></svg><svg class="icon moon"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-quiet btn-small" id="cabinet-entry" href="/app/" data-api="https://api.ravenvpn.site/api/app/v1" data-session-label="Кабинет">Войти</a>
+      <a class="btn btn-quiet btn-small header-bot" href="https://t.me/GetRavenBot?start=ru_header" aria-label="Открыть бота" data-umami-event="hero_cta_click"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть бота</span></a>
+    </div>
+  </div></header>
+  <main id="main">
+    <section class="page-hero blog-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="breadcrumbs">
+          <a href="../../">Raven VPN</a><span>/</span><a href="../../blog/">Блог</a><span>/</span><span>VPN на iPhone и белые списки</span>
+        </nav>
+        <span class="blog-badge">iPhone и iOS</span>
+        <h1>VPN на iPhone при белых списках в 2026 году: как скачать Happ, настроить обход и убрать вылеты</h1>
+        <p class="lead">На iPhone настройка VPN в 2026 году упирается в три отдельные задачи: найти настоящий клиент мимо чисток российского App Store, включить рабочий маршрут при белых списках мобильного оператора и убрать самопроизвольные вылеты в фоне. Разбираем все три шага без лишней теории - с опорой на нашу практику и обсуждения на 4PDA и Хабре.</p>
+        <div class="blog-meta"><span>Опубликовано <time datetime="2026-11-25">25 ноября 2026</time></span><span aria-hidden="true">·</span><span>8 мин чтения</span></div>
+      </div>
+    </section>
+    <section class="section blog-section">
+      <div class="wrap blog-layout">
+        <aside class="blog-toc-wrap">
+          <nav class="blog-toc" aria-label="Содержание">
+            <p class="blog-toc-title">Содержание</p>
+            <ol>
+              <li><a href="#ios-app-store-and-clients">Почему Happ и Incy пропали из российского App Store и как не скачать клон</a></li>
+              <li><a href="#ios-whitelist-setup">Как настроить обход белых списков на iPhone за пару минут</a></li>
+              <li><a href="#why-vpn-disconnects-iphone">Почему VPN сам отключается на iPhone: 5 реальных причин и решения</a></li>
+              <li><a href="#ios-checklist">Короткий чеклист настройки iPhone перед поездкой или выходом из дома</a></li>
+            </ol>
+          </nav>
+        </aside>
+        <article class="blog-article">
+          <div class="blog-body">
+            <section id="ios-app-store-and-clients">
+              <h2>Почему Happ и Incy пропали из российского App Store и как не скачать клон</h2>
+              <p>В российском сегменте App Store Apple регулярно удаляет VPN- и прокси-приложения по требованиям регуляторов. Из-за этого оригинальные <strong>Happ (Happ - Proxy Utility)</strong> и <strong>Incy</strong> в российском поиске обычно не находятся - либо на их месте всплывают сторонние подделки с похожими названиями, рекламой и навязанными платными подписками.</p>
+<p>Чтобы поставить официальное приложение без риска скачать клон, пользователи iOS применяют один из двух проверенных способов:</p>
+<ol>
+  <li><strong>Запасной зарубежный Apple ID (самый удобный вариант).</strong> Если на основном российском аккаунте оформлены подписки Apple, семейный доступ или остаток баланса, не меняйте его регион. Создайте отдельный Apple ID со страной вроде Казахстана или США, выйдите в <strong>App Store</strong> (именно в «Медиаматериалы и покупки», а не из всего iCloud), войдите под вторым аккаунтом, скачайте Happ или Incy и вернитесь в основной профиль. Приложение останется на телефоне.</li>
+  <li><strong>Временная смена региона основного Apple ID.</strong> Подходит, если на аккаунте нет активных подписок и нулевой баланс. После переключения региона на зарубежный приложение скачивается бесплатно, но учитывайте, что обновления потом также запрашиваются из региона загрузки.</li>
+</ol>
+<blockquote><p>Правило с 4PDA, которое экономит нервы: если официальный Happ или Incy уже установлен на iPhone, не удаляйте его при первом сбое сети - удалить профиль внутри приложения и добавить подписку заново всегда безопаснее, чем заново искать клиент в App Store.</p></blockquote>
+<p>Ссылки на официальные страницы Happ и Incy в App Store есть прямо на странице подключения устройства в Raven VPN. Ниже - короткое сравнение совместимых клиентов именно для iPhone и iPad:</p>
+<div class="table-wrap" role="region" aria-label="Сравнение VPN-клиентов на iPhone и iPad" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Клиент на iOS</th>
+        <th scope="col">Белые списки</th>
+        <th scope="col">Автоправила РФ</th>
+        <th scope="col">Особенности на iPhone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Happ</th>
+        <td>Да («Авто - Белые списки»)</td>
+        <td>Да (российские сайты напрямую)</td>
+        <td>Основной выбор для iOS: бесплатный, автообновление подписки и оба режима «Авто»</td>
+      </tr>
+      <tr>
+        <th scope="row">Incy</th>
+        <td>Да («Авто - Белые списки»)</td>
+        <td>Да (российские сайты напрямую)</td>
+        <td>Удобная альтернатива Happ с теми же правилами маршрутизации Raven VPN</td>
+      </tr>
+      <tr>
+        <th scope="row">Shadowrocket / Karing</th>
+        <td>Зависит от версии и профиля</td>
+        <td>Нет (настраивается вручную)</td>
+        <td>Работают через «Другой клиент»; Shadowrocket платный, автоправила Raven не импортируются</td>
+      </tr>
+      <tr>
+        <th scope="row">FlClashX</th>
+        <td>Недоступен на iOS</td>
+        <td>-</td>
+        <td>Выходит для Android, Android TV, Windows, macOS и Linux, но не для iPhone</td>
+      </tr>
+      <tr>
+        <th scope="row">Hiddify</th>
+        <td>Нет</td>
+        <td>Нет</td>
+        <td>Подходит только для обычных VPN-серверов; профиль белых списков не поддерживает</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+            </section>
+            <section id="ios-whitelist-setup">
+              <h2>Как настроить обход белых списков на iPhone за пару минут</h2>
+              <p>Первичное добавление подписки на iPhone лучше сделать дома на Wi-Fi или в сети без жёстких ограничений: когда оператор уже перевёл линию на белые списки, клиент без загруженного профиля может не достучаться до сервера подписки. Как быстро отличить белые списки от полного отключения мобильной передачи данных, мы подробно разобрали в статье <a href="../../blog/obhod-belyh-spiskov-mobilnyj-internet/">«Белые списки мобильного интернета»</a>.</p>
+<ol>
+  <li><strong>Добавьте iPhone отдельным устройством.</strong> Откройте <a href="https://t.me/GetRavenBot?start=seo_vpn-na-iphone-belye-spiski-ios">бота @GetRavenBot</a> или <a href="../../app/">кабинет на сайте</a> (работает по почте без Telegram), перейдите в «Мои подписки» - «Устройства» - «Добавить устройство» - «iPhone / iPad» и откройте <strong>страницу подключения</strong>. Не переносите ссылку с другого телефона или компьютера.</li>
+  <li><strong>Выберите Happ или Incy и режим российских сайтов.</strong> Для Happ и Incy доступны два варианта: <em>«Расширенный список российских сайтов»</em> (включён по умолчанию: на обычном VPN банки, Госуслуги и маркетплейсы открываются напрямую, а на сервере «Белые списки» автоматически применяются только сайты белого списка) и <em>«Свои правила»</em>.</li>
+  <li><strong>Импортируйте подписку в клиент.</strong> Нажмите «Добавить в Happ» или «Добавить в Incy» и разрешите iOS создать VPN-конфигурацию (потребуется Face ID / Touch ID или код-пароль). Если встроенный браузер Telegram не перекинул ссылку в приложение, нажмите рядом «Продолжить в браузере» (Safari) или отсканируйте QR-код с экрана компьютера.</li>
+  <li><strong>Выберите нужный режим.</strong> На домашнем Wi-Fi и обычной 4G-сети держите выбранным <strong>«Авто - Обычный VPN»</strong>. Когда оператор включил белые списки и обычные серверы перестали открывать страницы - переключитесь на <strong>«Авто - Белые списки»</strong>. Вернувшись на Wi-Fi, переключитесь обратно, чтобы не тратить отдельную квоту белых списков (2 ГБ в пробном периоде, 10/20/50 ГБ в платных тарифах).</li>
+</ol>
+<blockquote><p>Важное отличие iOS от Android: из-за системных ограничений Apple ни один VPN-клиент на iPhone не может исключать отдельные установленные приложения по имени пакета, как на Android. Раздельная маршрутизация в Happ и Incy на iOS работает по доменам (сайтам). Этого хватает для большинства браузерных и мобильных сервисов, но если конкретный российский банк на iPhone всё же видит активный значок VPN, достаточно на минуту выключить тумблер в приложении.</p></blockquote>
+            </section>
+            <section id="why-vpn-disconnects-iphone">
+              <h2>Почему VPN сам отключается на iPhone: 5 реальных причин и решения</h2>
+              <p>Запрос «почему VPN сам отключается на айфоне» стабильно держится в топе поиска, а в ветках Happ и Shadowrocket на 4PDA жалобы на внезапный обрыв в кармане повторяются каждую неделю. В отличие от Android, где виновато энергосбережение конкретной оболочки, на iOS за отвалы отвечают системные ограничения самой Apple и сетевое поведение оператора.</p>
+<div class="table-wrap" role="region" aria-label="5 причин отключения VPN на iPhone и способы исправления" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Причина на iOS</th>
+        <th scope="col">Как проявляется</th>
+        <th scope="col">Что сделать</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1. Лимит памяти Network Extension (50 МБ / Jetsam)</th>
+        <td>Значок VPN внезапно пропадает при активной загрузке, переключении вкладок или просмотре видео.</td>
+        <td>Не нагружайте клиент огромными сторонними GeoIP/GeoSite-базами и лишними ручными правилами; используйте компактные управляемые правила Raven VPN и обновляйте Happ/Incy.</td>
+      </tr>
+      <tr>
+        <th scope="row">2. «Помощь Wi-Fi» (Wi-Fi Assist)</th>
+        <td>Туннель рвётся при слабом Wi-Fi в подъезде, на кухне или на выходе из дома, хотя сигнал ещё виден.</td>
+        <td>Откройте «Настройки» - «Сотовая связь», пролистайте в самый низ и выключите <strong>«Помощь Wi-Fi»</strong>, чтобы iOS не перебрасывала пакеты тайком на 4G.</td>
+      </tr>
+      <tr>
+        <th scope="row">3. «Частный узел iCloud» и второй VPN-профиль</th>
+        <td>Safari висит, часть сайтов не резолвится или профили перехватывают соединение друг у друга.</td>
+        <td>Выключите «Частный узел» («Настройки» - iCloud) и проверьте «Настройки» - «Основные» - «VPN и управление устройством»: оставьте один активный профиль без сторонних DNS-блокировщиков.</td>
+      </tr>
+      <tr>
+        <th scope="row">4. Режим энергосбережения и фоновый сон</th>
+        <td>После 10-30 минут с погашенным экраном значок VPN горит, а мессенджеры и браузер не грузятся.</td>
+        <td>Снимите «Режим энергосбережения» при нестабильной сети; если туннель «уснул» в простое (промежуточные узлы белых списков часто закрывают тихие потоки через 20-60 секунд), переподключите тумблер в Happ/Incy.</td>
+      </tr>
+      <tr>
+        <th scope="row">5. Сбой «По запросу» (On Demand) и зависший 4G-стек</th>
+        <td>VPN циклично переподключается или после его отключения пропадает даже обычный мобильный интернет.</td>
+        <td>Проверьте в настройках профиля VPN пункт «Подключение по запросу» (при частых сменах сети лучше отключить). Если мобильный интернет «залип» намертво, включите <strong>Авиарежим</strong> на 10 секунд и выключите его.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Отдельная ловушка - если значок VPN на iPhone горит, пинг зелёный, но страницы не открываются вообще на 4G, тогда как дома на Wi-Fi всё работает. В таком случае дело не в настройках iOS, а в фильтрации самого оператора (отсечка после 16-20 КБ, таймаут TLS или белые списки) - пошаговую диагностику этого симптома мы разобрали в статье <a href="../../blog/pochemu-vpn-ne-rabotaet-na-mobilnom-internete/">«На Wi-Fi VPN работает, а на мобильном интернете нет»</a>.</p>
+            </section>
+            <section id="ios-checklist">
+              <h2>Короткий чеклист настройки iPhone перед поездкой или выходом из дома</h2>
+              <p>Пять действий, которые занимают две минуты и избавляют от большинства неожиданных проблем на мобильном интернете:</p>
+<ol>
+  <li><strong>Обновите подписку в Happ или Incy, пока есть стабильный Wi-Fi.</strong> Так клиент заранее подтянет актуальные маршруты «Авто - Обычный VPN» и «Авто - Белые списки».</li>
+  <li><strong>Отключите «Помощь Wi-Fi»</strong> внизу раздела «Настройки» - «Сотовая связь».</li>
+  <li><strong>Проверьте, что в настройках клиента не включён вручную Mux (Multiplexing).</strong> По умолчанию он выключен - включение Mux ломает профиль белых списков.</li>
+  <li><strong>Не выбирайте вручную «Белые списки 1 / 2» на постоянной основе.</strong> Нумерация записей может смещаться при обновлении пула маршрутов - стабильнее использовать <strong>«Авто - Белые списки»</strong>.</li>
+  <li><strong>Помните о квоте белых списков.</strong> Для переписки, карт и браузера обычно хватает 1-5 ГБ в месяц, но автозагрузка тяжёлых фото в iCloud, обновлений приложений App Store и видео по 4G способна быстро потратить пакет. На время работы через белые списки полезно включить «Экономию данных» в настройках сотового тарифа iOS.</li>
+</ol>
+<p>Если вы планируете раздавать мобильный интернет с iPhone на ноутбук с Windows при белых списках - учтите, что «Режим модема» на iOS не передаёт VPN-туннель на компьютер; как правильно подключить ноутбук в такой ситуации, разобрали в статье <a href="../../blog/vpn-dlya-windows-razdacha-belye-spiski/">«VPN для Windows и раздача мобильного интернета»</a>. Полный список платформ и шагов также всегда под рукой на странице <a href="../../setup/">подключения</a>.</p>
+            </section>
+          </div>
+          <aside class="blog-cta" aria-labelledby="blog-cta-title">
+            <div class="blog-cta-copy">
+              <h2 id="blog-cta-title">Проверьте Raven VPN на iPhone за 3 дня бесплатно</h2>
+              <p>Пробный доступ Про: 30 ГБ обычного VPN, 2 ГБ для белых списков, до 6 устройств. Автонастройка в Happ и Incy для iPhone и iPad.</p>
+            </div>
+            <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=seo_vpn-na-iphone-belye-spiski-ios" data-umami-event="blog_cta_click" data-umami-event-slug="vpn-na-iphone-belye-spiski-ios"><svg class="icon"><use href="#i-send"/></svg>Попробовать 3 дня бесплатно</a>
+          </aside>
+          <p class="blog-back"><a class="text-link" href="../../blog/"><svg class="icon"><use href="#i-back"/></svg>Все статьи блога</a></p>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="faq" aria-labelledby="article-faq-title">
+      <div class="wrap faq-grid">
+        <div>
+          <h2 class="h2" id="article-faq-title">Частые вопросы</h2>
+          <p>Больше ответов - <a href="../../faq/">на странице FAQ</a>.</p>
+        </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Как скачать Happ или Incy на iPhone, если их нет в российском App Store?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Оригинальные Happ и Incy удалены из российского App Store. Удобнее всего создать второй зарубежный Apple ID (например, Казахстан или США), войти под ним только в App Store («Медиаматериалы и покупки»), скачать официальное приложение по ссылке со страницы подключения Raven VPN и вернуться в основной аккаунт. Остерегайтесь клонов с похожими названиями в российском поиске.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Работают ли российские банки и Госуслуги на iPhone без отключения VPN?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>В Happ и Incy на iPhone российские сайты из расширенного списка идут напрямую автоматически. Однако из-за ограничений iOS исключать отдельные установленные приложения по имени пакета, как на Android, нельзя - если конкретное банковское приложение проверяет системный статус VPN, его можно открыть, выключив тумблер на минуту.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему VPN на iPhone отключается сам после блокировки экрана или при слабом Wi-Fi?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Чаще всего срабатывают три системных механизма iOS: лимит 50 МБ оперативной памяти на сетевое расширение (Jetsam), функция «Помощь Wi-Fi» (Wi-Fi Assist), которая переключает трафик на 4G и рвёт сессию, либо «Режим энергосбережения». Выключите «Помощь Wi-Fi» в настройках сотовой связи, не нагружайте клиент тяжёлыми сторонними списками маршрутов и держите Happ/Incy обновлённым.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Можно ли поставить FlClashX или приложение Raven VPN на iPhone?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Нет. FlClashX не выпускается для iOS, а наше собственное приложение Raven VPN сейчас доступно для Android и Windows. Для iPhone и iPad мы рекомендуем Happ или Incy с автонастройкой подписки.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Можно ли бесплатно проверить обход белых списков на iPhone перед оплатой?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Да. В Raven VPN есть бесплатный пробный период на 3 дня тарифа Про (30 ГБ обычного трафика, 2 ГБ для белых списков, до 50 Мбит/⁠с и до 6 устройств) при входе через Telegram; без Telegram в веб-кабинете те же 3 дня стоят 15 ₽.</p>
+        </details>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><div class="footer-grid">
+    <div class="footer-brand"><a class="brand" href="../../"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a><p>VPN, который работает даже при белых списках.</p></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="../../pricing/">Тарифы</a></li><li><a href="../../setup/">Настройка</a></li><li><a href="../../how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="../../support/">Поддержка</a></li><li><a href="../../faq/">FAQ</a></li><li><a href="../../blog/">Блог</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="../../privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="../../terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
+  </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
+
+</body>
+</html>

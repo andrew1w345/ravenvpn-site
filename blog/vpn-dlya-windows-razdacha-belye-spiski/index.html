@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>VPN для Windows: TUN, Zapret и раздача сети при белых списках - Блог Raven VPN</title>
+  <meta name="description" content="Как выбрать и настроить VPN на Windows 10 и 11: почему YouTube в браузере работает, а Discord нет (системный прокси vs TUN), конфликт с GoodbyeDPI/Zapret и раздача 4G с телефона при белых списках.">
+  <link rel="canonical" href="https://ravenvpn.site/blog/vpn-dlya-windows-razdacha-belye-spiski/">
+  <link rel="alternate" hreflang="ru" href="https://ravenvpn.site/blog/vpn-dlya-windows-razdacha-belye-spiski/">
+    <link rel="alternate" hreflang="x-default" href="https://ravenvpn.site/blog/vpn-dlya-windows-razdacha-belye-spiski/">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Raven VPN">
+  <meta property="og:title" content="VPN для Windows: TUN, Zapret и раздача сети при белых списках - Блог Raven VPN">
+  <meta property="og:description" content="Как выбрать и настроить VPN на Windows 10 и 11: почему YouTube в браузере работает, а Discord нет (системный прокси vs TUN), конфликт с GoodbyeDPI/Zapret и раздача 4G с телефона при белых списках.">
+  <meta property="og:url" content="https://ravenvpn.site/blog/vpn-dlya-windows-razdacha-belye-spiski/">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="article:published_time" content="2026-11-25">
+  <meta property="article:modified_time" content="2026-11-25">
+  <meta property="og:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raven VPN - работает даже при белых списках">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VPN для Windows: TUN, Zapret и раздача сети при белых списках - Блог Raven VPN">
+  <meta name="twitter:description" content="Как выбрать и настроить VPN на Windows 10 и 11: почему YouTube в браузере работает, а Discord нет (системный прокси vs TUN), конфликт с GoodbyeDPI/Zapret и раздача 4G с телефона при белых списках.">
+  <meta name="twitter:image" content="https://ravenvpn.site/assets/img/og-ru.png">
+  <link rel="icon" href="../../assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="../../assets/img/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="../../assets/img/apple-touch-raven.png" sizes="180x180">
+  <link rel="preload" href="../../assets/fonts/golos-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <script>try { const t = localStorage.getItem("raven-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch {}
+  try { if (window.WebGLRenderingContext && !matchMedia("(prefers-reduced-motion: reduce)").matches && (navigator.hardwareConcurrency || 8) > 2 && (navigator.deviceMemory || 8) > 2) document.documentElement.classList.add("key-pending"); } catch {}</script>
+  <link rel="stylesheet" href="../../assets/css/site.css?v=fee4e5cffbc4">
+  <script async src="https://raven-service.online/site.js" data-website-id="527be0be-9705-421a-beeb-8a3799fa188c" data-domains="ravenvpn.site,www.ravenvpn.site"></script>
+  <script type="application/ld+json">[
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "logo": "https://ravenvpn.site/assets/img/logo-transparent.webp",
+    "sameAs": [
+      "https://t.me/TheRavenVPN",
+      "https://t.me/RavenVPNReviews",
+      "https://www.youtube.com/@TheRavenVPN"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Raven VPN",
+    "url": "https://ravenvpn.site",
+    "inLanguage": "ru"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "VPN для Windows в 2026 году: режим TUN, конфликт с Zapret и раздача мобильного интернета при белых списках",
+    "description": "Как выбрать и настроить VPN на Windows 10 и 11: почему YouTube в браузере работает, а Discord нет (системный прокси vs TUN), конфликт с GoodbyeDPI/Zapret и раздача 4G с телефона при белых списках.",
+    "url": "https://ravenvpn.site/blog/vpn-dlya-windows-razdacha-belye-spiski/",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://ravenvpn.site/blog/vpn-dlya-windows-razdacha-belye-spiski/"
+    },
+    "datePublished": "2026-11-25",
+    "dateModified": "2026-11-25",
+    "inLanguage": "ru",
+    "image": "https://ravenvpn.site/assets/img/og-ru.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Raven VPN",
+      "url": "https://ravenvpn.site",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://ravenvpn.site/assets/img/logo-transparent.webp"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Почему на Windows YouTube в браузере открывается, а Discord и игры не работают?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Скорее всего, в Happ, Incy или v2rayN включён режим «Системный прокси», который влияет только на браузеры. Закройте клиент, запустите его от имени администратора и переключитесь на режим TUN - либо используйте приложение Raven VPN для Windows, которое сразу работает через системный туннель."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Почему после закрытия VPN-клиента на Windows пропал вообще весь интернет?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Если клиент работал через «Системный прокси» и завершился аварийно, Windows могла оставить включённым локальный прокси-сервер. Откройте «Параметры» - «Сеть и интернет» - «Прокси-сервер» и отключите пункт «Использовать прокси-сервер»."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Нужно ли удалять GoodbyeDPI или Zapret перед установкой VPN на ПК?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Удалять необязательно, но одновременно с TUN-режимом VPN их запускать нельзя - драйвер WinDivert конфликтует с виртуальным адаптером VPN. Полностью остановите службу или процессы winws.exe / goodbyedpi.exe перед подключением VPN."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли раздать уже работающий VPN с телефона на ноутбук без root-прав?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Напрямую через штатную точку доступа Android или «Режим модема» iPhone - нет, система пускает трафик раздачи мимо VPN телефона. Самый надёжный вариант - раздать обычный мобильный интернет по USB-модему или Wi-Fi и включить «Авто - Белые списки» (или приложение Raven VPN) на самом ноутбуке как отдельное устройство подписки."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Нужна ли отдельная подписка для компьютера, если VPN уже оплачен на телефоне?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Нет. Одна подписка Raven VPN включает от 2 до 6 устройств в зависимости от тарифа (в пробном периоде Про - до 6 устройств). Просто добавьте компьютер отдельным пунктом в разделе «Устройства»."
+        }
+      }
+    ]
+  }
+]</script>
+  <script defer src="../../assets/js/site.js?v=8a51d1a482ed"></script>
+  <script defer src="../../assets/js/source-label.js?v=f230d7b03e04"></script>
+  <script defer src="../../assets/js/cabinet-entry.js?v=3958d19615b5"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержанию</a>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M6 4v16l14-8z"/></symbol>
+  <symbol id="i-id" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6.5 16c.6-1.3 1.5-2 2.5-2s1.9.7 2.5 2"/><path d="M14 10h4"/><path d="M14 14h3"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M10 2h4"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M3 20c.8-3.3 3.2-5 6-5s5.2 1.7 6 5"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7"/><path d="M18 15c1.6.6 2.7 2.2 3 5"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M17 3a2.8 2.8 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+  <symbol id="i-q" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m21.4 11.1-9.2 9.2a6 6 0 0 1-8.5-8.5l9.2-9.2a4 4 0 0 1 5.7 5.7l-9.2 9.2a2 2 0 0 1-2.8-2.8l8.5-8.5"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10a7 7 0 0 1-14 0"/><path d="M12 17v5"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M12 2v9"/><path d="M18.4 6.6a9 9 0 1 1-12.8 0"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></symbol>
+  <symbol id="i-sig" viewBox="0 0 54 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="6" width="3" height="6" rx="1"/><rect x="9" y="3.5" width="3" height="8.5" rx="1"/><rect x="13.5" y="1" width="3" height="11" rx="1"/><path d="M26 11.2 22.6 7.6a4.8 4.8 0 0 1 6.8 0zM20.4 5.4a8 8 0 0 1 11.2 0l-1.4 1.4a6 6 0 0 0-8.4 0z"/><rect x="36" y="1.5" width="15" height="9" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="37.6" y="3.1" width="10" height="5.8" rx="1.2"/><rect x="51.8" y="4.3" width="1.4" height="3.4" rx=".7"/></symbol>
+</svg>
+
+  <header class="site-header"><div class="wrap header-row">
+    <a class="brand" href="../../" aria-label="Raven VPN"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a>
+    <button class="menu-button theme-toggle" type="button" aria-label="Меню" aria-controls="main-navigation" aria-expanded="false" data-menu-button><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button>
+    <nav class="nav" id="main-navigation" data-nav-links aria-label="Разделы">
+      <a href="../../pricing/">Тарифы</a><a href="../../setup/">Подключение</a><a href="../../faq/">FAQ</a><a href="../../blog/">Блог</a><a href="../../support/">Поддержка</a>
+    </nav>
+    <div class="header-actions">
+
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Переключить тему">
+        <svg class="icon sun"><use href="#i-sun"/></svg><svg class="icon moon"><use href="#i-moon"/></svg>
+      </button>
+      <a class="btn btn-quiet btn-small" id="cabinet-entry" href="/app/" data-api="https://api.ravenvpn.site/api/app/v1" data-session-label="Кабинет">Войти</a>
+      <a class="btn btn-quiet btn-small header-bot" href="https://t.me/GetRavenBot?start=ru_header" aria-label="Открыть бота" data-umami-event="hero_cta_click"><svg class="icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg><span>Открыть бота</span></a>
+    </div>
+  </div></header>
+  <main id="main">
+    <section class="page-hero blog-hero">
+      <div class="wrap">
+        <nav class="breadcrumbs" aria-label="breadcrumbs">
+          <a href="../../">Raven VPN</a><span>/</span><a href="../../blog/">Блог</a><span>/</span><span>VPN для Windows и раздача сети</span>
+        </nav>
+        <span class="blog-badge">Windows и ПК</span>
+        <h1>VPN для Windows в 2026 году: режим TUN, конфликт с Zapret и раздача мобильного интернета при белых списках</h1>
+        <p class="lead">На компьютере с Windows проблемы с VPN выглядят иначе, чем на телефоне: браузер открывает сайты, а Discord и игры стоят на месте; вчерашний Zapret внезапно ломает туннель; а при раздаче 4G с телефона на ноутбук белые списки отрезают сеть, даже если на самом смартфоне VPN включён. Разбираем все рабочие решения для Windows 10 и 11.</p>
+        <div class="blog-meta"><span>Опубликовано <time datetime="2026-11-25">25 ноября 2026</time></span><span aria-hidden="true">·</span><span>8 мин чтения</span></div>
+      </div>
+    </section>
+    <section class="section blog-section">
+      <div class="wrap blog-layout">
+        <aside class="blog-toc-wrap">
+          <nav class="blog-toc" aria-label="Содержание">
+            <p class="blog-toc-title">Содержание</p>
+            <ol>
+              <li><a href="#windows-clients-comparison">Какое приложение выбрать для Windows 10 и 11</a></li>
+              <li><a href="#system-proxy-vs-tun">Браузер работает, а Discord, Telegram и игры нет: системный прокси против TUN</a></li>
+              <li><a href="#goodbyedpi-zapret-conflict">Почему VPN на Windows конфликтует с GoodbyeDPI и Zapret</a></li>
+              <li><a href="#tethering-whitelists">Раздача мобильного интернета на ноутбук при белых списках: что реально работает</a></li>
+              <li><a href="#protect-whitelist-quota-windows">Как не сжечь квоту белых списков на Windows за 10 минут</a></li>
+            </ol>
+          </nav>
+        </aside>
+        <article class="blog-article">
+          <div class="blog-body">
+            <section id="windows-clients-comparison">
+              <h2>Какое приложение выбрать для Windows 10 и 11</h2>
+              <p>Подписка Raven VPN на Windows работает и через наше собственное приложение, и через универсальные клиенты. Выбор зависит от того, нужна ли вам одна кнопка с автопереходом на белые списки или привычный интерфейс подписки:</p>
+<div class="table-wrap" role="region" aria-label="Сравнение VPN-клиентов для Windows 10 и 11" tabindex="0">
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Приложение</th>
+        <th scope="col">Белые списки</th>
+        <th scope="col">Российские сайты напрямую</th>
+        <th scope="col">Кому подходит лучше</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"><a href="../../windows/">Raven VPN (Windows)</a></th>
+        <td>Да, автопереход на рабочий путь</td>
+        <td>Да, встроенные правила</td>
+        <td>Тем, кому нужна одна кнопка в трее: права администратора нужны раз при установке, вход по почте или Telegram, самообновление</td>
+      </tr>
+      <tr>
+        <th scope="row">Happ / Incy (Desktop)</th>
+        <td>Да («Авто - Белые списки»)</td>
+        <td>Да (автонастройка со страницы подключения)</td>
+        <td>Тем, кто хочет один и тот же знакомый клиент на телефоне и компьютере</td>
+      </tr>
+      <tr>
+        <th scope="row">FlClashX</th>
+        <td>Да</td>
+        <td>Да (три режима, включая отдельный whitelist)</td>
+        <td>Пользователям, которым удобен интерфейс Clash/Mihomo и детальные логи соединений</td>
+      </tr>
+      <tr>
+        <th scope="row">v2rayN / Clash Verge Rev</th>
+        <td>Да (актуальная версия)</td>
+        <td>Вручную</td>
+        <td>Опытным пользователям, подключающимся через «Другой клиент»</td>
+      </tr>
+      <tr>
+        <th scope="row">Hiddify</th>
+        <td>Нет</td>
+        <td>Нет</td>
+        <td>Только для обычных VPN-серверов; режим «Белые списки» в нём не работает</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Независимо от выбора клиента, добавляйте компьютер как <strong>отдельное устройство</strong> в разделе «Устройства» <a href="https://t.me/GetRavenBot?start=seo_vpn-dlya-windows-razdacha-belye-spiski">бота @GetRavenBot</a> или <a href="../../app/">личного кабинета</a> (не переносите ссылку с телефона). Если при установке <a href="../../windows/">Raven VPN для Windows</a> появится синее окно SmartScreen «Система Windows защитила ваш компьютер», нажмите «Подробнее» и «Выполнить в любом случае» - так Windows реагирует на новые программы без платной подписи Microsoft. Скачивайте установщик только с официального сайта <code>ravenvpn.site</code>.</p>
+            </section>
+            <section id="system-proxy-vs-tun">
+              <h2>Браузер работает, а Discord, Telegram и игры нет: системный прокси против TUN</h2>
+              <p>Самая частая жалоба пользователей Windows на 4PDA и в нашей поддержке: «Включил Happ или v2rayN, YouTube в Chrome открывается, а Discord крутит подключение к голосу и игры не видят сеть». Причина почти всегда одна - выбран режим <strong>Системный прокси (System Proxy)</strong> вместо <strong>TUN</strong>.</p>
+<ul>
+  <li><strong>Системный прокси (System Proxy)</strong> прописывает локальный адрес прокси в настройках Windows. Эту настройку читают браузеры (Chrome, Edge, Firefox), но <strong>игнорируют Discord, Telegram Desktop, Steam, игровые лаунчеры и большинство десктопных программ</strong>. Кроме того, классический HTTP-прокси плохо дружит с UDP-трафиком, который нужен для голосовых каналов и игр.</li>
+  <li><strong>Режим TUN (виртуальный сетевой адаптер Wintun)</strong> поднимает на уровне операционной системы полноценный сетевой интерфейс и заворачивает в туннель весь трафик (и TCP, и UDP), кроме российских сайтов из правил исключений. В этом режиме начинают работать и браузер, и голос в Discord, и Telegram, и игры.</li>
+</ul>
+<p>Чтобы включить TUN в Happ, Incy или FlClashX на Windows, закройте программу полностью (включая значок в трее возле часов), запустите её <strong>от имени администратора</strong> и переключите режим на <strong>TUN</strong> (клиент установит драйвер Wintun). В приложении <a href="../../windows/">Raven VPN для Windows</a> служба и права настраиваются один раз во время установки - дальше достаточно одного нажатия в трее.</p>
+<blockquote><p>Ловушка системного прокси: если клиент в режиме System Proxy аварийно закрылся или компьютер перезагрузился до отключения VPN, Windows иногда оставляет включённой галочку ручного прокси - и после этого пропадают вообще все сайты, включая российские. Откройте «Параметры» - «Сеть и интернет» - «Прокси-сервер» и выключите «Использовать прокси-сервер», если VPN сейчас отключён.</p></blockquote>
+            </section>
+            <section id="goodbyedpi-zapret-conflict">
+              <h2>Почему VPN на Windows конфликтует с GoodbyeDPI и Zapret</h2>
+              <p>Многие пользователи на домашнем ПК сначала пробовали локальные утилиты обхода DPI - <strong>GoodbyeDPI</strong> или сборки <strong>Zapret</strong> (<code>winws.exe</code>), а затем поставили VPN. Если оставить оба инструмента включёнными одновременно, сеть начинает вести себя непредсказуемо: VPN зависает на подключении, голос в Discord отваливается каждые пару минут или скорость падает почти до нуля.</p>
+<p>Техническая причина хорошо описана в разборах на Хабре и в тикетах <code>zapret-discord-youtube</code> на GitHub: локальные обходчики DPI перехватывают и модифицируют TCP/UDP-пакеты через драйвер <strong>WinDivert</strong> на уровне сетевого стека Windows. Когда поверх запускается VPN в режиме <strong>TUN (Wintun)</strong>, драйверы начинают конфликтовать за одни и те же пакеты, а сам зашифрованный туннель получает повреждённые или дублированные заголовки.</p>
+<p>Как убрать конфликт за минуту:</p>
+<ol>
+  <li>Закройте окно консольного скрипта Zapret / GoodbyeDPI и остановите его фоновую службу (если устанавливали через <code>service_install</code>).</li>
+  <li>Откройте Диспетчер задач (<code>Ctrl + Shift + Esc</code>) и убедитесь, что в процессах нет <code>winws.exe</code> и <code>goodbyedpi.exe</code>.</li>
+  <li>Переподключите VPN в режиме TUN. С рабочим VPN и автоматическими правилами для российских сайтов локальные обходчики DPI на компьютере не нужны - YouTube, Discord и зарубежные ресурсы идут через туннель, а банки и Госуслуги открываются напрямую.</li>
+</ol>
+            </section>
+            <section id="tethering-whitelists">
+              <h2>Раздача мобильного интернета на ноутбук при белых списках: что реально работает</h2>
+              <p>Типичный сценарий в поездке, командировке или при аварии у домашнего провайдера: вы раздаёте 4G с телефона на ноутбук с Windows, а у мобильного оператора включены белые списки. Причём часто возникает неожиданность - на самом телефоне VPN включён и Telegram работает, а на подключённом ноутбуке открываются только Госуслуги и банки.</p>
+<p>Причина проста и десятки раз подтверждена на 4PDA: <strong>штатная точка доступа Android и «Режим модема» iPhone без root-прав не раздают активный VPN-туннель телефона</strong>. Трафик подключённого ноутбука идёт мимо виртуального интерфейса <code>tun0</code> прямо в сеть оператора - и сразу упирается в белые списки.</p>
+<h3>Способ 1 (рекомендуемый). Раздача обычного 4G + VPN прямо на Windows</h3>
+<ol>
+  <li><strong>Подключите телефон к ноутбуку.</strong> Предпочтительнее режим <strong>USB-модема</strong> по кабелю: меньше задержек, не обрывается Wi-Fi-хотспот и телефон одновременно заряжается. Обычная точка доступа Wi-Fi тоже подойдёт.</li>
+  <li><strong>Включите обход белых списков на самом ПК.</strong> В Happ или Incy на Windows выберите <strong>«Авто - Белые списки»</strong>, а в приложении <a href="../../windows/">Raven VPN для Windows</a> достаточно нажать кнопку подключения - оно само обнаружит, что прямой маршрут не отвечает, и перейдёт на путь белых списков.</li>
+  <li><strong>Подготовьтесь заранее дома.</strong> Скачайте приложение и добавьте ноутбук в раздел «Устройства» заранее, пока под рукой есть нормальный Wi-Fi. Если белые списки уже включены, скачать установщик без работающего VPN будет сложно (на странице <a href="../../windows/">Raven VPN для Windows</a> мы также оставили запасную подсказку по первому подключению через кабинет).</li>
+</ol>
+<h3>Способ 2 (запасной, только для Android без root)</h3>
+<p>Если по какой-то причине вы не можете поставить VPN-клиент на рабочий компьютер, на Android поверх работающего VPN можно запустить приложение локального HTTP/SOCKS-прокси (например, <em>Every Proxy</em> или <em>Android Proxy Server</em>) и прописать IP-адрес и порт телефона в настройках прокси Windows (для программ мимо системного прокси дополнительно используют проксификатор вроде <em>Proxifier</em>). Но на практике эта схема медленнее, обрывается при засыпании экрана телефона и требует ручной настройки - отдельный слот устройства для Windows работает намного спокойнее.</p>
+            </section>
+            <section id="protect-whitelist-quota-windows">
+              <h2>Как не сжечь квоту белых списков на Windows за 10 минут</h2>
+              <p>В Raven VPN для белых списков выделен отдельный пакет трафика (2 ГБ в пробном периоде, 10 ГБ в «Старте», 20 ГБ в «Стандарте» и 50 ГБ в «Про»; при необходимости к активной платной подписке можно докупить +10/50/100 ГБ). На телефоне его спокойно хватает на недели переписки и браузера, а вот Windows в фоне умеет незаметно скачать крупное обновление системы, синхронизировать папку облака или начать загрузку патча в Steam.</p>
+<p>Перед работой через мобильную раздачу в режиме белых списков сделайте три быстрых шага:</p>
+<ol>
+  <li><strong>Пометьте сеть как лимитное подключение.</strong> Откройте «Параметры» - «Сеть и интернет» - свойства текущего Wi-Fi (или Ethernet для USB-модема) и включите <strong>«Лимитное подключение»</strong>. Windows прекратит фоновую загрузку обновлений и приложений из Microsoft Store.</li>
+  <li><strong>Поставьте на паузу тяжёлые фоновые клиенты.</strong> Приостановите автозагрузки в Steam, Epic Games, торрент-клиентах и синхронизацию OneDrive / Google Диска.</li>
+  <li><strong>Вернувшись на домашний интернет, переключитесь с белых списков обратно.</strong> В Happ/Incy выберите <strong>«Авто - Обычный VPN»</strong> (приложение Raven VPN вернётся на обычный быстрый путь автоматически).</li>
+</ol>
+<p>Если дома у вас несколько устройств, телевизор и игровые консоли, которым нужен постоянный доступ без запуска VPN на каждом экране, посмотрите наш разбор <a href="../../blog/vpn-na-router-openwrt-podkop-smart-tv/">«VPN на роутер (OpenWrt + podkop) и Smart TV»</a>. А для мобильной диагностики на телефоне пригодятся материалы про <a href="../../blog/obhod-belyh-spiskov-mobilnyj-internet/">белые списки на Android</a> и <a href="../../blog/vpn-na-iphone-belye-spiski-ios/">настройку iPhone</a>.</p>
+            </section>
+          </div>
+          <aside class="blog-cta" aria-labelledby="blog-cta-title">
+            <div class="blog-cta-copy">
+              <h2 id="blog-cta-title">Попробуйте Raven VPN на Windows и телефоне бесплатно</h2>
+              <p>3 дня тарифа Про: 30 ГБ, белые списки 2 ГБ, до 6 устройств. Нативное приложение для Windows 10/11 или готовые профили для Happ, Incy и FlClashX.</p>
+            </div>
+            <a class="btn btn-primary" href="https://t.me/GetRavenBot?start=seo_vpn-dlya-windows-razdacha-belye-spiski" data-umami-event="blog_cta_click" data-umami-event-slug="vpn-dlya-windows-razdacha-belye-spiski"><svg class="icon"><use href="#i-send"/></svg>Попробовать 3 дня бесплатно</a>
+          </aside>
+          <p class="blog-back"><a class="text-link" href="../../blog/"><svg class="icon"><use href="#i-back"/></svg>Все статьи блога</a></p>
+        </article>
+      </div>
+    </section>
+    <section class="section" id="faq" aria-labelledby="article-faq-title">
+      <div class="wrap faq-grid">
+        <div>
+          <h2 class="h2" id="article-faq-title">Частые вопросы</h2>
+          <p>Больше ответов - <a href="../../faq/">на странице FAQ</a>.</p>
+        </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему на Windows YouTube в браузере открывается, а Discord и игры не работают?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Скорее всего, в Happ, Incy или v2rayN включён режим «Системный прокси», который влияет только на браузеры. Закройте клиент, запустите его от имени администратора и переключитесь на режим TUN - либо используйте приложение Raven VPN для Windows, которое сразу работает через системный туннель.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Почему после закрытия VPN-клиента на Windows пропал вообще весь интернет?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Если клиент работал через «Системный прокси» и завершился аварийно, Windows могла оставить включённым локальный прокси-сервер. Откройте «Параметры» - «Сеть и интернет» - «Прокси-сервер» и отключите пункт «Использовать прокси-сервер».</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Нужно ли удалять GoodbyeDPI или Zapret перед установкой VPN на ПК?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Удалять необязательно, но одновременно с TUN-режимом VPN их запускать нельзя - драйвер WinDivert конфликтует с виртуальным адаптером VPN. Полностью остановите службу или процессы winws.exe / goodbyedpi.exe перед подключением VPN.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Можно ли раздать уже работающий VPN с телефона на ноутбук без root-прав?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Напрямую через штатную точку доступа Android или «Режим модема» iPhone - нет, система пускает трафик раздачи мимо VPN телефона. Самый надёжный вариант - раздать обычный мобильный интернет по USB-модему или Wi-Fi и включить «Авто - Белые списки» (или приложение Raven VPN) на самом ноутбуке как отдельное устройство подписки.</p>
+        </details>
+        <details class="faq-item" data-umami-event="faq_open">
+          <summary><span>Нужна ли отдельная подписка для компьютера, если VPN уже оплачен на телефоне?</span><svg class="summary-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"></path></svg></summary>
+          <p>Нет. Одна подписка Raven VPN включает от 2 до 6 устройств в зависимости от тарифа (в пробном периоде Про - до 6 устройств). Просто добавьте компьютер отдельным пунктом в разделе «Устройства».</p>
+        </details>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="wrap"><div class="footer-grid">
+    <div class="footer-brand"><a class="brand" href="../../"><img src="../../assets/img/logo-transparent.webp" width="40" height="40" alt=""><span>Raven VPN</span></a><p>VPN, который работает даже при белых списках.</p></div>
+    <div class="footer-group"><h3>Продукт</h3><ul><li><a href="../../pricing/">Тарифы</a></li><li><a href="../../setup/">Настройка</a></li><li><a href="../../how-it-works/">Как это работает</a></li></ul></div><div class="footer-group"><h3>Помощь</h3><ul><li><a href="../../support/">Поддержка</a></li><li><a href="../../faq/">FAQ</a></li><li><a href="../../blog/">Блог</a></li></ul></div><div class="footer-group"><h3>Документы</h3><ul><li><a href="../../privacy/" data-umami-event="legal_click">Конфиденциальность</a></li><li><a href="../../terms/" data-umami-event="legal_click">Условия и правила</a></li></ul></div><div class="footer-group"><h3>Сообщество</h3><ul><li><a href="https://t.me/TheRavenVPN">Канал</a></li><li><a href="https://t.me/RavenVPNReviews">Отзывы</a></li><li><a href="https://www.youtube.com/@TheRavenVPN">YouTube</a></li></ul></div>
+  </div><p class="footer-bottom">© 2026 Raven VPN</p></div></footer>
+
+</body>
+</html>
