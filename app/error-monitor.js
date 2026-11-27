@@ -1,5 +1,8 @@
 /* Loaded before the module graph: catches an entry/chunk failure as well as runtime errors. */
 (() => {
+  // Public device setup route (#/d/<token>) uses only setup API: no storage writes or /errors telemetry.
+  const isSetupRoute = () => /^#\/d(?:\/|[?&]|$)/.test(location.hash);
+  if (isSetupRoute()) return;
   const queue = [], seen = new Set();
   const clean = value => String(value).split(/\r?\n/).map(line =>
     /(?:initdata|query_id|auth_date|authorization|password|secret|seed|call_link|token)(?:[\s"']|%20)*(?::|=|%3d)/i.test(line)
@@ -13,6 +16,7 @@
     try { localStorage.setItem("raven-error-installation", installation); } catch { /* keep in memory */ }
   }
   let sender = async body => {
+    if (isSetupRoute()) return;
     let fallback = false;
     try { fallback = sessionStorage.getItem("raven-browser-fallback") === "1"
       || Number(localStorage.getItem("raven-browser-fallback-until")) > Date.now(); } catch { /* direct until the app selects a path */ }
@@ -29,13 +33,14 @@
   };
   let sending = false, timer, delay = 1000;
   async function flush() {
-    if (sending || !queue.length || document.visibilityState === "hidden") return;
+    if (sending || !queue.length || document.visibilityState === "hidden" || isSetupRoute()) return;
     sending = true;
     try { await sender(queue[0]); queue.shift(); delay = 1000; }
     catch { delay = Math.min(300000, delay * 2); }
-    finally { sending = false; if (queue.length) timer = setTimeout(flush, delay); }
+    finally { sending = false; if (queue.length && !isSetupRoute()) timer = setTimeout(flush, delay); }
   }
   function capture(type, error) {
+    if (isSetupRoute()) return;
     const message = clean(error instanceof Error ? error.message : typeof error === "string" ? error : "unhandled_error").slice(0, 2000);
     const stack = clean(error instanceof Error ? error.stack || "" : "").slice(0, 12000);
     const key = type + message + stack;
@@ -53,6 +58,7 @@
   // never reaches the server is a dropped connection: VPN switch, captive network.
   let resourceFailed = false;
   async function checkResource(url, kind) {
+    if (isSetupRoute()) return;
     try {
       const response = await fetch(url, { cache: "no-store", credentials: "omit", signal: AbortSignal.timeout(15000) });
       // A redirect to a captive portal can return HTML with 200 too. Only
@@ -86,9 +92,10 @@
   let watchdog;
   function watch() {
     clearTimeout(watchdog);
+    if (isSetupRoute()) return;
     watchdog = setTimeout(() => {
       // An empty page after a failed file is that failure, reported (or not) above.
-      if (document.visibilityState === "hidden" || resourceFailed || !navigator.onLine) return;
+      if (document.visibilityState === "hidden" || resourceFailed || !navigator.onLine || isSetupRoute()) return;
       const root = document.getElementById("app"), page = root?.querySelector(".page"), main = root?.querySelector("main");
       if (!root?.firstElementChild || !page?.firstElementChild || (main && main.getBoundingClientRect().height < 24 && window.innerHeight >= 320)) {
         capture("blank_root", "cabinet_root_not_rendered");
@@ -96,10 +103,14 @@
     }, 10000);
   }
   window.addEventListener("pageshow", watch);
+  window.addEventListener("hashchange", () => {
+    if (isSetupRoute()) { clearTimeout(timer); clearTimeout(watchdog); }
+    else if (queue.length) { clearTimeout(timer); void flush(); }
+  });
   window.addEventListener("online", () => { clearTimeout(timer); void flush(); });
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState !== "hidden") { watch(); clearTimeout(timer); void flush(); }
   });
   document.addEventListener("DOMContentLoaded", watch);
-  window.ravenErrors = { setSender(next) { sender = next; clearTimeout(timer); void flush(); } };
+  window.ravenErrors = { setSender(next) { sender = next; clearTimeout(timer); if (!isSetupRoute()) void flush(); } };
 })();
